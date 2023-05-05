@@ -1,5 +1,6 @@
 ﻿Imports System.IO
 Imports System.Text
+Imports Microsoft.VisualBasic.FileIO
 
 Module Module1
     ''' <summary>
@@ -11,11 +12,35 @@ Module Module1
         Dim status As Integer
     End Structure
 
-    Public joueurs() As String
-    Public scors() As Integer
+    Public Structure Joueur
+        Dim nom As String
+        Dim score, PB, NBJ1, NBJ2, TotalTemps As Integer 'pas sur que TotalTemps devrait être un entier
+
+    End Structure
+
+    Public joueurs As String()
+    Public scors As Integer()
 
     Sub main()
+        joueurs = New String(1) {}
+        scors = New Integer(1) {}
+
         Dim filePath As String = "../../Joueurs.csv"
+        Dim tfp As New TextFieldParser(filePath)
+        tfp.Delimiters = New String() {";"}
+        tfp.TextFieldType = FieldType.Delimited
+
+        Dim header = tfp.ReadLine()
+        Dim i = 0
+        While Not tfp.EndOfData
+            Dim filds = tfp.ReadFields()
+            Dim j As String = filds(0)
+            If i = joueurs.Length Then
+                ReDim Preserve joueurs(joueurs.Length + 1)
+            End If
+            joueurs(i) = j
+            i = i + 1
+        End While
         'Dim fileContent As String = System.IO.File.ReadAllText(filePath)
         'For Each line As String In System.IO.File.ReadLines(filePath)
         '    Dim joueur() As String = line.Split(" ")
@@ -30,8 +55,9 @@ Module Module1
         'End Using
         'Dim info As Byte() = New UTF8Encoding(True).GetBytes("test")
         'fs.Write(info, 0, info.Length)
-        Dim t As String = "Nom;Score;PB;NBJ1;NBJ2;TotalTemps" & vbCrLf
-        File.AppendAllText(filePath, t)
+
+        'Dim t As String = "Nom;Score;PB;NBJ1;NBJ2;TotalTemps" & vbCrLf
+        'File.AppendAllText(filePath, t)
 
         Application.Run(FormAccueil)
     End Sub
