@@ -1,0 +1,7 @@
+{
+  "charJouable": [ "#", "$", "£", "%", "@" ],
+  "couleursStatus": [ "Color.White", "Color.Blue", "Color.Green" ],
+  "temps": 90,
+  "nbProposition": 15,
+  "savePath": "../../Joueurs.csv"
+}

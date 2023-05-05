@@ -20,13 +20,16 @@ Module Module1
 
     Public joueurs As String()
     Public scors As Integer()
+    Public caracteresJouable As Caractere()
 
     Sub main()
         joueurs = New String(1) {}
         scors = New Integer(1) {}
+        caracteresJouable = New Caractere(4) {}
 
-        Dim filePath As String = "../../Joueurs.csv"
-        Dim tfp As New TextFieldParser(filePath)
+        'Lecture des joueurs
+        Dim filePathJoueurs As String = "../../Joueurs.csv"
+        Dim tfp As New TextFieldParser(filePathJoueurs)
         tfp.Delimiters = New String() {";"}
         tfp.TextFieldType = FieldType.Delimited
 
@@ -41,6 +44,10 @@ Module Module1
             joueurs(i) = j
             i = i + 1
         End While
+
+        'Lecture des caracteres jouable
+        LectCharJouable()
+
         'Dim fileContent As String = System.IO.File.ReadAllText(filePath)
         'For Each line As String In System.IO.File.ReadLines(filePath)
         '    Dim joueur() As String = line.Split(" ")
@@ -61,4 +68,18 @@ Module Module1
 
         Application.Run(FormAccueil)
     End Sub
+
+    Private Sub LectCharJouable()
+        Dim filePathCJ As String = "../../config.txt"
+        For Each line As String In System.IO.File.ReadLines(filePathCJ)
+            Dim c() As String = line.Split(" ")
+            For k As Integer = 0 To c.Length - 1
+                Dim caractere As Caractere = New Caractere
+                caractere.c = c(k)(0) 'je prend le premier char de la chaine
+                caractere.status = 0 'absent pour qu'il soit normal (couleur)
+                caracteresJouable(k) = caractere
+            Next
+        Next
+    End Sub
+
 End Module
