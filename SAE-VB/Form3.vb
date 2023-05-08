@@ -79,15 +79,8 @@
             For j As Integer = 0 To tentatives(i).Length - 1
                 s &= tentatives(i)(j).c & " "
             Next
-            LblTest.Text += s & vbCrLf
         Next
         ReDim Preserve tentatives(nbTentatives)
     End Sub
 
-    Private Sub LblTest_Paint(sender As Object, e As PaintEventArgs) Handles LblTest.Paint
-        Dim ligne As String() = LblTest.Text.Split(vbCrLf)
-        For i As Integer = 0 To ligne.Length - 1
-            Dim ch As String() = ligne(i).Split(" ")
-        Next
-    End Sub
 End Class
