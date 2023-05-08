@@ -22,6 +22,7 @@ Partial Class Form3
     'Ne la modifiez pas à l'aide de l'éditeur de code.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.btnEssaie = New System.Windows.Forms.Button()
         Me.txt5 = New System.Windows.Forms.TextBox()
         Me.txt4 = New System.Windows.Forms.TextBox()
@@ -38,6 +39,10 @@ Partial Class Form3
         Me.pnlEssais = New System.Windows.Forms.Panel()
         Me.PnlChar = New System.Windows.Forms.Panel()
         Me.BtnBye = New System.Windows.Forms.Button()
+        Me.LstTentatives = New System.Windows.Forms.ListBox()
+        Me.Timer = New System.Windows.Forms.Timer(Me.components)
+        Me.LblTest = New System.Windows.Forms.Label()
+        Me.pnlEssais.SuspendLayout()
         Me.PnlChar.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -167,6 +172,7 @@ Partial Class Form3
         '
         'pnlEssais
         '
+        Me.pnlEssais.Controls.Add(Me.LstTentatives)
         Me.pnlEssais.Location = New System.Drawing.Point(55, 166)
         Me.pnlEssais.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.pnlEssais.Name = "pnlEssais"
@@ -194,11 +200,28 @@ Partial Class Form3
         Me.BtnBye.Text = "Bye"
         Me.BtnBye.UseVisualStyleBackColor = True
         '
+        'LstTentatives
+        '
+        Me.LstTentatives.FormattingEnabled = True
+        Me.LstTentatives.Location = New System.Drawing.Point(3, 8)
+        Me.LstTentatives.Name = "LstTentatives"
+        Me.LstTentatives.Size = New System.Drawing.Size(135, 342)
+        Me.LstTentatives.TabIndex = 0
+        '
+        'LblTest
+        '
+        Me.LblTest.AutoSize = True
+        Me.LblTest.Location = New System.Drawing.Point(235, 337)
+        Me.LblTest.Name = "LblTest"
+        Me.LblTest.Size = New System.Drawing.Size(0, 13)
+        Me.LblTest.TabIndex = 31
+        '
         'Form3
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(422, 532)
+        Me.Controls.Add(Me.LblTest)
         Me.Controls.Add(Me.BtnBye)
         Me.Controls.Add(Me.PnlChar)
         Me.Controls.Add(Me.pnlEssais)
@@ -213,6 +236,7 @@ Partial Class Form3
         Me.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.Name = "Form3"
         Me.Text = "Form3"
+        Me.pnlEssais.ResumeLayout(False)
         Me.PnlChar.ResumeLayout(False)
         Me.PnlChar.PerformLayout()
         Me.ResumeLayout(False)
@@ -236,4 +260,7 @@ Partial Class Form3
     Friend WithEvents pnlEssais As Panel
     Friend WithEvents PnlChar As Panel
     Friend WithEvents BtnBye As Button
+    Friend WithEvents LstTentatives As ListBox
+    Friend WithEvents Timer As Timer
+    Friend WithEvents LblTest As Label
 End Class

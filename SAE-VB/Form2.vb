@@ -56,7 +56,6 @@
 
         Me.Hide()
         Form3.Show()
-        Form3.Text = "Il vous reste 15 coup(s)..."
     End Sub
 
     'Private Sub txt_GotFocus(sender As Object, e As EventArgs) Handles txt1.GotFocus, txt2.GotFocus, txt3.GotFocus, txt4.GotFocus, txt5.GotFocus

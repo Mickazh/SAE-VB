@@ -1,6 +1,10 @@
 ﻿Public Class Form3
+    Private tentatives As Caractere()()
+    Private nbTentatives As Integer = 0
     Private win As Boolean = False
     Private Sub Form3_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.Text = "Il vous reste 15 coup(s)..."
+        tentatives = New Caractere(0)() {}
         BtnBye.Visible = False
         lblPresent.ForeColor = Color.Blue
         lblPresentPlace.ForeColor = Color.Green
@@ -47,15 +51,43 @@
             Exit Sub
         End If
         Dim correct = True
+        Dim caract As Caractere
+        tentatives(nbTentatives) = New Caractere(4) {}
         For i As Integer = 0 To PnlChar.Controls.Count - 1
-            If Not combin.combineCache.Contains(PnlChar.Controls(i).Text(0)) Then
-                Continue For
+            caract = New Caractere
+            caract.c = PnlChar.Controls(i).Text(0)
+            If PnlChar.Controls(i).Text(0).Equals(combin.combineCache(i)) Then
+                PnlChar.Controls(i).BackColor = Color.Green
+                caract.status = 2
+            ElseIf Not combin.combineCache.Contains(PnlChar.Controls(i).Text(0)) Then
+                PnlChar.Controls(i).BackColor = Color.Blue
+                caract.status = 1
+                correct = False
+            Else
+                caract.status = 0
+                correct = False
             End If
-            PnlChar.Controls(i).BackColor = Color.Blue
-            If Not PnlChar.Controls(i).Text(0).Equals(combin.combineCache(i)) Then
-                Continue For
-            End If
-            PnlChar.Controls(i).BackColor = Color.Green
+            tentatives(nbTentatives)(i) = caract
+        Next
+        If correct Then
+            MsgBox("bravo")
+        End If
+        nbTentatives += 1
+        Me.Text = $"Il vous reste {15 - nbTentatives} coup(s)..."
+        For i As Integer = 0 To tentatives.Length - 1
+            Dim s = ""
+            For j As Integer = 0 To tentatives(i).Length - 1
+                s &= tentatives(i)(j).c & " "
+            Next
+            LblTest.Text += s & vbCrLf
+        Next
+        ReDim Preserve tentatives(nbTentatives)
+    End Sub
+
+    Private Sub LblTest_Paint(sender As Object, e As PaintEventArgs) Handles LblTest.Paint
+        Dim ligne As String() = LblTest.Text.Split(vbCrLf)
+        For i As Integer = 0 To ligne.Length - 1
+            Dim ch As String() = ligne(i).Split(" ")
         Next
     End Sub
 End Class

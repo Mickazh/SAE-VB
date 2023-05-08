@@ -22,11 +22,6 @@ SAE-VB
   les recherches de ressources à l'aide de cette classe de ressource fortement typée.
 </summary>
 </member>
-<member name="T:SAE_VB.Caractere">
- <summary>
- classe caractere, je sais pas si on garde cette idée
- </summary>
-</member>
 <member name="T:SAE_VB.Module1.Caractere">
  <summary>
  c est le caractère le réprésentant 
