@@ -36,75 +36,71 @@ Partial Class Form3
         Me.lblPresentPlace = New System.Windows.Forms.Label()
         Me.lblPresent = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.pnlEssais = New System.Windows.Forms.Panel()
-        Me.LstTentatives = New System.Windows.Forms.ListBox()
         Me.PnlChar = New System.Windows.Forms.Panel()
         Me.BtnBye = New System.Windows.Forms.Button()
         Me.Timer = New System.Windows.Forms.Timer(Me.components)
         Me.RTBTenta = New System.Windows.Forms.RichTextBox()
         Me.LblCharJouable = New System.Windows.Forms.Label()
-        Me.pnlEssais.SuspendLayout()
         Me.PnlChar.SuspendLayout()
         Me.SuspendLayout()
         '
         'btnEssaie
         '
-        Me.btnEssaie.Location = New System.Drawing.Point(357, 79)
-        Me.btnEssaie.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
+        Me.btnEssaie.Location = New System.Drawing.Point(476, 97)
+        Me.btnEssaie.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.btnEssaie.Name = "btnEssaie"
-        Me.btnEssaie.Size = New System.Drawing.Size(56, 19)
+        Me.btnEssaie.Size = New System.Drawing.Size(75, 23)
         Me.btnEssaie.TabIndex = 19
         Me.btnEssaie.Text = "Guess"
         Me.btnEssaie.UseVisualStyleBackColor = True
         '
         'txt5
         '
-        Me.txt5.Location = New System.Drawing.Point(264, 4)
-        Me.txt5.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
+        Me.txt5.Location = New System.Drawing.Point(352, 5)
+        Me.txt5.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txt5.Name = "txt5"
-        Me.txt5.Size = New System.Drawing.Size(59, 20)
+        Me.txt5.Size = New System.Drawing.Size(77, 22)
         Me.txt5.TabIndex = 18
         '
         'txt4
         '
-        Me.txt4.Location = New System.Drawing.Point(201, 4)
-        Me.txt4.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
+        Me.txt4.Location = New System.Drawing.Point(268, 5)
+        Me.txt4.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txt4.Name = "txt4"
-        Me.txt4.Size = New System.Drawing.Size(59, 20)
+        Me.txt4.Size = New System.Drawing.Size(77, 22)
         Me.txt4.TabIndex = 17
         '
         'txt3
         '
-        Me.txt3.Location = New System.Drawing.Point(138, 4)
-        Me.txt3.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
+        Me.txt3.Location = New System.Drawing.Point(184, 5)
+        Me.txt3.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txt3.Name = "txt3"
-        Me.txt3.Size = New System.Drawing.Size(59, 20)
+        Me.txt3.Size = New System.Drawing.Size(77, 22)
         Me.txt3.TabIndex = 16
         '
         'txt2
         '
-        Me.txt2.Location = New System.Drawing.Point(75, 4)
-        Me.txt2.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
+        Me.txt2.Location = New System.Drawing.Point(100, 5)
+        Me.txt2.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txt2.Name = "txt2"
-        Me.txt2.Size = New System.Drawing.Size(59, 20)
+        Me.txt2.Size = New System.Drawing.Size(77, 22)
         Me.txt2.TabIndex = 15
         '
         'txt1
         '
-        Me.txt1.Location = New System.Drawing.Point(12, 4)
-        Me.txt1.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
+        Me.txt1.Location = New System.Drawing.Point(16, 5)
+        Me.txt1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txt1.Name = "txt1"
-        Me.txt1.Size = New System.Drawing.Size(59, 20)
+        Me.txt1.Size = New System.Drawing.Size(77, 22)
         Me.txt1.TabIndex = 14
         '
         'lblCaractères
         '
         Me.lblCaractères.AutoSize = True
         Me.lblCaractères.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblCaractères.Location = New System.Drawing.Point(249, 248)
-        Me.lblCaractères.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblCaractères.Location = New System.Drawing.Point(332, 305)
         Me.lblCaractères.Name = "lblCaractères"
-        Me.lblCaractères.Size = New System.Drawing.Size(153, 17)
+        Me.lblCaractères.Size = New System.Drawing.Size(178, 20)
         Me.lblCaractères.TabIndex = 13
         Me.lblCaractères.Text = "Caractères jouables"
         '
@@ -112,10 +108,9 @@ Partial Class Form3
         '
         Me.lblTitre.AutoSize = True
         Me.lblTitre.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTitre.Location = New System.Drawing.Point(154, 26)
-        Me.lblTitre.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblTitre.Location = New System.Drawing.Point(205, 32)
         Me.lblTitre.Name = "lblTitre"
-        Me.lblTitre.Size = New System.Drawing.Size(96, 17)
+        Me.lblTitre.Size = New System.Drawing.Size(113, 20)
         Me.lblTitre.TabIndex = 12
         Me.lblTitre.Text = "Master Mind"
         '
@@ -123,40 +118,36 @@ Partial Class Form3
         '
         Me.lblCodeColor.AutoSize = True
         Me.lblCodeColor.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblCodeColor.Location = New System.Drawing.Point(249, 129)
-        Me.lblCodeColor.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblCodeColor.Location = New System.Drawing.Point(332, 159)
         Me.lblCodeColor.Name = "lblCodeColor"
-        Me.lblCodeColor.Size = New System.Drawing.Size(106, 17)
+        Me.lblCodeColor.Size = New System.Drawing.Size(123, 20)
         Me.lblCodeColor.TabIndex = 20
         Me.lblCodeColor.Text = "Code Couleur"
         '
         'lblAbsent
         '
         Me.lblAbsent.AutoSize = True
-        Me.lblAbsent.Location = New System.Drawing.Point(250, 166)
-        Me.lblAbsent.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblAbsent.Location = New System.Drawing.Point(333, 204)
         Me.lblAbsent.Name = "lblAbsent"
-        Me.lblAbsent.Size = New System.Drawing.Size(40, 13)
+        Me.lblAbsent.Size = New System.Drawing.Size(49, 16)
         Me.lblAbsent.TabIndex = 24
         Me.lblAbsent.Text = "Absent"
         '
         'lblPresentPlace
         '
         Me.lblPresentPlace.AutoSize = True
-        Me.lblPresentPlace.Location = New System.Drawing.Point(250, 208)
-        Me.lblPresentPlace.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblPresentPlace.Location = New System.Drawing.Point(333, 256)
         Me.lblPresentPlace.Name = "lblPresentPlace"
-        Me.lblPresentPlace.Size = New System.Drawing.Size(109, 13)
+        Me.lblPresentPlace.Size = New System.Drawing.Size(135, 16)
         Me.lblPresentPlace.TabIndex = 25
         Me.lblPresentPlace.Text = "Présent et Bien Placé"
         '
         'lblPresent
         '
         Me.lblPresent.AutoSize = True
-        Me.lblPresent.Location = New System.Drawing.Point(250, 187)
-        Me.lblPresent.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblPresent.Location = New System.Drawing.Point(333, 230)
         Me.lblPresent.Name = "lblPresent"
-        Me.lblPresent.Size = New System.Drawing.Size(43, 13)
+        Me.lblPresent.Size = New System.Drawing.Size(53, 16)
         Me.lblPresent.TabIndex = 26
         Me.lblPresent.Text = "Présent"
         '
@@ -164,29 +155,11 @@ Partial Class Form3
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(53, 142)
-        Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label5.Location = New System.Drawing.Point(71, 175)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(141, 17)
+        Me.Label5.Size = New System.Drawing.Size(165, 20)
         Me.Label5.TabIndex = 27
         Me.Label5.Text = "Essais précédents"
-        '
-        'pnlEssais
-        '
-        Me.pnlEssais.Controls.Add(Me.LstTentatives)
-        Me.pnlEssais.Location = New System.Drawing.Point(55, 166)
-        Me.pnlEssais.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
-        Me.pnlEssais.Name = "pnlEssais"
-        Me.pnlEssais.Size = New System.Drawing.Size(141, 355)
-        Me.pnlEssais.TabIndex = 28
-        '
-        'LstTentatives
-        '
-        Me.LstTentatives.FormattingEnabled = True
-        Me.LstTentatives.Location = New System.Drawing.Point(3, 8)
-        Me.LstTentatives.Name = "LstTentatives"
-        Me.LstTentatives.Size = New System.Drawing.Size(135, 342)
-        Me.LstTentatives.TabIndex = 0
         '
         'PnlChar
         '
@@ -195,46 +168,49 @@ Partial Class Form3
         Me.PnlChar.Controls.Add(Me.txt3)
         Me.PnlChar.Controls.Add(Me.txt2)
         Me.PnlChar.Controls.Add(Me.txt1)
-        Me.PnlChar.Location = New System.Drawing.Point(19, 77)
+        Me.PnlChar.Location = New System.Drawing.Point(25, 95)
+        Me.PnlChar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.PnlChar.Name = "PnlChar"
-        Me.PnlChar.Size = New System.Drawing.Size(335, 32)
+        Me.PnlChar.Size = New System.Drawing.Size(447, 39)
         Me.PnlChar.TabIndex = 29
         '
         'BtnBye
         '
-        Me.BtnBye.Location = New System.Drawing.Point(335, 486)
+        Me.BtnBye.Location = New System.Drawing.Point(447, 598)
+        Me.BtnBye.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.BtnBye.Name = "BtnBye"
-        Me.BtnBye.Size = New System.Drawing.Size(75, 23)
+        Me.BtnBye.Size = New System.Drawing.Size(100, 28)
         Me.BtnBye.TabIndex = 30
         Me.BtnBye.Text = "Bye"
         Me.BtnBye.UseVisualStyleBackColor = True
         '
         'RTBTenta
         '
-        Me.RTBTenta.Location = New System.Drawing.Point(245, 338)
+        Me.RTBTenta.Location = New System.Drawing.Point(75, 204)
+        Me.RTBTenta.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.RTBTenta.Name = "RTBTenta"
-        Me.RTBTenta.Size = New System.Drawing.Size(137, 41)
+        Me.RTBTenta.Size = New System.Drawing.Size(181, 422)
         Me.RTBTenta.TabIndex = 31
         Me.RTBTenta.Text = ""
         '
         'LblCharJouable
         '
         Me.LblCharJouable.AutoSize = True
-        Me.LblCharJouable.Location = New System.Drawing.Point(249, 277)
+        Me.LblCharJouable.Location = New System.Drawing.Point(332, 341)
+        Me.LblCharJouable.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.LblCharJouable.Name = "LblCharJouable"
-        Me.LblCharJouable.Size = New System.Drawing.Size(0, 13)
+        Me.LblCharJouable.Size = New System.Drawing.Size(0, 16)
         Me.LblCharJouable.TabIndex = 32
         '
         'Form3
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(422, 532)
+        Me.ClientSize = New System.Drawing.Size(563, 655)
         Me.Controls.Add(Me.LblCharJouable)
         Me.Controls.Add(Me.RTBTenta)
         Me.Controls.Add(Me.BtnBye)
         Me.Controls.Add(Me.PnlChar)
-        Me.Controls.Add(Me.pnlEssais)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.lblPresent)
         Me.Controls.Add(Me.lblPresentPlace)
@@ -243,10 +219,9 @@ Partial Class Form3
         Me.Controls.Add(Me.btnEssaie)
         Me.Controls.Add(Me.lblCaractères)
         Me.Controls.Add(Me.lblTitre)
-        Me.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
+        Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Name = "Form3"
         Me.Text = "Form3"
-        Me.pnlEssais.ResumeLayout(False)
         Me.PnlChar.ResumeLayout(False)
         Me.PnlChar.PerformLayout()
         Me.ResumeLayout(False)
@@ -267,10 +242,8 @@ Partial Class Form3
     Friend WithEvents lblPresentPlace As Label
     Friend WithEvents lblPresent As Label
     Friend WithEvents Label5 As Label
-    Friend WithEvents pnlEssais As Panel
     Friend WithEvents PnlChar As Panel
     Friend WithEvents BtnBye As Button
-    Friend WithEvents LstTentatives As ListBox
     Friend WithEvents Timer As Timer
     Friend WithEvents RTBTenta As RichTextBox
     Friend WithEvents LblCharJouable As Label
