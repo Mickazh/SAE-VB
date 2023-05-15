@@ -211,7 +211,7 @@ Partial Class Form3
         '
         'RTBTenta
         '
-        Me.RTBTenta.Location = New System.Drawing.Point(245, 338)
+        Me.RTBTenta.Location = New System.Drawing.Point(222, 398)
         Me.RTBTenta.Name = "RTBTenta"
         Me.RTBTenta.Size = New System.Drawing.Size(137, 41)
         Me.RTBTenta.TabIndex = 31

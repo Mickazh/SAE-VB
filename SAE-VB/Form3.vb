@@ -98,4 +98,5 @@
         ReDim Preserve tentatives(nbTentatives)
     End Sub
 
+
 End Class
