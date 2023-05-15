@@ -89,12 +89,12 @@
         End If
         nbTentatives += 1
         Me.Text = $"Il vous reste {15 - nbTentatives} coup(s)..."
-        For i As Integer = 0 To tentatives.Length - 1
-            Dim s = ""
-            For j As Integer = 0 To tentatives(i).Length - 1
-                s &= tentatives(i)(j).c & " "
-            Next
-        Next
+        'For i As Integer = 0 To tentatives.Length - 1
+        '    Dim s = ""
+        '    For j As Integer = 0 To tentatives(i).Length - 1
+        '        s &= tentatives(i)(j).c & " "
+        '    Next
+        'Next
         ReDim Preserve tentatives(nbTentatives)
     End Sub
 
