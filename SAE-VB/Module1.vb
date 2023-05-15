@@ -15,7 +15,6 @@ Module Module1
     Public Structure Joueur
         Dim nom As String
         Dim score, PB, NBJ1, NBJ2, TotalTemps As Integer 'pas sur que TotalTemps devrait être un entier
-
     End Structure
 
     Public joueurs As String()

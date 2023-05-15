@@ -2,12 +2,20 @@
     Private tentatives As Caractere()()
     Private nbTentatives As Integer = 0
     Private win As Boolean = False
+    Private colorBon, colorIn, colorMauvais As Color
+
     Private Sub Form3_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        colorBon = Color.FromArgb(0, 255, 0)
+        colorIn = Color.FromArgb(0, 0, 255)
+        colorMauvais = Color.FromArgb(0, 0, 0)
         Me.Text = "Il vous reste 15 coup(s)..."
         tentatives = New Caractere(0)() {}
         BtnBye.Visible = False
         lblPresent.ForeColor = Color.Blue
         lblPresentPlace.ForeColor = Color.Green
+        For i As Integer = 0 To caracteresJouable.Length - 1
+            LblCharJouable.Text &= caracteresJouable(i).c & " "
+        Next
     End Sub
     Private Sub txt_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt1.KeyPress, txt2.KeyPress, txt3.KeyPress, txt4.KeyPress, txt5.KeyPress
         If e.KeyChar = vbBack Then
@@ -53,22 +61,29 @@
         Dim correct = True
         Dim caract As Caractere
         tentatives(nbTentatives) = New Caractere(4) {}
-        For i As Integer = 0 To PnlChar.Controls.Count - 1
+        For i As Integer = PnlChar.Controls.Count - 1 To 0 Step -1
             caract = New Caractere
             caract.c = PnlChar.Controls(i).Text(0)
             If PnlChar.Controls(i).Text(0).Equals(combin.combineCache(i)) Then
                 PnlChar.Controls(i).BackColor = Color.Green
+                RTBTenta.SelectionColor = colorBon
                 caract.status = 2
-            ElseIf Not combin.combineCache.Contains(PnlChar.Controls(i).Text(0)) Then
+            ElseIf combin.combineCache.Contains(PnlChar.Controls(i).Text(0)) Then
                 PnlChar.Controls(i).BackColor = Color.Blue
                 caract.status = 1
+                RTBTenta.SelectionColor = colorIn
                 correct = False
+                MsgBox("ok")
             Else
                 caract.status = 0
+                PnlChar.Controls(i).BackColor = colorMauvais
+                RTBTenta.SelectionColor = colorMauvais
                 correct = False
             End If
+            RTBTenta.AppendText(caract.c)
             tentatives(nbTentatives)(i) = caract
         Next
+        RTBTenta.AppendText(vbCrLf)
         If correct Then
             MsgBox("bravo")
         End If
