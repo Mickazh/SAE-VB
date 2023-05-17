@@ -46,6 +46,7 @@ Partial Class Form3
         '
         'btnEssaie
         '
+        Me.btnEssaie.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnEssaie.Location = New System.Drawing.Point(476, 97)
         Me.btnEssaie.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.btnEssaie.Name = "btnEssaie"
@@ -169,15 +170,16 @@ Partial Class Form3
         Me.PnlChar.Controls.Add(Me.txt2)
         Me.PnlChar.Controls.Add(Me.txt1)
         Me.PnlChar.Location = New System.Drawing.Point(25, 95)
-        Me.PnlChar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PnlChar.Margin = New System.Windows.Forms.Padding(4)
         Me.PnlChar.Name = "PnlChar"
         Me.PnlChar.Size = New System.Drawing.Size(447, 39)
         Me.PnlChar.TabIndex = 29
         '
         'BtnBye
         '
+        Me.BtnBye.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BtnBye.Location = New System.Drawing.Point(447, 598)
-        Me.BtnBye.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BtnBye.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnBye.Name = "BtnBye"
         Me.BtnBye.Size = New System.Drawing.Size(100, 28)
         Me.BtnBye.TabIndex = 30
@@ -187,7 +189,7 @@ Partial Class Form3
         'RTBTenta
         '
         Me.RTBTenta.Location = New System.Drawing.Point(75, 204)
-        Me.RTBTenta.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.RTBTenta.Margin = New System.Windows.Forms.Padding(4)
         Me.RTBTenta.Name = "RTBTenta"
         Me.RTBTenta.Size = New System.Drawing.Size(181, 422)
         Me.RTBTenta.TabIndex = 31

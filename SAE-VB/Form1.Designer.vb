@@ -22,6 +22,7 @@ Partial Class FormAccueil
     'Ne la modifiez pas à l'aide de l'éditeur de code.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormAccueil))
         Me.cboJoueur1 = New System.Windows.Forms.ComboBox()
         Me.cboJoueur2 = New System.Windows.Forms.ComboBox()
         Me.btnStartJeu = New System.Windows.Forms.Button()
@@ -50,6 +51,7 @@ Partial Class FormAccueil
         '
         'btnStartJeu
         '
+        Me.btnStartJeu.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnStartJeu.Location = New System.Drawing.Point(435, 326)
         Me.btnStartJeu.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnStartJeu.Name = "btnStartJeu"
@@ -60,6 +62,7 @@ Partial Class FormAccueil
         '
         'btnExitApp
         '
+        Me.btnExitApp.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnExitApp.Location = New System.Drawing.Point(135, 326)
         Me.btnExitApp.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnExitApp.Name = "btnExitApp"
@@ -70,6 +73,7 @@ Partial Class FormAccueil
         '
         'btnScores
         '
+        Me.btnScores.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnScores.Location = New System.Drawing.Point(285, 326)
         Me.btnScores.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnScores.Name = "btnScores"
@@ -80,6 +84,7 @@ Partial Class FormAccueil
         '
         'BtnSettings
         '
+        Me.BtnSettings.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BtnSettings.Location = New System.Drawing.Point(25, 23)
         Me.BtnSettings.Name = "BtnSettings"
         Me.BtnSettings.Size = New System.Drawing.Size(41, 44)
@@ -97,6 +102,7 @@ Partial Class FormAccueil
         Me.Controls.Add(Me.btnStartJeu)
         Me.Controls.Add(Me.cboJoueur2)
         Me.Controls.Add(Me.cboJoueur1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "FormAccueil"
         Me.Text = "Accueil"
