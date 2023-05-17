@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class Form3
+Partial Class Jeu
     Inherits System.Windows.Forms.Form
 
     'Form remplace la méthode Dispose pour nettoyer la liste des composants.
@@ -191,6 +191,7 @@ Partial Class Form3
         Me.RTBTenta.Location = New System.Drawing.Point(75, 204)
         Me.RTBTenta.Margin = New System.Windows.Forms.Padding(4)
         Me.RTBTenta.Name = "RTBTenta"
+        Me.RTBTenta.ReadOnly = True
         Me.RTBTenta.Size = New System.Drawing.Size(181, 422)
         Me.RTBTenta.TabIndex = 31
         Me.RTBTenta.Text = ""
@@ -204,7 +205,7 @@ Partial Class Form3
         Me.LblCharJouable.Size = New System.Drawing.Size(0, 16)
         Me.LblCharJouable.TabIndex = 32
         '
-        'Form3
+        'Jeu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -222,8 +223,8 @@ Partial Class Form3
         Me.Controls.Add(Me.lblCaractères)
         Me.Controls.Add(Me.lblTitre)
         Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.Name = "Form3"
-        Me.Text = "Form3"
+        Me.Name = "Jeu"
+        Me.Text = "Jeu"
         Me.PnlChar.ResumeLayout(False)
         Me.PnlChar.PerformLayout()
         Me.ResumeLayout(False)

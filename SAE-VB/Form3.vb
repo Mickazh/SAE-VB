@@ -1,4 +1,4 @@
-﻿Public Class Form3
+﻿Public Class Jeu
     Private tentatives As Caractere()()
     Private nbTentatives As Integer = 0
     Private win As Boolean = False
