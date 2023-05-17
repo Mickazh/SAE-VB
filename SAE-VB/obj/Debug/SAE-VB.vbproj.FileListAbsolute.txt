@@ -5,7 +5,6 @@ C:\Users\MSI\Documents\OneDrive - Université de Paris\Cours\S2\Période D\IHM\S
 C:\Users\MSI\Documents\OneDrive - Université de Paris\Cours\S2\Période D\IHM\SAE-VB\SAE-VB\obj\Debug\SAE-VB.vbproj.GenerateResource.cache
 C:\Users\MSI\Documents\OneDrive - Université de Paris\Cours\S2\Période D\IHM\SAE-VB\SAE-VB\obj\Debug\SAE-VB.vbproj.CoreCompileInputs.cache
 C:\Users\MSI\Documents\OneDrive - Université de Paris\Cours\S2\Période D\IHM\SAE-VB\SAE-VB\obj\Debug\SAE_VB.combin.resources
-C:\Users\MSI\Documents\OneDrive - Université de Paris\Cours\S2\Période D\IHM\SAE-VB\SAE-VB\obj\Debug\SAE_VB.Form3.resources
 C:\Users\micow\OneDrive\Documents\Cours\BUT1\S2\R2_02_IHM\SAE-BD\SAE-VB\bin\Debug\SAE-VB.exe.config
 C:\Users\micow\OneDrive\Documents\Cours\BUT1\S2\R2_02_IHM\SAE-BD\SAE-VB\bin\Debug\SAE-VB.exe
 C:\Users\micow\OneDrive\Documents\Cours\BUT1\S2\R2_02_IHM\SAE-BD\SAE-VB\bin\Debug\SAE-VB.pdb
@@ -29,3 +28,4 @@ C:\Users\MSI\Documents\OneDrive - Université de Paris\Cours\S2\Période D\IHM\S
 C:\Users\MSI\Documents\OneDrive - Université de Paris\Cours\S2\Période D\IHM\SAE-VB\SAE-VB\obj\Debug\SAE-VB.xml
 C:\Users\MSI\Documents\OneDrive - Université de Paris\Cours\S2\Période D\IHM\SAE-VB\SAE-VB\obj\Debug\SAE-VB.pdb
 C:\Users\MSI\Documents\OneDrive - Université de Paris\Cours\S2\Période D\IHM\SAE-VB\SAE-VB\obj\Debug\SAE_VB.Settings.resources
+C:\Users\MSI\Documents\OneDrive - Université de Paris\Cours\S2\Période D\IHM\SAE-VB\SAE-VB\obj\Debug\SAE_VB.Jeu.resources
