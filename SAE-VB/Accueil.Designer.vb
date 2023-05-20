@@ -85,9 +85,10 @@ Partial Class FormAccueil
         'BtnSettings
         '
         Me.BtnSettings.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnSettings.Image = CType(resources.GetObject("BtnSettings.Image"), System.Drawing.Image)
         Me.BtnSettings.Location = New System.Drawing.Point(25, 23)
         Me.BtnSettings.Name = "BtnSettings"
-        Me.BtnSettings.Size = New System.Drawing.Size(41, 44)
+        Me.BtnSettings.Size = New System.Drawing.Size(47, 50)
         Me.BtnSettings.TabIndex = 5
         Me.BtnSettings.UseVisualStyleBackColor = True
         '
