@@ -50,10 +50,16 @@ Partial Class Settings
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.lblChoixCaractere = New System.Windows.Forms.Label()
         Me.ToolTipCombin = New System.Windows.Forms.ToolTip(Me.components)
+        Me.NumUpDownEssaie = New System.Windows.Forms.NumericUpDown()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.PnlColorChoice.SuspendLayout()
         Me.PnlTemps.SuspendLayout()
         Me.Panel4.SuspendLayout()
         Me.Panel1.SuspendLayout()
+        CType(Me.NumUpDownEssaie, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
         '
         'txtColorPrésent
@@ -289,9 +295,10 @@ Partial Class Settings
         'lblResultChar
         '
         Me.lblResultChar.AutoSize = True
-        Me.lblResultChar.Location = New System.Drawing.Point(75, 94)
+        Me.lblResultChar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblResultChar.Location = New System.Drawing.Point(58, 95)
         Me.lblResultChar.Name = "lblResultChar"
-        Me.lblResultChar.Size = New System.Drawing.Size(0, 16)
+        Me.lblResultChar.Size = New System.Drawing.Size(0, 18)
         Me.lblResultChar.TabIndex = 31
         '
         'Panel1
@@ -318,11 +325,54 @@ Partial Class Settings
         Me.lblChoixCaractere.Text = "Choix des caractères"
         Me.lblChoixCaractere.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
+        'NumUpDownEssaie
+        '
+        Me.NumUpDownEssaie.Location = New System.Drawing.Point(25, 43)
+        Me.NumUpDownEssaie.Maximum = New Decimal(New Integer() {20, 0, 0, 0})
+        Me.NumUpDownEssaie.Minimum = New Decimal(New Integer() {9, 0, 0, 0})
+        Me.NumUpDownEssaie.Name = "NumUpDownEssaie"
+        Me.NumUpDownEssaie.Size = New System.Drawing.Size(50, 22)
+        Me.NumUpDownEssaie.TabIndex = 33
+        Me.NumUpDownEssaie.Value = New Decimal(New Integer() {15, 0, 0, 0})
+        '
+        'Panel2
+        '
+        Me.Panel2.Controls.Add(Me.Label1)
+        Me.Panel2.Controls.Add(Me.NumUpDownEssaie)
+        Me.Panel2.Controls.Add(Me.Label2)
+        Me.Panel2.Location = New System.Drawing.Point(13, 333)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(295, 78)
+        Me.Panel2.TabIndex = 33
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Font = New System.Drawing.Font("Arial Rounded MT Bold", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.Black
+        Me.Label1.Location = New System.Drawing.Point(22, 13)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(269, 16)
+        Me.Label1.TabIndex = 27
+        Me.Label1.Text = "Limite de proposition pour l'adversaire"
+        Me.Label1.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(75, 94)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(0, 16)
+        Me.Label2.TabIndex = 31
+        '
         'Settings
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(Me.PnlTemps)
@@ -339,6 +389,9 @@ Partial Class Settings
         Me.Panel4.PerformLayout()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        CType(Me.NumUpDownEssaie, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel2.ResumeLayout(False)
+        Me.Panel2.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -368,4 +421,8 @@ Partial Class Settings
     Friend WithEvents lblColorResult As Label
     Friend WithEvents lblChoixCaractere As Label
     Friend WithEvents ToolTipCombin As ToolTip
+    Friend WithEvents NumUpDownEssaie As NumericUpDown
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Label2 As Label
 End Class

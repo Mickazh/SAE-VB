@@ -5,7 +5,6 @@ Imports Microsoft.VisualBasic.Devices
 Public Class Settings
 
     Public typeActuel As String = ""
-
     Private Sub RadioButton_CheckedChanged(sender As Object, e As EventArgs) Handles RBPrésent.CheckedChanged, RBPrésentBien.CheckedChanged
         Dim radioButton As RadioButton = CType(sender, RadioButton)
 
@@ -39,7 +38,13 @@ Public Class Settings
 
     Private Sub button_points_Click(sender As Object, e As EventArgs) Handles button_points.Click
         Dim SaveFileDialog As New SaveFileDialog()
-        SaveFileDialog.ShowDialog()
+        SaveFileDialog.Filter = "Fichiers texte (*.txt)|*.txt|Tous les fichiers (*.*)|*.*"
+        If SaveFileDialog.ShowDialog() = DialogResult.OK Then
+            Dim nomFichier As String = SaveFileDialog.FileName
+
+            ' Votre code pour enregistrer le fichier ici
+            ' Vous pouvez utiliser le chemin d'accès 'nomFichier' pour enregistrer le fichier
+        End If
     End Sub
 
     Private Sub Settings_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -62,17 +67,16 @@ Public Class Settings
                 Return
             End If
 
-            ' Vérifier si tous les caractères ont été saisis
+            ' Vérifie si tous les caractères ont été saisis
             If charactersSet.Count = 5 Then
                 MessageBox.Show("Tous les caractères ont été saisis.")
-                ' Vous pouvez effectuer d'autres actions ou valider les caractères ici
                 Return
             End If
 
-            ' Ajouter le caractère au HashSet
+            ' Ajoute le caractère au HashSet
             charactersSet.Add(character)
 
-            ' Effacer le contenu de la TextBox
+            ' Efface le contenu de la TextBox
             txtCar.Clear()
             CharJouable = String.Join("", charactersSet)
             lblResultChar.Text = String.Join(" ", charactersSet)
