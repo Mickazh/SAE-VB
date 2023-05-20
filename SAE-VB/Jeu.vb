@@ -1,4 +1,7 @@
-﻿Public Class Jeu
+﻿Imports System.Threading
+Imports System.Windows.Forms.VisualStyles.VisualStyleElement.Status
+
+Public Class Jeu
     Private tentatives As Caractere()()
     Private nbTentatives As Integer = 0
     Private win As Boolean = False
@@ -34,6 +37,11 @@
             End If
         Next
         e.Handled = True
+    End Sub
+
+    Private Sub BtnBye_Click(sender As Object, e As EventArgs) Handles BtnBye.Click
+        FormAccueil.Show()
+        Me.Close()
     End Sub
 
     Private Sub Form3_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
@@ -73,19 +81,25 @@
                 caract.status = 1
                 RTBTenta.SelectionColor = colorIn
                 correct = False
-                MsgBox("ok")
+
+                'MsgBox("ok")
             Else
                 caract.status = 0
-                PnlChar.Controls(i).BackColor = colorMauvais
+                'PnlChar.Controls(i).BackColor = colorMauvais
                 RTBTenta.SelectionColor = colorMauvais
                 correct = False
             End If
             RTBTenta.AppendText(caract.c)
+            RTBTenta.AppendText("    ")
             tentatives(nbTentatives)(i) = caract
         Next
+        RTBTenta.SelectAll()
+        RTBTenta.SelectionAlignment = HorizontalAlignment.Center
         RTBTenta.AppendText(vbCrLf)
         If correct Then
+            btnEssaie.Enabled = False
             MsgBox("bravo")
+            BtnBye.Visible = True
         End If
         nbTentatives += 1
         Me.Text = $"Il vous reste {15 - nbTentatives} coup(s)..."

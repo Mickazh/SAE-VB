@@ -20,7 +20,7 @@ Module Module1
     Public joueurs As String()
     Public scors As Integer()
     Public caracteresJouable As Caractere()
-
+    Public chemin As String = ""
     Sub main()
         joueurs = New String(1) {}
         scors = New Integer(1) {}
@@ -80,5 +80,28 @@ Module Module1
             Next
         Next
     End Sub
+    Public Sub EnregistrerParam(chaine As String)
+        Dim fichier As Integer = 0
+        Dim s As String = ""
+        Dim nomFichier As String = ""
+        fichier = FreeFile()
+        nomFichier = chemin + "/Paramètres.txt"
+        s = chaine
+        FileOpen(fichier, nomFichier, OpenMode.Output)
+        Print(fichier, s)
+        FileClose(fichier)
+    End Sub
 
+    Public Sub RecupererParam()
+        Dim fichier As Integer = 0
+        Dim s As String = ""
+        Dim Chaines As String() = {}
+        Dim nomFichier As String = ""
+        fichier = FreeFile()
+        nomFichier = chemin + "/Paramètres.txt"
+        FileOpen(fichier, nomFichier, OpenMode.Input)
+        While EOF(fichier) = False
+        End While
+        FileClose(fichier)
+    End Sub
 End Module

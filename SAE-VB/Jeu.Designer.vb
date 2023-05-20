@@ -62,6 +62,7 @@ Partial Class Jeu
         Me.txt5.Name = "txt5"
         Me.txt5.Size = New System.Drawing.Size(77, 22)
         Me.txt5.TabIndex = 18
+        Me.txt5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txt4
         '
@@ -70,6 +71,7 @@ Partial Class Jeu
         Me.txt4.Name = "txt4"
         Me.txt4.Size = New System.Drawing.Size(77, 22)
         Me.txt4.TabIndex = 17
+        Me.txt4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txt3
         '
@@ -78,6 +80,7 @@ Partial Class Jeu
         Me.txt3.Name = "txt3"
         Me.txt3.Size = New System.Drawing.Size(77, 22)
         Me.txt3.TabIndex = 16
+        Me.txt3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txt2
         '
@@ -86,6 +89,7 @@ Partial Class Jeu
         Me.txt2.Name = "txt2"
         Me.txt2.Size = New System.Drawing.Size(77, 22)
         Me.txt2.TabIndex = 15
+        Me.txt2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txt1
         '
@@ -94,6 +98,7 @@ Partial Class Jeu
         Me.txt1.Name = "txt1"
         Me.txt1.Size = New System.Drawing.Size(77, 22)
         Me.txt1.TabIndex = 14
+        Me.txt1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'lblCaractères
         '
@@ -188,22 +193,23 @@ Partial Class Jeu
         '
         'RTBTenta
         '
-        Me.RTBTenta.Location = New System.Drawing.Point(75, 204)
+        Me.RTBTenta.Location = New System.Drawing.Point(85, 201)
         Me.RTBTenta.Margin = New System.Windows.Forms.Padding(4)
         Me.RTBTenta.Name = "RTBTenta"
         Me.RTBTenta.ReadOnly = True
-        Me.RTBTenta.Size = New System.Drawing.Size(181, 422)
+        Me.RTBTenta.Size = New System.Drawing.Size(136, 422)
         Me.RTBTenta.TabIndex = 31
         Me.RTBTenta.Text = ""
         '
         'LblCharJouable
         '
         Me.LblCharJouable.AutoSize = True
-        Me.LblCharJouable.Location = New System.Drawing.Point(332, 341)
-        Me.LblCharJouable.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.LblCharJouable.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblCharJouable.Location = New System.Drawing.Point(333, 325)
         Me.LblCharJouable.Name = "LblCharJouable"
         Me.LblCharJouable.Size = New System.Drawing.Size(0, 16)
         Me.LblCharJouable.TabIndex = 32
+        Me.LblCharJouable.TextAlign = System.Drawing.ContentAlignment.BottomLeft
         '
         'Jeu
         '
