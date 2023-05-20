@@ -22,15 +22,16 @@ Partial Class Settings
     'Ne la modifiez pas à l'aide de l'éditeur de code.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Settings))
         Me.txtColorPrésent = New System.Windows.Forms.TextBox()
         Me.btnEnregistrer = New System.Windows.Forms.Button()
         Me.PnlColorChoice = New System.Windows.Forms.Panel()
-        Me.lblColorMaster = New System.Windows.Forms.Label()
+        Me.lblColorResult = New System.Windows.Forms.Label()
         Me.txtColorPrésentBienPla = New System.Windows.Forms.TextBox()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.RBPrésentBien = New System.Windows.Forms.RadioButton()
-        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
+        Me.RBAbsent = New System.Windows.Forms.RadioButton()
         Me.RBPrésent = New System.Windows.Forms.RadioButton()
         Me.PnlTemps = New System.Windows.Forms.Panel()
         Me.RBNon = New System.Windows.Forms.RadioButton()
@@ -43,9 +44,16 @@ Partial Class Settings
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.lblSauvegarde = New System.Windows.Forms.Label()
         Me.cboChemin = New System.Windows.Forms.ComboBox()
+        Me.txtCar = New System.Windows.Forms.TextBox()
+        Me.lblResultChar = New System.Windows.Forms.Label()
+        Me.ToolTipChar = New System.Windows.Forms.ToolTip(Me.components)
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.lblChoixCaractere = New System.Windows.Forms.Label()
+        Me.ToolTipCombin = New System.Windows.Forms.ToolTip(Me.components)
         Me.PnlColorChoice.SuspendLayout()
         Me.PnlTemps.SuspendLayout()
         Me.Panel4.SuspendLayout()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'txtColorPrésent
@@ -67,26 +75,31 @@ Partial Class Settings
         '
         'PnlColorChoice
         '
-        Me.PnlColorChoice.Controls.Add(Me.lblColorMaster)
+        Me.PnlColorChoice.Controls.Add(Me.lblColorResult)
         Me.PnlColorChoice.Controls.Add(Me.txtColorPrésentBienPla)
         Me.PnlColorChoice.Controls.Add(Me.TextBox1)
         Me.PnlColorChoice.Controls.Add(Me.RBPrésentBien)
-        Me.PnlColorChoice.Controls.Add(Me.RadioButton2)
+        Me.PnlColorChoice.Controls.Add(Me.RBAbsent)
         Me.PnlColorChoice.Controls.Add(Me.RBPrésent)
         Me.PnlColorChoice.Controls.Add(Me.txtColorPrésent)
         Me.PnlColorChoice.Location = New System.Drawing.Point(544, 19)
         Me.PnlColorChoice.Name = "PnlColorChoice"
-        Me.PnlColorChoice.Size = New System.Drawing.Size(200, 152)
+        Me.PnlColorChoice.Size = New System.Drawing.Size(209, 152)
         Me.PnlColorChoice.TabIndex = 18
         '
-        'lblColorMaster
+        'lblColorResult
         '
-        Me.lblColorMaster.AutoSize = True
-        Me.lblColorMaster.Location = New System.Drawing.Point(32, 14)
-        Me.lblColorMaster.Name = "lblColorMaster"
-        Me.lblColorMaster.Size = New System.Drawing.Size(117, 16)
-        Me.lblColorMaster.TabIndex = 22
-        Me.lblColorMaster.Text = "Couleur du résultat"
+        Me.lblColorResult.AutoSize = True
+        Me.lblColorResult.BackColor = System.Drawing.Color.Transparent
+        Me.lblColorResult.Font = New System.Drawing.Font("Arial Rounded MT Bold", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblColorResult.ForeColor = System.Drawing.Color.Black
+        Me.lblColorResult.Location = New System.Drawing.Point(11, 16)
+        Me.lblColorResult.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblColorResult.Name = "lblColorResult"
+        Me.lblColorResult.Size = New System.Drawing.Size(185, 16)
+        Me.lblColorResult.TabIndex = 32
+        Me.lblColorResult.Text = "Couleur de la combinaison"
+        Me.lblColorResult.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'txtColorPrésentBienPla
         '
@@ -112,15 +125,15 @@ Partial Class Settings
         Me.RBPrésentBien.Text = "Présent et " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Bien Placé"
         Me.RBPrésentBien.UseVisualStyleBackColor = True
         '
-        'RadioButton2
+        'RBAbsent
         '
-        Me.RadioButton2.AutoSize = True
-        Me.RadioButton2.Location = New System.Drawing.Point(35, 52)
-        Me.RadioButton2.Name = "RadioButton2"
-        Me.RadioButton2.Size = New System.Drawing.Size(109, 20)
-        Me.RadioButton2.TabIndex = 18
-        Me.RadioButton2.Text = "RadioButton2"
-        Me.RadioButton2.UseVisualStyleBackColor = True
+        Me.RBAbsent.AutoSize = True
+        Me.RBAbsent.Location = New System.Drawing.Point(35, 52)
+        Me.RBAbsent.Name = "RBAbsent"
+        Me.RBAbsent.Size = New System.Drawing.Size(70, 20)
+        Me.RBAbsent.TabIndex = 18
+        Me.RBAbsent.Text = "Absent"
+        Me.RBAbsent.UseVisualStyleBackColor = True
         '
         'RBPrésent
         '
@@ -264,11 +277,53 @@ Partial Class Settings
         Me.cboChemin.Size = New System.Drawing.Size(244, 24)
         Me.cboChemin.TabIndex = 13
         '
+        'txtCar
+        '
+        Me.txtCar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCar.Location = New System.Drawing.Point(75, 48)
+        Me.txtCar.Name = "txtCar"
+        Me.txtCar.Size = New System.Drawing.Size(34, 30)
+        Me.txtCar.TabIndex = 30
+        Me.txtCar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'lblResultChar
+        '
+        Me.lblResultChar.AutoSize = True
+        Me.lblResultChar.Location = New System.Drawing.Point(75, 94)
+        Me.lblResultChar.Name = "lblResultChar"
+        Me.lblResultChar.Size = New System.Drawing.Size(0, 16)
+        Me.lblResultChar.TabIndex = 31
+        '
+        'Panel1
+        '
+        Me.Panel1.Controls.Add(Me.lblChoixCaractere)
+        Me.Panel1.Controls.Add(Me.txtCar)
+        Me.Panel1.Controls.Add(Me.lblResultChar)
+        Me.Panel1.Location = New System.Drawing.Point(544, 211)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(209, 113)
+        Me.Panel1.TabIndex = 32
+        '
+        'lblChoixCaractere
+        '
+        Me.lblChoixCaractere.AutoSize = True
+        Me.lblChoixCaractere.BackColor = System.Drawing.Color.Transparent
+        Me.lblChoixCaractere.Font = New System.Drawing.Font("Arial Rounded MT Bold", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblChoixCaractere.ForeColor = System.Drawing.Color.Black
+        Me.lblChoixCaractere.Location = New System.Drawing.Point(22, 14)
+        Me.lblChoixCaractere.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblChoixCaractere.Name = "lblChoixCaractere"
+        Me.lblChoixCaractere.Size = New System.Drawing.Size(150, 16)
+        Me.lblChoixCaractere.TabIndex = 27
+        Me.lblChoixCaractere.Text = "Choix des caractères"
+        Me.lblChoixCaractere.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
         'Settings
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(Me.PnlTemps)
         Me.Controls.Add(Me.PnlColorChoice)
@@ -282,6 +337,8 @@ Partial Class Settings
         Me.PnlTemps.PerformLayout()
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -291,9 +348,8 @@ Partial Class Settings
     Friend WithEvents txtColorPrésentBienPla As TextBox
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents RBPrésentBien As RadioButton
-    Friend WithEvents RadioButton2 As RadioButton
+    Friend WithEvents RBAbsent As RadioButton
     Friend WithEvents RBPrésent As RadioButton
-    Friend WithEvents lblColorMaster As Label
     Friend WithEvents PnlTemps As Panel
     Friend WithEvents RBNon As RadioButton
     Friend WithEvents RBOui As RadioButton
@@ -305,4 +361,11 @@ Partial Class Settings
     Friend WithEvents Panel4 As Panel
     Friend WithEvents lblSauvegarde As Label
     Friend WithEvents cboChemin As ComboBox
+    Friend WithEvents txtCar As TextBox
+    Friend WithEvents lblResultChar As Label
+    Friend WithEvents ToolTipChar As ToolTip
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents lblColorResult As Label
+    Friend WithEvents lblChoixCaractere As Label
+    Friend WithEvents ToolTipCombin As ToolTip
 End Class
