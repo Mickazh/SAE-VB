@@ -346,7 +346,7 @@ Partial Class Settings
         Me.Panel2.Controls.Add(Me.Label2)
         Me.Panel2.Location = New System.Drawing.Point(13, 333)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(295, 78)
+        Me.Panel2.Size = New System.Drawing.Size(318, 78)
         Me.Panel2.TabIndex = 33
         '
         'Label1
