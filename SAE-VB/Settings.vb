@@ -51,7 +51,16 @@ Public Class Settings
     End Sub
 
     Private Sub Settings_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        NumUpDownEssaie.Value = nbPropostions
+        txtbox_temps.Text = tempsPourJouer
+        If limiteTemps = "Non" Then
+            RBNon.Checked = True
+        Else
+            RBOui.Checked = True
+        End If
+        cboChemin.Text = path
+        txtColorPrésent.BackColor = Color.FromName(couleurPresent)
+        txtColorPrésentBienPla.BackColor = Color.FromName(couleurPresentBienPlacé)
         ToolTipChar.SetToolTip(txtCar, "Appuyer sur Entrée pour valider le caractère choisi")
     End Sub
 

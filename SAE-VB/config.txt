@@ -1,1 +1,8 @@
-# $ £ % @
+charJouable #$£%@
+LimiteTemps Non
+tempsPourJouer 0
+path ../../config
+nbPropostions 15
+CouleurAsbent White
+CouleurPresent Blue
+CouleurPresentBienPlacé Green
