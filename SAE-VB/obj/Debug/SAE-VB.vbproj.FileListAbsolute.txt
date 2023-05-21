@@ -60,3 +60,6 @@ C:\Users\MSI\Source\Repos\Mickazh\SAE-VB\SAE-VB\obj\Debug\SAE-VB.vbproj.CoreComp
 C:\Users\MSI\Source\Repos\Mickazh\SAE-VB\SAE-VB\obj\Debug\SAE-VB.exe
 C:\Users\MSI\Source\Repos\Mickazh\SAE-VB\SAE-VB\obj\Debug\SAE-VB.xml
 C:\Users\MSI\Source\Repos\Mickazh\SAE-VB\SAE-VB\obj\Debug\SAE-VB.pdb
+C:\Users\MSI\Source\Repos\Mickazh\SAE-VB\SAE-VB\bin\Debug\Newtonsoft.Json.dll
+C:\Users\MSI\Source\Repos\Mickazh\SAE-VB\SAE-VB\bin\Debug\Newtonsoft.Json.xml
+C:\Users\MSI\Source\Repos\Mickazh\SAE-VB\SAE-VB\obj\Debug\SAE-VB.vbproj.CopyComplete

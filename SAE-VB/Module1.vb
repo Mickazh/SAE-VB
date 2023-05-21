@@ -1,6 +1,7 @@
 ﻿Imports System.IO
 Imports System.Text
 Imports Microsoft.VisualBasic.FileIO
+Imports Newtonsoft.Json
 
 Module Module1
     ''' <summary>
@@ -80,16 +81,20 @@ Module Module1
             Next
         Next
     End Sub
-    Public Sub EnregistrerParam(chaine As String)
-        Dim fichier As Integer = 0
-        Dim s As String = ""
-        Dim nomFichier As String = ""
-        fichier = FreeFile()
-        nomFichier = chemin + "/Paramètres.txt"
-        s = chaine
-        FileOpen(fichier, nomFichier, OpenMode.Output)
-        Print(fichier, s)
-        FileClose(fichier)
+    Public Sub EnregistrerParam(donnees As List(Of Donnee))
+        'Dim fichier As Integer = 0
+        'Dim s As String = ""
+        'Dim nomFichier As String = ""
+        'fichier = FreeFile()
+        'nomFichier = "C:/Users/MSI/Bureau/Paramètres.json"
+        's = chaine
+        'FileOpen(fichier, nomFichier, OpenMode.Output)
+        'Print(fichier, donnees)
+        'FileClose(fichier)
+        Dim json As String = JsonConvert.SerializeObject(donnees, Newtonsoft.Json.Formatting.Indented)
+        Using writer As New StreamWriter(chemin & "/Paramètres.json")
+            writer.Write(json)
+        End Using
     End Sub
 
     Public Sub RecupererParam()

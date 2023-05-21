@@ -64,8 +64,10 @@ Partial Class Settings
         '
         'txtColorPrésent
         '
+        Me.txtColorPrésent.Cursor = System.Windows.Forms.Cursors.Default
         Me.txtColorPrésent.Location = New System.Drawing.Point(150, 83)
         Me.txtColorPrésent.Name = "txtColorPrésent"
+        Me.txtColorPrésent.ReadOnly = True
         Me.txtColorPrésent.Size = New System.Drawing.Size(22, 22)
         Me.txtColorPrésent.TabIndex = 16
         '
@@ -109,8 +111,10 @@ Partial Class Settings
         '
         'txtColorPrésentBienPla
         '
+        Me.txtColorPrésentBienPla.Cursor = System.Windows.Forms.Cursors.Default
         Me.txtColorPrésentBienPla.Location = New System.Drawing.Point(150, 111)
         Me.txtColorPrésentBienPla.Name = "txtColorPrésentBienPla"
+        Me.txtColorPrésentBienPla.ReadOnly = True
         Me.txtColorPrésentBienPla.Size = New System.Drawing.Size(22, 22)
         Me.txtColorPrésentBienPla.TabIndex = 21
         '

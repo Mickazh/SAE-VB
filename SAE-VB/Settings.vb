@@ -1,6 +1,9 @@
-﻿Imports System.Windows.Forms.VisualStyles.VisualStyleElement
+﻿Imports System.IO
+Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 Imports System.Windows.Forms.VisualStyles.VisualStyleElement.ToolBar
+Imports System.Xml
 Imports Microsoft.VisualBasic.Devices
+Imports Newtonsoft.Json
 
 Public Class Settings
 
@@ -29,9 +32,10 @@ Public Class Settings
         End If
     End Sub
 
+
     Private Sub btnEnregistrer_Click(sender As Object, e As EventArgs) Handles btnEnregistrer.Click
         chemin = cboChemin.Text
-        'Module1.EnregistrerParam(s)
+        Module1.EnregistrerParam(GetParam())
         FormAccueil.Show()
         Me.Close()
     End Sub
@@ -105,4 +109,42 @@ Public Class Settings
     Private Sub PnlColorChoice_MouseHover(sender As Object, e As EventArgs) Handles PnlColorChoice.MouseHover
         ToolTipCombin.SetToolTip(PnlColorChoice, "Conseil : Choississez des couleurs qui se différencient")
     End Sub
+
+    Public Function GetParam()
+        Dim chaineS As String = ""
+        Dim i As Integer = 0
+
+
+        If (txtbox_temps.Text.Length = 0) Then
+            i = 60
+        Else
+            i = Integer.Parse(txtbox_temps.Text)
+        End If
+
+        If (RBOui.Checked = True) Then
+            chaineS += "AvecTemps_" & i.ToString & vbCrLf
+        Else
+            chaineS += "SansTemps" & vbCrLf
+        End If
+        Dim s As String = txtColorPrésentBienPla.BackColor.ToString
+        s = s.Replace(s.First, "")
+        s = s.Replace(s.Last, "")
+        s = s.Remove(0, 6)
+        chaineS += s & vbCrLf
+        chaineS += typeActuel & vbCrLf
+        'chaineS += "Difficulté_" + TrackBar1.Value.ToString
+        'Return chaineS
+        Dim donnees As New List(Of Donnee)()
+
+        ' Ajoutez des données à la liste
+        donnees.Add(New Donnee() With {.Entier = txtbox_temps.Text, .Descript = "Temps"})
+        donnees.Add(New Donnee() With {.Entier = NumUpDownEssaie.Value, .Descript = "Nombre_Essaie"})
+        donnees.Add(New Donnee() With {.Couleur = txtColorPrésent.BackColor, .Descript = "Couleur_Présent"})
+        donnees.Add(New Donnee() With {.Couleur = txtColorPrésentBienPla.BackColor, .Descript = "Couleur_Présent_BienPlacé"})
+        donnees.Add(New Donnee() With {.Chaine = cboChemin.Text, .Descript = "Chemin"})
+        donnees.Add(New Donnee() With {.Chaine = CharJouable, .Descript = "Caractères"})
+        ' Ajoutez autant de données que nécessaire
+        Return donnees
+
+    End Function
 End Class
