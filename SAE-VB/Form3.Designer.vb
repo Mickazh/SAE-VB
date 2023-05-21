@@ -36,14 +36,11 @@ Partial Class Form3
         Me.lblPresentPlace = New System.Windows.Forms.Label()
         Me.lblPresent = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.pnlEssais = New System.Windows.Forms.Panel()
-        Me.LstTentatives = New System.Windows.Forms.ListBox()
         Me.PnlChar = New System.Windows.Forms.Panel()
         Me.BtnBye = New System.Windows.Forms.Button()
         Me.Timer = New System.Windows.Forms.Timer(Me.components)
         Me.RTBTenta = New System.Windows.Forms.RichTextBox()
         Me.LblCharJouable = New System.Windows.Forms.Label()
-        Me.pnlEssais.SuspendLayout()
         Me.PnlChar.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -171,23 +168,6 @@ Partial Class Form3
         Me.Label5.TabIndex = 27
         Me.Label5.Text = "Essais précédents"
         '
-        'pnlEssais
-        '
-        Me.pnlEssais.Controls.Add(Me.LstTentatives)
-        Me.pnlEssais.Location = New System.Drawing.Point(55, 166)
-        Me.pnlEssais.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
-        Me.pnlEssais.Name = "pnlEssais"
-        Me.pnlEssais.Size = New System.Drawing.Size(141, 355)
-        Me.pnlEssais.TabIndex = 28
-        '
-        'LstTentatives
-        '
-        Me.LstTentatives.FormattingEnabled = True
-        Me.LstTentatives.Location = New System.Drawing.Point(3, 8)
-        Me.LstTentatives.Name = "LstTentatives"
-        Me.LstTentatives.Size = New System.Drawing.Size(135, 342)
-        Me.LstTentatives.TabIndex = 0
-        '
         'PnlChar
         '
         Me.PnlChar.Controls.Add(Me.txt5)
@@ -211,9 +191,9 @@ Partial Class Form3
         '
         'RTBTenta
         '
-        Me.RTBTenta.Location = New System.Drawing.Point(222, 398)
+        Me.RTBTenta.Location = New System.Drawing.Point(56, 166)
         Me.RTBTenta.Name = "RTBTenta"
-        Me.RTBTenta.Size = New System.Drawing.Size(137, 41)
+        Me.RTBTenta.Size = New System.Drawing.Size(137, 344)
         Me.RTBTenta.TabIndex = 31
         Me.RTBTenta.Text = ""
         '
@@ -234,7 +214,6 @@ Partial Class Form3
         Me.Controls.Add(Me.RTBTenta)
         Me.Controls.Add(Me.BtnBye)
         Me.Controls.Add(Me.PnlChar)
-        Me.Controls.Add(Me.pnlEssais)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.lblPresent)
         Me.Controls.Add(Me.lblPresentPlace)
@@ -245,8 +224,7 @@ Partial Class Form3
         Me.Controls.Add(Me.lblTitre)
         Me.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.Name = "Form3"
-        Me.Text = "Form3"
-        Me.pnlEssais.ResumeLayout(False)
+        Me.Text = "enfin "
         Me.PnlChar.ResumeLayout(False)
         Me.PnlChar.PerformLayout()
         Me.ResumeLayout(False)
@@ -267,10 +245,8 @@ Partial Class Form3
     Friend WithEvents lblPresentPlace As Label
     Friend WithEvents lblPresent As Label
     Friend WithEvents Label5 As Label
-    Friend WithEvents pnlEssais As Panel
     Friend WithEvents PnlChar As Panel
     Friend WithEvents BtnBye As Button
-    Friend WithEvents LstTentatives As ListBox
     Friend WithEvents Timer As Timer
     Friend WithEvents RTBTenta As RichTextBox
     Friend WithEvents LblCharJouable As Label
