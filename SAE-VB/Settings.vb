@@ -120,4 +120,12 @@ Public Class Settings
     Private Sub PnlColorChoice_MouseHover(sender As Object, e As EventArgs) Handles PnlColorChoice.MouseHover
         ToolTipCombin.SetToolTip(PnlColorChoice, "Conseil : Choississez des couleurs qui se différencient")
     End Sub
+
+  Private Sub RBOui_CheckedChanged(sender As Object, e As EventArgs) Handles RBOui.CheckedChanged
+    PanelTime.Visible = True
+  End Sub
+
+  Private Sub RBNon_CheckedChanged(sender As Object, e As EventArgs) Handles RBNon.CheckedChanged
+    PanelTime.Visible = False
+  End Sub
 End Class
