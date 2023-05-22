@@ -83,6 +83,7 @@
       <DependentUpon>Accueil.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ModuleSettings.vb" />
     <Compile Include="Pattern.Designer.vb">
       <DependentUpon>Pattern.vb</DependentUpon>
     </Compile>
