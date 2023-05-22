@@ -3,14 +3,18 @@ Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 Imports System.Windows.Forms.VisualStyles.VisualStyleElement.ToolBar
 Imports System.Xml
 Imports Microsoft.VisualBasic.Devices
-Imports Newtonsoft.Json
-Imports Newtonsoft.Json.Linq
 
 Public Class Settings
 
     Public typeActuel As String = ""
 
     Private Sub btnEnregistrer_Click(sender As Object, e As EventArgs) Handles btnEnregistrer.Click
+        limiteTemps = CheckBoxTime.Checked
+        tempsPourJouer = CInt(txtbox_temps.Text)
+        path = cboChemin.Text
+        nbPropostions = NumUpDownEssaie.Value
+        couleurPresent = btnPresent.BackColor
+        couleurPresentBienPlacé = btnPrePla.BackColor
         EnregistrerParam()
         FormAccueil.Show()
         Me.Close()
@@ -47,7 +51,6 @@ Public Class Settings
     End Sub
 
     Private charactersSet As HashSet(Of Char) = New HashSet(Of Char)()
-    Public CharJouable As String = ""
     Private Sub TextBoxCaractere_KeyDown(sender As Object, e As KeyEventArgs) Handles txtCar.KeyDown
         ' Vérifier si l'utilisateur a appuyé sur la touche Entrée
         If e.KeyCode = Keys.Enter Then
@@ -70,7 +73,7 @@ Public Class Settings
 
             ' Efface le contenu de la TextBox
             txtCar.Clear()
-            'CharJouable = String.Join("", charactersSet)
+            CharJouable = String.Join("", charactersSet)
             lblResultChar.Text = String.Join(" ", charactersSet)
         End If
     End Sub
