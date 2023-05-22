@@ -54,10 +54,10 @@ Public Class Settings
         NumUpDownEssaie.Value = nbPropostions
         txtbox_temps.Text = tempsPourJouer
         If limiteTemps = "Non" Then
-            RBNon.Checked = True
-        Else
-            RBOui.Checked = True
-        End If
+      CheckBoxTime.Checked = False
+    Else
+      CheckBoxTime.Checked = True
+    End If
         cboChemin.Text = path
         txtColorPrésent.BackColor = Color.FromName(couleurPresent)
         txtColorPrésentBienPla.BackColor = Color.FromName(couleurPresentBienPlacé)
@@ -121,11 +121,7 @@ Public Class Settings
         ToolTipCombin.SetToolTip(PnlColorChoice, "Conseil : Choississez des couleurs qui se différencient")
     End Sub
 
-  Private Sub RBOui_CheckedChanged(sender As Object, e As EventArgs) Handles RBOui.CheckedChanged
-    PanelTime.Visible = True
-  End Sub
-
-  Private Sub RBNon_CheckedChanged(sender As Object, e As EventArgs) Handles RBNon.CheckedChanged
-    PanelTime.Visible = False
+  Private Sub CheckBoxTime_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBoxTime.CheckedChanged
+    PanelTime.Visible = Not PanelTime.Visible
   End Sub
 End Class

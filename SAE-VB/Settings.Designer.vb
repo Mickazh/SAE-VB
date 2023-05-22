@@ -34,8 +34,7 @@ Partial Class Settings
         Me.RBAbsent = New System.Windows.Forms.RadioButton()
         Me.RBPrésent = New System.Windows.Forms.RadioButton()
         Me.PnlTemps = New System.Windows.Forms.Panel()
-        Me.RBNon = New System.Windows.Forms.RadioButton()
-        Me.RBOui = New System.Windows.Forms.RadioButton()
+        Me.PanelTime = New System.Windows.Forms.Panel()
         Me.label_seconde = New System.Windows.Forms.Label()
         Me.txtbox_temps = New System.Windows.Forms.TextBox()
         Me.label_timer = New System.Windows.Forms.Label()
@@ -54,21 +53,21 @@ Partial Class Settings
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.PanelTime = New System.Windows.Forms.Panel()
+        Me.CheckBoxTime = New System.Windows.Forms.CheckBox()
         Me.PnlColorChoice.SuspendLayout()
         Me.PnlTemps.SuspendLayout()
+        Me.PanelTime.SuspendLayout()
         Me.Panel4.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.NumUpDownEssaie, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
-        Me.PanelTime.SuspendLayout()
         Me.SuspendLayout()
         '
         'txtColorPrésent
         '
         Me.txtColorPrésent.Cursor = System.Windows.Forms.Cursors.Default
         Me.txtColorPrésent.Location = New System.Drawing.Point(112, 67)
-        Me.txtColorPrésent.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtColorPrésent.Margin = New System.Windows.Forms.Padding(2)
         Me.txtColorPrésent.Name = "txtColorPrésent"
         Me.txtColorPrésent.ReadOnly = True
         Me.txtColorPrésent.Size = New System.Drawing.Size(18, 20)
@@ -78,7 +77,7 @@ Partial Class Settings
         '
         Me.btnEnregistrer.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnEnregistrer.Location = New System.Drawing.Point(472, 306)
-        Me.btnEnregistrer.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnEnregistrer.Margin = New System.Windows.Forms.Padding(2)
         Me.btnEnregistrer.Name = "btnEnregistrer"
         Me.btnEnregistrer.Size = New System.Drawing.Size(111, 50)
         Me.btnEnregistrer.TabIndex = 17
@@ -95,7 +94,7 @@ Partial Class Settings
         Me.PnlColorChoice.Controls.Add(Me.RBPrésent)
         Me.PnlColorChoice.Controls.Add(Me.txtColorPrésent)
         Me.PnlColorChoice.Location = New System.Drawing.Point(408, 15)
-        Me.PnlColorChoice.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.PnlColorChoice.Margin = New System.Windows.Forms.Padding(2)
         Me.PnlColorChoice.Name = "PnlColorChoice"
         Me.PnlColorChoice.Size = New System.Drawing.Size(157, 124)
         Me.PnlColorChoice.TabIndex = 18
@@ -117,7 +116,7 @@ Partial Class Settings
         '
         Me.txtColorPrésentBienPla.Cursor = System.Windows.Forms.Cursors.Default
         Me.txtColorPrésentBienPla.Location = New System.Drawing.Point(112, 90)
-        Me.txtColorPrésentBienPla.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtColorPrésentBienPla.Margin = New System.Windows.Forms.Padding(2)
         Me.txtColorPrésentBienPla.Name = "txtColorPrésentBienPla"
         Me.txtColorPrésentBienPla.ReadOnly = True
         Me.txtColorPrésentBienPla.Size = New System.Drawing.Size(18, 20)
@@ -126,7 +125,7 @@ Partial Class Settings
         'TextBox1
         '
         Me.TextBox1.Location = New System.Drawing.Point(112, 42)
-        Me.TextBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TextBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(18, 20)
         Me.TextBox1.TabIndex = 20
@@ -135,7 +134,7 @@ Partial Class Settings
         '
         Me.RBPrésentBien.AutoSize = True
         Me.RBPrésentBien.Location = New System.Drawing.Point(26, 84)
-        Me.RBPrésentBien.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.RBPrésentBien.Margin = New System.Windows.Forms.Padding(2)
         Me.RBPrésentBien.Name = "RBPrésentBien"
         Me.RBPrésentBien.Size = New System.Drawing.Size(76, 30)
         Me.RBPrésentBien.TabIndex = 19
@@ -146,7 +145,7 @@ Partial Class Settings
         '
         Me.RBAbsent.AutoSize = True
         Me.RBAbsent.Location = New System.Drawing.Point(26, 42)
-        Me.RBAbsent.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.RBAbsent.Margin = New System.Windows.Forms.Padding(2)
         Me.RBAbsent.Name = "RBAbsent"
         Me.RBAbsent.Size = New System.Drawing.Size(58, 17)
         Me.RBAbsent.TabIndex = 18
@@ -157,7 +156,7 @@ Partial Class Settings
         '
         Me.RBPrésent.AutoSize = True
         Me.RBPrésent.Location = New System.Drawing.Point(26, 63)
-        Me.RBPrésent.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.RBPrésent.Margin = New System.Windows.Forms.Padding(2)
         Me.RBPrésent.Name = "RBPrésent"
         Me.RBPrésent.Size = New System.Drawing.Size(61, 17)
         Me.RBPrésent.TabIndex = 17
@@ -167,9 +166,8 @@ Partial Class Settings
         'PnlTemps
         '
         Me.PnlTemps.BackColor = System.Drawing.Color.Transparent
+        Me.PnlTemps.Controls.Add(Me.CheckBoxTime)
         Me.PnlTemps.Controls.Add(Me.PanelTime)
-        Me.PnlTemps.Controls.Add(Me.RBNon)
-        Me.PnlTemps.Controls.Add(Me.RBOui)
         Me.PnlTemps.Controls.Add(Me.lblLimiteTime)
         Me.PnlTemps.Location = New System.Drawing.Point(10, 7)
         Me.PnlTemps.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
@@ -177,31 +175,16 @@ Partial Class Settings
         Me.PnlTemps.Size = New System.Drawing.Size(266, 132)
         Me.PnlTemps.TabIndex = 24
         '
-        'RBNon
+        'PanelTime
         '
-        Me.RBNon.AutoSize = True
-        Me.RBNon.ForeColor = System.Drawing.Color.Black
-        Me.RBNon.Location = New System.Drawing.Point(95, 50)
-        Me.RBNon.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.RBNon.Name = "RBNon"
-        Me.RBNon.Size = New System.Drawing.Size(45, 17)
-        Me.RBNon.TabIndex = 8
-        Me.RBNon.TabStop = True
-        Me.RBNon.Text = "Non"
-        Me.RBNon.UseVisualStyleBackColor = True
-        '
-        'RBOui
-        '
-        Me.RBOui.AutoSize = True
-        Me.RBOui.ForeColor = System.Drawing.Color.Black
-        Me.RBOui.Location = New System.Drawing.Point(95, 21)
-        Me.RBOui.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.RBOui.Name = "RBOui"
-        Me.RBOui.Size = New System.Drawing.Size(41, 17)
-        Me.RBOui.TabIndex = 7
-        Me.RBOui.TabStop = True
-        Me.RBOui.Text = "Oui"
-        Me.RBOui.UseVisualStyleBackColor = True
+        Me.PanelTime.Controls.Add(Me.label_seconde)
+        Me.PanelTime.Controls.Add(Me.txtbox_temps)
+        Me.PanelTime.Controls.Add(Me.label_timer)
+        Me.PanelTime.Location = New System.Drawing.Point(10, 91)
+        Me.PanelTime.Name = "PanelTime"
+        Me.PanelTime.Size = New System.Drawing.Size(238, 30)
+        Me.PanelTime.TabIndex = 9
+        Me.PanelTime.Visible = False
         '
         'label_seconde
         '
@@ -294,7 +277,7 @@ Partial Class Settings
         '
         Me.txtCar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtCar.Location = New System.Drawing.Point(56, 39)
-        Me.txtCar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtCar.Margin = New System.Windows.Forms.Padding(2)
         Me.txtCar.Name = "txtCar"
         Me.txtCar.Size = New System.Drawing.Size(26, 26)
         Me.txtCar.TabIndex = 30
@@ -316,7 +299,7 @@ Partial Class Settings
         Me.Panel1.Controls.Add(Me.txtCar)
         Me.Panel1.Controls.Add(Me.lblResultChar)
         Me.Panel1.Location = New System.Drawing.Point(408, 171)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(157, 92)
         Me.Panel1.TabIndex = 32
@@ -337,7 +320,7 @@ Partial Class Settings
         'NumUpDownEssaie
         '
         Me.NumUpDownEssaie.Location = New System.Drawing.Point(19, 35)
-        Me.NumUpDownEssaie.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.NumUpDownEssaie.Margin = New System.Windows.Forms.Padding(2)
         Me.NumUpDownEssaie.Maximum = New Decimal(New Integer() {20, 0, 0, 0})
         Me.NumUpDownEssaie.Minimum = New Decimal(New Integer() {9, 0, 0, 0})
         Me.NumUpDownEssaie.Name = "NumUpDownEssaie"
@@ -351,7 +334,7 @@ Partial Class Settings
         Me.Panel2.Controls.Add(Me.NumUpDownEssaie)
         Me.Panel2.Controls.Add(Me.Label2)
         Me.Panel2.Location = New System.Drawing.Point(10, 271)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(238, 63)
         Me.Panel2.TabIndex = 33
@@ -378,15 +361,14 @@ Partial Class Settings
         Me.Label2.Size = New System.Drawing.Size(0, 13)
         Me.Label2.TabIndex = 31
         '
-        'PanelTime
+        'CheckBoxTime
         '
-        Me.PanelTime.Controls.Add(Me.label_seconde)
-        Me.PanelTime.Controls.Add(Me.txtbox_temps)
-        Me.PanelTime.Controls.Add(Me.label_timer)
-        Me.PanelTime.Location = New System.Drawing.Point(10, 91)
-        Me.PanelTime.Name = "PanelTime"
-        Me.PanelTime.Size = New System.Drawing.Size(238, 30)
-        Me.PanelTime.TabIndex = 9
+        Me.CheckBoxTime.AutoSize = True
+        Me.CheckBoxTime.Location = New System.Drawing.Point(116, 37)
+        Me.CheckBoxTime.Name = "CheckBoxTime"
+        Me.CheckBoxTime.Size = New System.Drawing.Size(15, 14)
+        Me.CheckBoxTime.TabIndex = 10
+        Me.CheckBoxTime.UseVisualStyleBackColor = True
         '
         'Settings
         '
@@ -400,13 +382,15 @@ Partial Class Settings
         Me.Controls.Add(Me.PnlColorChoice)
         Me.Controls.Add(Me.btnEnregistrer)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "Settings"
         Me.Text = "Settings"
         Me.PnlColorChoice.ResumeLayout(False)
         Me.PnlColorChoice.PerformLayout()
         Me.PnlTemps.ResumeLayout(False)
         Me.PnlTemps.PerformLayout()
+        Me.PanelTime.ResumeLayout(False)
+        Me.PanelTime.PerformLayout()
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
         Me.Panel1.ResumeLayout(False)
@@ -414,8 +398,6 @@ Partial Class Settings
         CType(Me.NumUpDownEssaie, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
-        Me.PanelTime.ResumeLayout(False)
-        Me.PanelTime.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -428,8 +410,6 @@ Partial Class Settings
     Friend WithEvents RBAbsent As RadioButton
     Friend WithEvents RBPrésent As RadioButton
     Friend WithEvents PnlTemps As Panel
-    Friend WithEvents RBNon As RadioButton
-    Friend WithEvents RBOui As RadioButton
     Friend WithEvents label_seconde As Label
     Friend WithEvents txtbox_temps As TextBox
     Friend WithEvents label_timer As Label
@@ -450,4 +430,5 @@ Partial Class Settings
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents PanelTime As Panel
+    Friend WithEvents CheckBoxTime As CheckBox
 End Class
