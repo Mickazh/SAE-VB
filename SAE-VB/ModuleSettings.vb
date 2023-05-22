@@ -31,7 +31,7 @@ Module ModuleSettings
         'Lecture des caracteres jouable
         Module1.Jouer()
         'LectCharJouable()
-        LectPara()
+        LectParam()
         'Dim fileContent As String = System.IO.File.ReadAllText(filePath)
         'For Each line As String In System.IO.File.ReadLines(filePath)
         '    Dim joueur() As String = line.Split(" ")
@@ -71,7 +71,7 @@ Module ModuleSettings
     '
     'LectCharJouable(CharJouable)
     'End Sub
-    Private Sub LectPara()
+    Private Sub LectParam()
         Dim filePathCJ As String = "../../config.txt"
         Dim lines As String() = File.ReadAllLines(filePathCJ)
         charJouable = lines(0).Split(" ")(1)
@@ -87,40 +87,36 @@ Module ModuleSettings
     End Sub
 
     Private Sub LectCharJouable()
-        'Dim filePathCJ As String = "../../config.txt"
-        'For Each line As String In System.IO.File.ReadLines(filePathCJ)
-        'Dim c() As String = line.Split(" ")
         For i As Integer = 0 To charJouable.Length - 1
             Dim caractere As Caractere = New Caractere
             caractere.c = charJouable(i) 'je prend le premier char de la chaine
             caractere.status = 0 'absent pour qu'il soit normal (couleur)
             caracteresJouable(i) = caractere
         Next
-        'Next
     End Sub
 
-    Public Sub EnregistrerParam(chaine As String)
-        Dim fichier As Integer = 0
-        Dim s As String = ""
-        Dim nomFichier As String = ""
-        fichier = FreeFile()
-        nomFichier = "../../cond.json"
-        s = chaine
-        FileOpen(fichier, nomFichier, OpenMode.Output)
-        Print(fichier, s)
-        FileClose(fichier)
-    End Sub
+    Public Sub EnregistrerParam()
+        Dim filePath As String = "../../config.txt"
+        'Dim fichier As Integer = 0
+        'Dim s As String = ""
+        'Dim nomFichier As String = ""
+        'fichier = FreeFile()
+        'nomFichier = "../../cond.json"
+        's = chaine
+        'FileOpen(fichier, nomFichier, OpenMode.Output)
+        'Print(fichier, s)
+        'FileClose(fichier)
+        Using writer As New StreamWriter(filePath, True)
+            ' Écriture des données dans le fichier, une par ligne
+            writer.WriteLine(charJouable)
+            writer.WriteLine(limiteTemps)
+            writer.WriteLine(tempsPourJouer)
+            writer.WriteLine(path)
+            writer.WriteLine(nbPropostions)
 
-    Public Sub RecupererParam()
-        Dim fichier As Integer = 0
-        Dim s As String = ""
-        Dim Chaines As String() = {}
-        Dim nomFichier As String = ""
-        fichier = FreeFile()
-        nomFichier = chemin + "/Paramètres.txt"
-        FileOpen(fichier, nomFichier, OpenMode.Input)
-        While EOF(fichier) = False
-        End While
-        FileClose(fichier)
+            writer.WriteLine(couleurAbsent)
+            writer.WriteLine(couleurPresent)
+            writer.WriteLine(couleurPresentBienPlacé)
+        End Using
     End Sub
 End Module
