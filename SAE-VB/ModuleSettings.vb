@@ -108,7 +108,6 @@ Module ModuleSettings
         'FileClose(fichier)
         Using writer As New StreamWriter(filePath, True)
             ' Écriture des données dans le fichier, une par ligne
-            File.WriteAllText(filePath, String.Empty)
             writer.WriteLine(charJouable)
             writer.WriteLine(limiteTemps)
             writer.WriteLine(tempsPourJouer)

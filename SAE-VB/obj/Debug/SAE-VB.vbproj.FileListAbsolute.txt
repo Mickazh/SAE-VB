@@ -82,3 +82,6 @@ C:\Users\yohan\Desktop\Mastermind\SAE-VB\SAE-VB\obj\Debug\SAE-VB.vbproj.CopyComp
 C:\Users\yohan\Desktop\Mastermind\SAE-VB\SAE-VB\obj\Debug\SAE-VB.exe
 C:\Users\yohan\Desktop\Mastermind\SAE-VB\SAE-VB\obj\Debug\SAE-VB.xml
 C:\Users\yohan\Desktop\Mastermind\SAE-VB\SAE-VB\obj\Debug\SAE-VB.pdb
+C:\Users\MSI\Documents\OneDrive - Université de Paris\Cours\S2\Période D\IHM\SAE-VB\SAE-VB\bin\Debug\Newtonsoft.Json.dll
+C:\Users\MSI\Documents\OneDrive - Université de Paris\Cours\S2\Période D\IHM\SAE-VB\SAE-VB\bin\Debug\Newtonsoft.Json.xml
+C:\Users\MSI\Documents\OneDrive - Université de Paris\Cours\S2\Période D\IHM\SAE-VB\SAE-VB\obj\Debug\SAE-VB.vbproj.CopyComplete
