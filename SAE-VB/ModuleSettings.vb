@@ -15,13 +15,13 @@ Module ModuleSettings
     Public caracteresJouable As Caractere()
     Public chemin As String = ""
     Public charJouable As String = ""
-    Public limiteTemps As String = ""
+    Public limiteTemps As Boolean
     Public tempsPourJouer As Integer = 0
     Public path As String = ""
     Public nbPropostions As Integer = 0
-    Public couleurAbsent As String = ""
-    Public couleurPresent As String = ""
-    Public couleurPresentBienPlacé As String = ""
+    Public couleurAbsent As Color
+    Public couleurPresent As Color
+    Public couleurPresentBienPlacé As Color
 
     Sub main()
         joueurs = New String(1) {}
@@ -74,33 +74,15 @@ Module ModuleSettings
     Private Sub LectPara()
         Dim filePathCJ As String = "../../config.txt"
         Dim lines As String() = File.ReadAllLines(filePathCJ)
+        charJouable = lines(0).Split(" ")(1)
+        limiteTemps = CBool(lines(1).Split(" ")(1))
+        tempsPourJouer = CInt(lines(2).Split(" ")(1))
+        path = lines(3).Split(" ")(1)
+        nbPropostions = CInt(lines(4).Split(" ")(1))
 
-        For i As Integer = 0 To lines.Length - 1
-            Dim line As String = lines(i)
-            Dim words As String() = line.Split(" ")
-            ' Vérifier le contenu de la première partie de la ligne pour assigner les valeurs aux variables correspondantes
-            Select Case words(0)
-                Case "charJouable"
-                    ' La deuxième partie de la ligne est la valeur correspondante
-                    charJouable = words(1)
-                Case "LimiteTemps"
-                    limiteTemps = words(1)
-                Case "tempsPourJouer"
-                    ' Convertir la deuxième partie de la ligne en entier
-                    Integer.TryParse(words(1), tempsPourJouer)
-                Case "path"
-                    path = words(1)
-                Case "nbPropostions"
-                    Integer.TryParse(words(1), nbPropostions)
-                Case "CouleurAbsent"
-                    couleurAbsent = words(1)
-                Case "CouleurPresent"
-                    couleurPresent = words(1)
-                Case "CouleurPresentBienPlacé"
-                    couleurPresentBienPlacé = words(1)
-                    ' Ajouter d'autres cas pour les autres lignes du fichier, si nécessaire
-            End Select
-        Next
+        couleurAbsent = Color.FromName(lines(5).Split(" ")(1))
+        couleurPresent = Color.FromName(lines(6).Split(" ")(1))
+        couleurPresentBienPlacé = Color.FromName(lines(7).Split(" ")(1))
         LectCharJouable()
     End Sub
 

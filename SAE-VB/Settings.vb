@@ -53,14 +53,14 @@ Public Class Settings
     Private Sub Settings_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         NumUpDownEssaie.Value = nbPropostions
         txtbox_temps.Text = tempsPourJouer
-        If limiteTemps = "Non" Then
+        If limiteTemps Then
             RBNon.Checked = True
         Else
             RBOui.Checked = True
         End If
         cboChemin.Text = path
-        txtColorPrésent.BackColor = Color.FromName(couleurPresent)
-        txtColorPrésentBienPla.BackColor = Color.FromName(couleurPresentBienPlacé)
+        txtColorPrésent.BackColor = couleurPresent
+        txtColorPrésentBienPla.BackColor = couleurPresentBienPlacé
         ToolTipChar.SetToolTip(txtCar, "Appuyer sur Entrée pour valider le caractère choisi")
     End Sub
 
@@ -119,5 +119,17 @@ Public Class Settings
 
     Private Sub PnlColorChoice_MouseHover(sender As Object, e As EventArgs) Handles PnlColorChoice.MouseHover
         ToolTipCombin.SetToolTip(PnlColorChoice, "Conseil : Choississez des couleurs qui se différencient")
+    End Sub
+
+    Private Sub btnAbsent_Click(sender As Object, e As EventArgs) Handles btnAbsent.Click, btnPresent.Click, btnPrePLa.Click
+        Dim colorDialog As New ColorDialog()
+
+        ' Affiche le dialogue de sélection de couleur
+        If colorDialog.ShowDialog() = DialogResult.OK Then
+            ' Récupère la couleur sélectionnée
+            Dim selectedColor As Color = colorDialog.Color
+            sender.BackColor = selectedColor
+        End If
+
     End Sub
 End Class
