@@ -1,5 +1,5 @@
 charJouable #$£%@
-LimiteTemps Non
+LimiteTemps false
 tempsPourJouer 0
 path ../../config
 nbPropostions 15

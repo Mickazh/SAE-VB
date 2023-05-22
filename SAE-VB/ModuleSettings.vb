@@ -15,13 +15,13 @@ Module ModuleSettings
     Public caracteresJouable As Caractere()
     Public chemin As String = ""
     Public charJouable As String = ""
-    Public limiteTemps As String = ""
+    Public limiteTemps As Boolean
     Public tempsPourJouer As Integer = 0
     Public path As String = ""
     Public nbPropostions As Integer = 0
-    Public couleurAbsent As String = ""
-    Public couleurPresent As String = ""
-    Public couleurPresentBienPlacé As String = ""
+    Public couleurAbsent As Color
+    Public couleurPresent As Color
+    Public couleurPresentBienPlacé As Color
 
     Sub main()
         joueurs = New String(1) {}
@@ -31,7 +31,7 @@ Module ModuleSettings
         'Lecture des caracteres jouable
         Module1.Jouer()
         'LectCharJouable()
-        LectPara()
+        LectParam()
         'Dim fileContent As String = System.IO.File.ReadAllText(filePath)
         'For Each line As String In System.IO.File.ReadLines(filePath)
         '    Dim joueur() As String = line.Split(" ")
@@ -71,74 +71,52 @@ Module ModuleSettings
     '
     'LectCharJouable(CharJouable)
     'End Sub
-    Private Sub LectPara()
+    Private Sub LectParam()
         Dim filePathCJ As String = "../../config.txt"
         Dim lines As String() = File.ReadAllLines(filePathCJ)
+        charJouable = lines(0).Split(" ")(1)
+        limiteTemps = CBool(lines(1).Split(" ")(1))
+        tempsPourJouer = CInt(lines(2).Split(" ")(1))
+        path = lines(3).Split(" ")(1)
+        nbPropostions = CInt(lines(4).Split(" ")(1))
 
-        For i As Integer = 0 To lines.Length - 1
-            Dim line As String = lines(i)
-            Dim words As String() = line.Split(" ")
-            ' Vérifier le contenu de la première partie de la ligne pour assigner les valeurs aux variables correspondantes
-            Select Case words(0)
-                Case "charJouable"
-                    ' La deuxième partie de la ligne est la valeur correspondante
-                    charJouable = words(1)
-                Case "LimiteTemps"
-                    limiteTemps = words(1)
-                Case "tempsPourJouer"
-                    ' Convertir la deuxième partie de la ligne en entier
-                    Integer.TryParse(words(1), tempsPourJouer)
-                Case "path"
-                    path = words(1)
-                Case "nbPropostions"
-                    Integer.TryParse(words(1), nbPropostions)
-                Case "CouleurAbsent"
-                    couleurAbsent = words(1)
-                Case "CouleurPresent"
-                    couleurPresent = words(1)
-                Case "CouleurPresentBienPlacé"
-                    couleurPresentBienPlacé = words(1)
-                    ' Ajouter d'autres cas pour les autres lignes du fichier, si nécessaire
-            End Select
-        Next
+        couleurAbsent = Color.FromName(lines(5).Split(" ")(1))
+        couleurPresent = Color.FromName(lines(6).Split(" ")(1))
+        couleurPresentBienPlacé = Color.FromName(lines(7).Split(" ")(1))
         LectCharJouable()
     End Sub
 
     Private Sub LectCharJouable()
-        'Dim filePathCJ As String = "../../config.txt"
-        'For Each line As String In System.IO.File.ReadLines(filePathCJ)
-        'Dim c() As String = line.Split(" ")
         For i As Integer = 0 To charJouable.Length - 1
             Dim caractere As Caractere = New Caractere
             caractere.c = charJouable(i) 'je prend le premier char de la chaine
             caractere.status = 0 'absent pour qu'il soit normal (couleur)
             caracteresJouable(i) = caractere
         Next
-        'Next
     End Sub
 
-    Public Sub EnregistrerParam(chaine As String)
-        Dim fichier As Integer = 0
-        Dim s As String = ""
-        Dim nomFichier As String = ""
-        fichier = FreeFile()
-        nomFichier = "../../cond.json"
-        s = chaine
-        FileOpen(fichier, nomFichier, OpenMode.Output)
-        Print(fichier, s)
-        FileClose(fichier)
-    End Sub
+    Public Sub EnregistrerParam()
+        Dim filePath As String = "../../config.txt"
+        'Dim fichier As Integer = 0
+        'Dim s As String = ""
+        'Dim nomFichier As String = ""
+        'fichier = FreeFile()
+        'nomFichier = "../../cond.json"
+        's = chaine
+        'FileOpen(fichier, nomFichier, OpenMode.Output)
+        'Print(fichier, s)
+        'FileClose(fichier)
+        Using writer As New StreamWriter(filePath, True)
+            ' Écriture des données dans le fichier, une par ligne
+            writer.WriteLine(charJouable)
+            writer.WriteLine(limiteTemps)
+            writer.WriteLine(tempsPourJouer)
+            writer.WriteLine(path)
+            writer.WriteLine(nbPropostions)
 
-    Public Sub RecupererParam()
-        Dim fichier As Integer = 0
-        Dim s As String = ""
-        Dim Chaines As String() = {}
-        Dim nomFichier As String = ""
-        fichier = FreeFile()
-        nomFichier = chemin + "/Paramètres.txt"
-        FileOpen(fichier, nomFichier, OpenMode.Input)
-        While EOF(fichier) = False
-        End While
-        FileClose(fichier)
+            writer.WriteLine(couleurAbsent)
+            writer.WriteLine(couleurPresent)
+            writer.WriteLine(couleurPresentBienPlacé)
+        End Using
     End Sub
 End Module

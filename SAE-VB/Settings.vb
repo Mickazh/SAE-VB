@@ -9,32 +9,9 @@ Imports Newtonsoft.Json.Linq
 Public Class Settings
 
     Public typeActuel As String = ""
-    Private Sub RadioButton_CheckedChanged(sender As Object, e As EventArgs) Handles RBPrésent.CheckedChanged, RBPrésentBien.CheckedChanged
-        Dim radioButton As RadioButton = CType(sender, RadioButton)
-
-        If radioButton.Checked Then
-            Dim colorDialog As New ColorDialog()
-
-            ' Affiche le dialogue de sélection de couleur
-            If colorDialog.ShowDialog() = DialogResult.OK Then
-                ' Récupère la couleur sélectionnée
-                Dim selectedColor As Color = colorDialog.Color
-
-                If RBPrésent.Checked Then
-                    txtColorPrésent.BackColor = selectedColor
-                Else
-                    txtColorPrésentBienPla.BackColor = selectedColor
-                End If
-                ' Décoche tous les RadioButtons après la sélection de la couleur
-                For Each rb As RadioButton In PnlColorChoice.Controls.OfType(Of RadioButton)()
-                    rb.Checked = False
-                Next
-            End If
-        End If
-    End Sub
-
 
     Private Sub btnEnregistrer_Click(sender As Object, e As EventArgs) Handles btnEnregistrer.Click
+        EnregistrerParam()
         FormAccueil.Show()
         Me.Close()
     End Sub
@@ -53,14 +30,14 @@ Public Class Settings
     Private Sub Settings_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         NumUpDownEssaie.Value = nbPropostions
         txtbox_temps.Text = tempsPourJouer
-        If limiteTemps = "Non" Then
-      CheckBoxTime.Checked = False
-    Else
-      CheckBoxTime.Checked = True
-    End If
+        If limiteTemps Then
+            CheckBoxTime.Checked = True
+        Else
+            CheckBoxTime.Checked = False
+        End If
         cboChemin.Text = path
-        txtColorPrésent.BackColor = Color.FromName(couleurPresent)
-        txtColorPrésentBienPla.BackColor = Color.FromName(couleurPresentBienPlacé)
+        btnPresent.BackColor = couleurPresent
+        btnPrePla.BackColor = couleurPresentBienPlacé
         ToolTipChar.SetToolTip(txtCar, "Appuyer sur Entrée pour valider le caractère choisi")
     End Sub
 
@@ -121,7 +98,18 @@ Public Class Settings
         ToolTipCombin.SetToolTip(PnlColorChoice, "Conseil : Choississez des couleurs qui se différencient")
     End Sub
 
-  Private Sub CheckBoxTime_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBoxTime.CheckedChanged
-    PanelTime.Visible = Not PanelTime.Visible
-  End Sub
+    Private Sub CheckBoxTime_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBoxTime.CheckedChanged
+        PanelTime.Visible = Not PanelTime.Visible
+    End Sub
+
+    Private Sub btnAbs_Click(sender As Object, e As EventArgs) Handles btnAbs.Click, btnPresent.Click, btnPrePla.Click
+        Dim colorDialog As New ColorDialog()
+
+        ' Affiche le dialogue de sélection de couleur
+        If colorDialog.ShowDialog() = DialogResult.OK Then
+            ' Récupère la couleur sélectionnée
+            Dim selectedColor As Color = colorDialog.Color
+            sender.BackColor = selectedColor
+        End If
+    End Sub
 End Class
