@@ -45,6 +45,11 @@ Public Class Jeu
         Next
         e.Handled = True
     End Sub
+    Private Sub txt1_Click(sender As Object, e As EventArgs) Handles txt1.Click, txt2.Click, txt3.Click, txt4.Click, txt5.Click
+        Dim textBox As TextBox = CType(sender, TextBox)
+        textBox.Text = String.Empty
+        textBox.BackColor = Color.White
+    End Sub
 
     Private Sub BtnBye_Click(sender As Object, e As EventArgs) Handles BtnBye.Click
         FormAccueil.cboJoueur1.Text = "j2"
@@ -152,5 +157,4 @@ Public Class Jeu
         btnEssaie.Enabled = False
         BtnBye.Visible = True
     End Sub
-
 End Class

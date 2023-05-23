@@ -108,6 +108,16 @@ Public Class Settings
         PanelTime.Visible = Not PanelTime.Visible
     End Sub
 
+    'Private Function IsColorTooClose(color As Color) As Boolean
+    '    For Each buttonColor As Color In buttonColors
+    '        ' Vérifie si la distance entre la couleur sélectionnée et une couleur existante est inférieure à un seuil
+    '        If CalculateColorDistance(color, buttonColor) < 100 Then
+    '            Return True ' Couleurs trop proches
+    '        End If
+    '    Next
+
+    '    Return False ' Couleurs suffisamment différentes
+    'End Function
     Private Sub btnAbs_Click(sender As Object, e As EventArgs) Handles btnAbs.Click, btnPresent.Click, btnPrePla.Click
         Dim colorDialog As New ColorDialog()
 
