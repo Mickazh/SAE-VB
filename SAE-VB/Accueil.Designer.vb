@@ -36,7 +36,7 @@ Partial Class FormAccueil
         'cboJoueur1
         '
         Me.cboJoueur1.FormattingEnabled = True
-        Me.cboJoueur1.Location = New System.Drawing.Point(163, 156)
+        Me.cboJoueur1.Location = New System.Drawing.Point(219, 185)
         Me.cboJoueur1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.cboJoueur1.Name = "cboJoueur1"
         Me.cboJoueur1.Size = New System.Drawing.Size(121, 24)
@@ -45,7 +45,7 @@ Partial Class FormAccueil
         'cboJoueur2
         '
         Me.cboJoueur2.FormattingEnabled = True
-        Me.cboJoueur2.Location = New System.Drawing.Point(317, 155)
+        Me.cboJoueur2.Location = New System.Drawing.Point(457, 185)
         Me.cboJoueur2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.cboJoueur2.Name = "cboJoueur2"
         Me.cboJoueur2.Size = New System.Drawing.Size(121, 24)
@@ -54,7 +54,7 @@ Partial Class FormAccueil
         'btnStartJeu
         '
         Me.btnStartJeu.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnStartJeu.Location = New System.Drawing.Point(435, 326)
+        Me.btnStartJeu.Location = New System.Drawing.Point(496, 337)
         Me.btnStartJeu.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnStartJeu.Name = "btnStartJeu"
         Me.btnStartJeu.Size = New System.Drawing.Size(82, 23)
@@ -65,7 +65,7 @@ Partial Class FormAccueil
         'btnExitApp
         '
         Me.btnExitApp.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnExitApp.Location = New System.Drawing.Point(135, 326)
+        Me.btnExitApp.Location = New System.Drawing.Point(196, 337)
         Me.btnExitApp.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnExitApp.Name = "btnExitApp"
         Me.btnExitApp.Size = New System.Drawing.Size(75, 23)
@@ -76,7 +76,7 @@ Partial Class FormAccueil
         'btnScores
         '
         Me.btnScores.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnScores.Location = New System.Drawing.Point(285, 326)
+        Me.btnScores.Location = New System.Drawing.Point(346, 337)
         Me.btnScores.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnScores.Name = "btnScores"
         Me.btnScores.Size = New System.Drawing.Size(75, 23)
@@ -98,7 +98,7 @@ Partial Class FormAccueil
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(195, 110)
+        Me.Label1.Location = New System.Drawing.Point(249, 140)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(64, 17)
         Me.Label1.TabIndex = 6
@@ -107,7 +107,7 @@ Partial Class FormAccueil
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(350, 110)
+        Me.Label2.Location = New System.Drawing.Point(490, 140)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(64, 17)
         Me.Label2.TabIndex = 7
