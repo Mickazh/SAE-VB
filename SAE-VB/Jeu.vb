@@ -4,14 +4,14 @@ Imports System.Windows.Forms.VisualStyles.VisualStyleElement.Status
 Public Class Jeu
     Private tentatives As Caractere()()
     Private nbTentatives As Integer = 0
-    Private win As Boolean = False
+    Private correct As Boolean = True
     Private colorBon, colorIn, colorMauvais As Color
 
     Private Sub Form3_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         colorBon = Color.FromArgb(0, 255, 0)
         colorIn = Color.FromArgb(0, 0, 255)
         colorMauvais = Color.FromArgb(0, 0, 0)
-        Me.Text = "Il vous reste 15 coup(s)..."
+        Me.Text = $"Il vous reste {nbPropostions} coup(s)..."
         tentatives = New Caractere(0)() {}
         BtnBye.Visible = False
         lblPresent.ForeColor = Color.Blue
@@ -40,16 +40,24 @@ Public Class Jeu
     End Sub
 
     Private Sub BtnBye_Click(sender As Object, e As EventArgs) Handles BtnBye.Click
+        FormAccueil.cboJoueur1.Text = "j2"
+        FormAccueil.cboJoueur2.Text = "j1"
         FormAccueil.Show()
+        combin.Close()
         Me.Close()
     End Sub
 
     Private Sub Form3_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
         'peut être un peu brutale car j'empeche la fermeture du fichier
-        If Not win Then
+        If Not correct Then
             e.Cancel = True
         End If
-        Me.Hide()
+        'FormAccueil.cboJoueur1.Text = "j2"
+        'FormAccueil.cboJoueur2.Text = "j1"
+    End Sub
+
+    Private Sub Jeu_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
+        'peut être un peu brutale car j'empeche la fermeture du fichier
         FormAccueil.cboJoueur1.Text = "j2"
         FormAccueil.cboJoueur2.Text = "j1"
         FormAccueil.Show()
@@ -64,6 +72,12 @@ Public Class Jeu
             End If
         Next
         If Not valide Then
+            Exit Sub
+        End If
+        If nbPropostions = nbTentatives Then
+            MsgBox("Dommage, vous n'avez pas trouvé ! ")
+            btnEssaie.Enabled = False
+            BtnBye.Visible = True
             Exit Sub
         End If
         Dim correct = True
@@ -102,7 +116,7 @@ Public Class Jeu
             BtnBye.Visible = True
         End If
         nbTentatives += 1
-        Me.Text = $"Il vous reste {15 - nbTentatives} coup(s)..."
+        Me.Text = $"Il vous reste {nbPropostions - nbTentatives} coup(s)..."
         'For i As Integer = 0 To tentatives.Length - 1
         '    Dim s = ""
         '    For j As Integer = 0 To tentatives(i).Length - 1

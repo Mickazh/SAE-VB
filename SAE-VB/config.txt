@@ -6,4 +6,3 @@ nbPropostions 15
 CouleurAsbent White
 CouleurPresent Blue
 CouleurPresentBienPlacé Green
-
