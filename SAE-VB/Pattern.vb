@@ -16,14 +16,15 @@
         If e.KeyChar = vbBack Then
             Exit Sub
         End If
+
         If sender.Text.Length = 1 Then
             e.Handled = True
             Exit Sub
         End If
+
         For i As Integer = 0 To caracteresJouable.Length - 1
             If (e.KeyChar = caracteresJouable(i).c) Then
                 sender.BackColor = Color.White
-                'SendKeys.Send("{TAB}") 'sympa mais fait comme si je cliquais sur tab, pas pratique pour @ par exemple
                 Exit Sub
             End If
         Next
@@ -32,9 +33,9 @@
 
     Private Sub btnCacher_Click(sender As Object, e As EventArgs) Handles btnCacher.Click
         Dim valide = True
-        For i As Integer = 0 To PnlChar.Controls.Count - 1
-            If PnlChar.Controls(i).Text.Length <> 1 Then
-                PnlChar.Controls(i).BackColor = Color.Red
+        For Each control In PnlChar.Controls
+            If control.Text.Length <> 1 Then
+                control.BackColor = Color.Red
                 valide = False
             End If
         Next
@@ -47,12 +48,6 @@
         For i As Integer = 0 To PnlChar.Controls.Count - 1
             combineCache(i) = PnlChar.Controls(i).Text(0)
         Next
-
-        'Dim s As String = ""
-        'For i As Integer = 0 To 4
-        '    s &= combineCache(i) & " "
-        'Next
-        'MsgBox(s)
 
         Me.Hide()
         Jeu.Show()

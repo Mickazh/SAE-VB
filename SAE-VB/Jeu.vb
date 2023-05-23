@@ -16,6 +16,7 @@ Public Class Jeu
         BtnBye.Visible = False
         lblPresent.ForeColor = Color.Blue
         lblPresentPlace.ForeColor = Color.Green
+        lblTemps.Text = tempsPourJouer
         For i As Integer = 0 To caracteresJouable.Length - 1
             LblCharJouable.Text &= caracteresJouable(i).c & " "
         Next
@@ -103,13 +104,16 @@ Public Class Jeu
                 RTBTenta.SelectionColor = colorMauvais
                 correct = False
             End If
+
             RTBTenta.AppendText(caract.c)
             RTBTenta.AppendText("    ")
             tentatives(nbTentatives)(i) = caract
         Next
+
         RTBTenta.SelectAll()
         RTBTenta.SelectionAlignment = HorizontalAlignment.Center
         RTBTenta.AppendText(vbCrLf)
+
         If correct Then
             btnEssaie.Enabled = False
             MsgBox("bravo")
