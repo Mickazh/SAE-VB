@@ -24,31 +24,13 @@ Module ModuleSettings
     Private couleurPresentBienPlacé As Color
 
     Sub main()
-        joueurs = New String(1) {}
-        scors = New Integer(1) {}
+
         caracteresJouable = New Caractere(4) {}
 
         'Lecture des caracteres jouable
         Module1.Jouer()
-        'LectCharJouable()
-        LectParam()
-        'Dim fileContent As String = System.IO.File.ReadAllText(filePath)
-        'For Each line As String In System.IO.File.ReadLines(filePath)
-        '    Dim joueur() As String = line.Split(" ")
-        '    For i = 0 To joueur.Length - 1
-        '        MsgBox(joueur(i))
-        '    Next
-        'Next
-        'Dim fs As FileStream = File.Create(filePath)
-        'Dim fileExists As Boolean = File.Exists(filePath)
-        'Using sw As New StreamWriter(File.Open(filePath, FileMode.OpenOrCreate))
-        '    sw.WriteLine("test")
-        'End Using
-        'Dim info As Byte() = New UTF8Encoding(True).GetBytes("test")
-        'fs.Write(info, 0, info.Length)
 
-        'Dim t As String = "Nom;Score;PB;NBJ1;NBJ2;TotalTemps" & vbCrLf
-        'File.AppendAllText(filePath, t)
+        LectParam()
 
         Application.Run(FormAccueil)
     End Sub

@@ -12,6 +12,7 @@ Public Class Settings
     Private Sub btnEnregistrer_Click(sender As Object, e As EventArgs) Handles btnEnregistrer.Click
         setnbEssaie(NumUpDownEssaie.Value)
         setLimiteTemps(CheckBoxTime.Checked)
+        setTempsPourJouer(txtbox_temps.Text)
         setChemin(cboChemin.Text)
         setcouleurAbsent(btnAbs.BackColor)
         setcouleurPresent(btnPresent.BackColor)

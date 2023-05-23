@@ -18,8 +18,14 @@ Public Class Jeu
         For i As Integer = 0 To getCaracteresJouable.Length - 1
             LblCharJouable.Text &= getCaracteresJouable(i).c & " "
         Next
-        Timer_count = getTempsPourJouer() * Timer.Interval
-        Timer.Start()
+        If getLimiteTemps() Then
+            Timer_count = getTempsPourJouer() * Timer.Interval
+            Timer.Start()
+        Else
+            lblTemps.Visible = False
+            lblSeconde.Visible = False
+        End If
+
     End Sub
     Private Sub txt_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt1.KeyPress, txt2.KeyPress, txt3.KeyPress, txt4.KeyPress, txt5.KeyPress
         If e.KeyChar = vbBack Then
@@ -60,6 +66,10 @@ Public Class Jeu
     Private Sub Timer_Tick(sender As Object, e As EventArgs) Handles Timer.Tick
         Timer_count -= Timer.Interval
         lblTemps.Text = CStr(Timer_count / Timer.Interval)
+        If Timer_count = 0 Then
+            Timer.Stop()
+            EndGame()
+        End If
     End Sub
 
     Private Sub Jeu_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
@@ -81,9 +91,7 @@ Public Class Jeu
             Exit Sub
         End If
         If getnbEssaie() = nbTentatives Then
-            MsgBox("Dommage, vous n'avez pas trouvé ! ")
-            btnEssaie.Enabled = False
-            BtnBye.Visible = True
+            EndGame()
             Exit Sub
         End If
         Dim correct = True
@@ -92,10 +100,12 @@ Public Class Jeu
         For i As Integer = PnlChar.Controls.Count - 1 To 0 Step -1
             caract = New Caractere
             caract.c = PnlChar.Controls(i).Text(0)
+
             If PnlChar.Controls(i).Text(0).Equals(combin.combineCache(i)) Then
                 PnlChar.Controls(i).BackColor = getcouleurPBP()
                 RTBTenta.SelectionColor = getcouleurPBP()
                 caract.status = 2
+
             ElseIf combin.combineCache.Contains(PnlChar.Controls(i).Text(0)) Then
                 PnlChar.Controls(i).BackColor = getcouleurPresent()
                 RTBTenta.SelectionColor = getcouleurPresent()
@@ -125,6 +135,7 @@ Public Class Jeu
             MsgBox("bravo")
             BtnBye.Visible = True
         End If
+
         nbTentatives += 1
         Me.Text = $"Il vous reste {getnbEssaie() - nbTentatives} coup(s)..."
         'For i As Integer = 0 To tentatives.Length - 1
@@ -134,6 +145,11 @@ Public Class Jeu
         '    Next
         'Next
         ReDim Preserve tentatives(nbTentatives)
+    End Sub
+    Public Sub EndGame()
+        MsgBox("Dommage, vous n'avez pas trouvé ! ")
+        btnEssaie.Enabled = False
+        BtnBye.Visible = True
     End Sub
 
 End Class

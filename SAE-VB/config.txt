@@ -1,8 +1,8 @@
-charJouable azert
-limiteTemps True
-tempsPourJouer 60
-path ../../config
-nbPropostions 9
+charJouable #$£%@
+limiteTemps False
+tempsPourJouer 0
+path ../../config.txt
+nbPropostions 15
 couleurAbsent 255 255 255
-couleurPresent 128 0 128
-couleurPresentBienPlacé 0 255 255
+couleurPresent 0 255 0
+couleurPresentBienPlacé 0 0 255
