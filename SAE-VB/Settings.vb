@@ -10,7 +10,6 @@ Public Class Settings
     Public typeActuel As String = ""
 
     Private Sub btnEnregistrer_Click(sender As Object, e As EventArgs) Handles btnEnregistrer.Click
-
         setnbEssaie(NumUpDownEssaie.Value)
         setLimiteTemps(CheckBoxTime.Checked)
         setChemin(cboChemin.Text)
@@ -54,7 +53,6 @@ Public Class Settings
     End Sub
 
     Private charactersSet As HashSet(Of Char) = New HashSet(Of Char)()
-    Public CharJouable As String = ""
     Private Sub TextBoxCaractere_KeyDown(sender As Object, e As KeyEventArgs) Handles txtCar.KeyDown
         ' Vérifier si l'utilisateur a appuyé sur la touche Entrée
         If e.KeyCode = Keys.Enter Then
@@ -77,7 +75,7 @@ Public Class Settings
 
             ' Efface le contenu de la TextBox
             txtCar.Clear()
-            CharJouable = String.Join("", charactersSet)
+            setCharJouable(String.Join("", charactersSet))
             lblResultChar.Text = String.Join(" ", charactersSet)
         End If
     End Sub

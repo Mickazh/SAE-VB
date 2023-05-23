@@ -1,4 +1,4 @@
-charJouable #$£%@
+charJouable azert
 limiteTemps True
 tempsPourJouer 60
 path ../../config
