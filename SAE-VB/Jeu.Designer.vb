@@ -185,10 +185,10 @@ Partial Class Jeu
         'BtnBye
         '
         Me.BtnBye.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnBye.Location = New System.Drawing.Point(536, 761)
+        Me.BtnBye.Location = New System.Drawing.Point(424, 756)
         Me.BtnBye.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
         Me.BtnBye.Name = "BtnBye"
-        Me.BtnBye.Size = New System.Drawing.Size(112, 35)
+        Me.BtnBye.Size = New System.Drawing.Size(137, 64)
         Me.BtnBye.TabIndex = 30
         Me.BtnBye.Text = "Bye"
         Me.BtnBye.UseVisualStyleBackColor = True
@@ -241,7 +241,7 @@ Partial Class Jeu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(712, 937)
+        Me.ClientSize = New System.Drawing.Size(636, 944)
         Me.Controls.Add(Me.lblSeconde)
         Me.Controls.Add(Me.LblCharJouable)
         Me.Controls.Add(Me.RTBTenta)

@@ -59,7 +59,7 @@ Public Class Settings
         If e.KeyCode = Keys.Enter Then
             Dim character As Char = txtCar.Text.Trim()
 
-            ' Vérifier si le caractère est vide ou s'il est déjà dans le HashSet
+            ' Vérifie si le caractère est vide ou s'il est déjà dans le HashSet
             If String.IsNullOrEmpty(character) OrElse charactersSet.Contains(character) Then
                 MessageBox.Show("Veuillez entrer un caractère différent.")
                 Return

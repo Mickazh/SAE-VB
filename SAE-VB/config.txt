@@ -4,5 +4,5 @@ tempsPourJouer 0
 path ../../config.txt
 nbPropostions 15
 couleurAbsent 255 255 255
-couleurPresent 0 255 0
-couleurPresentBienPlacé 0 0 255
+couleurPresent 0 0 255
+couleurPresentBienPlacé 0 255 0

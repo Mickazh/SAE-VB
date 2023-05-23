@@ -5,9 +5,9 @@ Public Class Jeu
     Private tentatives As Caractere()()
     Private nbTentatives As Integer = 0
     Private correct As Boolean = True
-    Private colorBon, colorIn, colorMauvais As Color
 
     Private Sub Form3_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.Size = New Size(450, 630)
         Me.Text = $"Il vous reste {getnbEssaie()} coup(s)..."
         tentatives = New Caractere(0)() {}
         BtnBye.Visible = False
@@ -117,7 +117,8 @@ Public Class Jeu
             Else
                 caract.status = 0
                 'PnlChar.Controls(i).BackColor = colorMauvais
-                RTBTenta.SelectionColor = getcouleurAbsent()
+                'RTBTenta.SelectionColor = getcouleurAbsent()'
+                RTBTenta.SelectionColor = lblAbsent.ForeColor
                 correct = False
             End If
 
