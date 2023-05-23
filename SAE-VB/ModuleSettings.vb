@@ -24,6 +24,13 @@ Module ModuleSettings
     Public couleurPresentBienPlacé As Color
 
     Sub main()
+        Dim j As Joueur
+        j.nom = "ok"
+        ModuleJoueurs.enregistrerJoueur(j)
+        ModuleJoueurs.enregistrerJoueur(j)
+        j.nom = "pas ok"
+        ModuleJoueurs.enregistrerJoueur(j)
+        ModuleJoueurs.lectureJoueurs()
         joueurs = New String(1) {}
         scors = New Integer(1) {}
         caracteresJouable = New Caractere(4) {}
