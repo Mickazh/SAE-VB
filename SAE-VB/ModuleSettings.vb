@@ -114,9 +114,9 @@ Module ModuleSettings
             writer.WriteLine(path)
             writer.WriteLine(nbPropostions)
 
-            writer.WriteLine(couleurAbsent)
-            writer.WriteLine(couleurPresent)
-            writer.WriteLine(couleurPresentBienPlacé)
+            writer.WriteLine(couleurAbsent.Name)
+            writer.WriteLine(couleurPresent.Name)
+            writer.WriteLine(couleurPresentBienPlacé.Name)
         End Using
     End Sub
 End Module
