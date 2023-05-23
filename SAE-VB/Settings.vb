@@ -14,6 +14,9 @@ Public Class Settings
     Private Sub btnEnregistrer_Click(sender As Object, e As EventArgs) Handles btnEnregistrer.Click
         couleurPresent = btnPresent.BackColor
         couleurPresentBienPlacé = btnPrePla.BackColor
+        nbPropostions = NumUpDownEssaie.Value
+        limiteTemps = CheckBoxTime.Checked
+        path = cboChemin.Text
         EnregistrerParam()
         FormAccueil.Show()
         Me.Close()
@@ -32,7 +35,7 @@ Public Class Settings
 
     Private Sub Settings_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         NumUpDownEssaie.Value = nbPropostions
-        txtbox_temps.Text = tempsPourJouer
+        txtbox_temps.Text = getTempsPourJouer()
         If limiteTemps Then
             CheckBoxTime.Checked = True
         Else
@@ -73,7 +76,7 @@ Public Class Settings
 
             ' Efface le contenu de la TextBox
             txtCar.Clear()
-            'CharJouable = String.Join("", charactersSet)
+            CharJouable = String.Join("", charactersSet)
             lblResultChar.Text = String.Join(" ", charactersSet)
         End If
     End Sub

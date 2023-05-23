@@ -16,7 +16,7 @@ Module ModuleSettings
     Public chemin As String = ""
     Public charJouable As String = ""
     Public limiteTemps As Boolean
-    Public tempsPourJouer As Integer = 0
+    Private tempsPourJouer As Integer
     Public path As String = ""
     Public nbPropostions As Integer = 0
     Public couleurAbsent As Color
@@ -80,9 +80,12 @@ Module ModuleSettings
         path = lines(3).Split(" ")(1)
         nbPropostions = CInt(lines(4).Split(" ")(1))
 
-        couleurAbsent = Color.FromName(lines(5).Split(" ")(1))
-        couleurPresent = Color.FromName(lines(6).Split(" ")(1))
-        couleurPresentBienPlacé = Color.FromName(lines(7).Split(" ")(1))
+        couleurAbsent = Color.FromArgb(CInt(lines(5).Split(" ")(1)),
+CInt(lines(5).Split(" ")(2)), CInt(lines(5).Split(" ")(3)))
+        couleurPresent = Color.FromArgb(CInt(lines(6).Split(" ")(1)),
+CInt(lines(6).Split(" ")(2)), CInt(lines(6).Split(" ")(3)))
+        couleurPresentBienPlacé = Color.FromArgb(CInt(lines(7).Split(" ")(1)),
+CInt(lines(7).Split(" ")(2)), CInt(lines(7).Split(" ")(3)))
         LectCharJouable()
     End Sub
 
@@ -106,17 +109,31 @@ Module ModuleSettings
         'FileOpen(fichier, nomFichier, OpenMode.Output)
         'Print(fichier, s)
         'FileClose(fichier)
-        Using writer As New StreamWriter(filePath, True)
-            ' Écriture des données dans le fichier, une par ligne
-            writer.WriteLine(charJouable)
-            writer.WriteLine(limiteTemps)
-            writer.WriteLine(tempsPourJouer)
-            writer.WriteLine(path)
-            writer.WriteLine(nbPropostions)
+        'Using writer As New StreamWriter(filePath, True)
+        ' Écriture des données dans le fichier, une par ligne
+        Dim lines As List(Of String) = System.IO.File.ReadAllLines(filePath).ToList()
+        lines(0) = "charJouable " & charJouable
+        lines(1) = "limiteTemps " & limiteTemps
+        lines(2) = "tempsPourJouer " & tempsPourJouer
+        lines(3) = "path " & path
+        lines(4) = "nbPropostions " & nbPropostions
+        lines(5) = "couleurAbsent " & couleurAbsent.R & " " & couleurAbsent.G & " " & couleurAbsent.B
+        lines(6) = "couleurPresent " & couleurPresent.R & " " & couleurPresent.G & " " & couleurPresent.B
+        lines(7) = "couleurPresentBienPlacé " & couleurPresentBienPlacé.R & " " & couleurPresentBienPlacé.G & " " & couleurPresentBienPlacé.B
+        'writer.WriteLine(charJouable)
+        'writer.WriteLine(limiteTemps)
+        'writer.WriteLine(tempsPourJouer)
+        'writer.WriteLine(path)
+        'writer.WriteLine(nbPropostions)
 
-            writer.WriteLine(couleurAbsent.Name)
-            writer.WriteLine(couleurPresent.Name)
-            writer.WriteLine(couleurPresentBienPlacé.Name)
-        End Using
+        'writer.WriteLine(couleurAbsent.R & "" & couleurAbsent.G & "" & couleurAbsent.B)
+        'writer.WriteLine(couleurPresent.R & "" & couleurPresent.G & "" & couleurPresent.B)
+        'writer.WriteLine(couleurPresentBienPlacé.R & "" & couleurPresentBienPlacé.G & "" & couleurPresentBienPlacé.B)
+        System.IO.File.WriteAllLines(filePath, lines)
+        'End Using
     End Sub
+
+    Public Function getTempsPourJouer()
+        Return tempsPourJouer
+    End Function
 End Module

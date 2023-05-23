@@ -16,10 +16,13 @@ Public Class Jeu
         BtnBye.Visible = False
         lblPresent.ForeColor = Color.Blue
         lblPresentPlace.ForeColor = Color.Green
-        lblTemps.Text = tempsPourJouer
+        lblTemps.Text = getTempsPourJouer()
+
         For i As Integer = 0 To caracteresJouable.Length - 1
             LblCharJouable.Text &= caracteresJouable(i).c & " "
         Next
+        Timer_count = getTempsPourJouer() * Timer.Interval
+        Timer.Start()
     End Sub
     Private Sub txt_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt1.KeyPress, txt2.KeyPress, txt3.KeyPress, txt4.KeyPress, txt5.KeyPress
         If e.KeyChar = vbBack Then
@@ -55,6 +58,11 @@ Public Class Jeu
         End If
         'FormAccueil.cboJoueur1.Text = "j2"
         'FormAccueil.cboJoueur2.Text = "j1"
+    End Sub
+
+    Private Sub Timer_Tick(sender As Object, e As EventArgs) Handles Timer.Tick
+        Timer_count -= Timer.Interval
+        lblTemps.Text = CStr(Timer_count / Timer.Interval)
     End Sub
 
     Private Sub Jeu_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed

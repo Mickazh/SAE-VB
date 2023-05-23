@@ -193,6 +193,10 @@ Partial Class Jeu
         Me.BtnBye.Text = "Bye"
         Me.BtnBye.UseVisualStyleBackColor = True
         '
+        'Timer
+        '
+        Me.Timer.Interval = 1000
+        '
         'RTBTenta
         '
         Me.RTBTenta.Location = New System.Drawing.Point(96, 251)
