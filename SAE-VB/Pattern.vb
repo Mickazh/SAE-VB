@@ -2,8 +2,8 @@
     Public combineCache As Char()
     Private Sub combin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         combineCache = New Char(4) {}
-        For i As Integer = 0 To caracteresJouable.Length - 1
-            LblCharJouable.Text &= caracteresJouable(i).c & " "
+        For i As Integer = 0 To getCaracteresJouable.Length - 1
+            LblCharJouable.Text &= getCaracteresJouable(i).c & " "
         Next
     End Sub
 
@@ -16,14 +16,15 @@
         If e.KeyChar = vbBack Then
             Exit Sub
         End If
+
         If sender.Text.Length = 1 Then
             e.Handled = True
             Exit Sub
         End If
-        For i As Integer = 0 To caracteresJouable.Length - 1
-            If (e.KeyChar = caracteresJouable(i).c) Then
+
+        For i As Integer = 0 To getCaracteresJouable.Length - 1
+            If (e.KeyChar = getCaracteresJouable(i).c) Then
                 sender.BackColor = Color.White
-                'SendKeys.Send("{TAB}") 'sympa mais fait comme si je cliquais sur tab, pas pratique pour @ par exemple
                 Exit Sub
             End If
         Next
@@ -32,9 +33,9 @@
 
     Private Sub btnCacher_Click(sender As Object, e As EventArgs) Handles btnCacher.Click
         Dim valide = True
-        For i As Integer = 0 To PnlChar.Controls.Count - 1
-            If PnlChar.Controls(i).Text.Length <> 1 Then
-                PnlChar.Controls(i).BackColor = Color.Red
+        For Each control In PnlChar.Controls
+            If control.Text.Length <> 1 Then
+                control.BackColor = Color.Red
                 valide = False
             End If
         Next
@@ -47,12 +48,6 @@
         For i As Integer = 0 To PnlChar.Controls.Count - 1
             combineCache(i) = PnlChar.Controls(i).Text(0)
         Next
-
-        'Dim s As String = ""
-        'For i As Integer = 0 To 4
-        '    s &= combineCache(i) & " "
-        'Next
-        'MsgBox(s)
 
         Me.Hide()
         Jeu.Show()
