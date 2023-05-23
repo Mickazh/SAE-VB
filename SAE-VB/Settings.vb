@@ -4,19 +4,19 @@ Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 Imports System.Windows.Forms.VisualStyles.VisualStyleElement.ToolBar
 Imports System.Xml
 Imports Microsoft.VisualBasic.Devices
-Imports Newtonsoft.Json
-Imports Newtonsoft.Json.Linq
 
 Public Class Settings
 
     Public typeActuel As String = ""
 
     Private Sub btnEnregistrer_Click(sender As Object, e As EventArgs) Handles btnEnregistrer.Click
-        couleurPresent = btnPresent.BackColor
-        couleurPresentBienPlacé = btnPrePla.BackColor
-        nbPropostions = NumUpDownEssaie.Value
-        limiteTemps = CheckBoxTime.Checked
-        path = cboChemin.Text
+
+        setnbEssaie(NumUpDownEssaie.Value)
+        setLimiteTemps(CheckBoxTime.Checked)
+        setChemin(cboChemin.Text)
+        setcouleurAbsent(btnAbs.BackColor)
+        setcouleurPresent(btnPresent.BackColor)
+        setcouleurPBP(btnPrePla.BackColor)
         EnregistrerParam()
         FormAccueil.Show()
         Me.Close()
@@ -34,16 +34,17 @@ Public Class Settings
     End Sub
 
     Private Sub Settings_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        NumUpDownEssaie.Value = nbPropostions
+        NumUpDownEssaie.Value = getnbEssaie()
         txtbox_temps.Text = getTempsPourJouer()
-        If limiteTemps Then
+        If getLimiteTemps() Then
             CheckBoxTime.Checked = True
         Else
             CheckBoxTime.Checked = False
         End If
-        cboChemin.Text = path
-        btnPresent.BackColor = couleurPresent
-        btnPrePla.BackColor = couleurPresentBienPlacé
+        cboChemin.Text = getChemin()
+        btnAbs.BackColor = getcouleurAbsent()
+        btnPresent.BackColor = getcouleurPresent()
+        btnPrePla.BackColor = getcouleurPBP()
         ToolTipChar.SetToolTip(txtCar, "Appuyer sur Entrée pour valider le caractère choisi")
     End Sub
 

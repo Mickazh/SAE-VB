@@ -8,18 +8,15 @@ Public Class Jeu
     Private colorBon, colorIn, colorMauvais As Color
 
     Private Sub Form3_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        colorBon = Color.FromArgb(0, 255, 0)
-        colorIn = Color.FromArgb(0, 0, 255)
-        colorMauvais = Color.FromArgb(0, 0, 0)
-        Me.Text = $"Il vous reste {nbPropostions} coup(s)..."
+        Me.Text = $"Il vous reste {getnbEssaie()} coup(s)..."
         tentatives = New Caractere(0)() {}
         BtnBye.Visible = False
-        lblPresent.ForeColor = Color.Blue
-        lblPresentPlace.ForeColor = Color.Green
+        lblPresent.ForeColor = getcouleurPresent()
+        lblPresentPlace.ForeColor = getcouleurPBP()
         lblTemps.Text = getTempsPourJouer()
 
-        For i As Integer = 0 To caracteresJouable.Length - 1
-            LblCharJouable.Text &= caracteresJouable(i).c & " "
+        For i As Integer = 0 To getCaracteresJouable.Length - 1
+            LblCharJouable.Text &= getCaracteresJouable(i).c & " "
         Next
         Timer_count = getTempsPourJouer() * Timer.Interval
         Timer.Start()
@@ -33,8 +30,8 @@ Public Class Jeu
             e.Handled = True
             Exit Sub
         End If
-        For i As Integer = 0 To caracteresJouable.Length - 1
-            If (e.KeyChar = caracteresJouable(i).c) Then
+        For i As Integer = 0 To getCaracteresJouable.Length - 1
+            If (e.KeyChar = getCaracteresJouable(i).c) Then
                 sender.BackColor = Color.White
                 'SendKeys.Send("{TAB}") 'sympa mais fait comme si je cliquais sur tab, pas pratique pour @ par exemple
                 Exit Sub
@@ -83,7 +80,7 @@ Public Class Jeu
         If Not valide Then
             Exit Sub
         End If
-        If nbPropostions = nbTentatives Then
+        If getnbEssaie() = nbTentatives Then
             MsgBox("Dommage, vous n'avez pas trouvé ! ")
             btnEssaie.Enabled = False
             BtnBye.Visible = True
@@ -96,20 +93,21 @@ Public Class Jeu
             caract = New Caractere
             caract.c = PnlChar.Controls(i).Text(0)
             If PnlChar.Controls(i).Text(0).Equals(combin.combineCache(i)) Then
-                PnlChar.Controls(i).BackColor = Color.Green
-                RTBTenta.SelectionColor = colorBon
+                PnlChar.Controls(i).BackColor = getcouleurPBP()
+                RTBTenta.SelectionColor = getcouleurPBP()
                 caract.status = 2
             ElseIf combin.combineCache.Contains(PnlChar.Controls(i).Text(0)) Then
-                PnlChar.Controls(i).BackColor = Color.Blue
+                PnlChar.Controls(i).BackColor = getcouleurPresent()
+                RTBTenta.SelectionColor = getcouleurPresent()
                 caract.status = 1
-                RTBTenta.SelectionColor = colorIn
+
                 correct = False
 
                 'MsgBox("ok")
             Else
                 caract.status = 0
                 'PnlChar.Controls(i).BackColor = colorMauvais
-                RTBTenta.SelectionColor = colorMauvais
+                RTBTenta.SelectionColor = getcouleurAbsent()
                 correct = False
             End If
 
@@ -128,7 +126,7 @@ Public Class Jeu
             BtnBye.Visible = True
         End If
         nbTentatives += 1
-        Me.Text = $"Il vous reste {nbPropostions - nbTentatives} coup(s)..."
+        Me.Text = $"Il vous reste {getnbEssaie() - nbTentatives} coup(s)..."
         'For i As Integer = 0 To tentatives.Length - 1
         '    Dim s = ""
         '    For j As Integer = 0 To tentatives(i).Length - 1

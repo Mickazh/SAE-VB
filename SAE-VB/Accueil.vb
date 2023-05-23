@@ -26,6 +26,7 @@
 
     Private Sub btnStartJeu_Click(sender As Object, e As EventArgs) Handles btnStartJeu.Click
         Me.Hide()
+        LectParam()
         combin.Show()
     End Sub
 

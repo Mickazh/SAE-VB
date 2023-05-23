@@ -2,7 +2,7 @@ charJouable #$£%@
 limiteTemps True
 tempsPourJouer 60
 path ../../config
-nbPropostions 18
-couleurAbsent 0 0 0
-couleurPresent 0 0 64
-couleurPresentBienPlacé 64 0 128
+nbPropostions 9
+couleurAbsent 255 255 255
+couleurPresent 128 0 128
+couleurPresentBienPlacé 0 255 255

@@ -2,8 +2,8 @@
     Public combineCache As Char()
     Private Sub combin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         combineCache = New Char(4) {}
-        For i As Integer = 0 To caracteresJouable.Length - 1
-            LblCharJouable.Text &= caracteresJouable(i).c & " "
+        For i As Integer = 0 To getCaracteresJouable.Length - 1
+            LblCharJouable.Text &= getCaracteresJouable(i).c & " "
         Next
     End Sub
 
@@ -22,8 +22,8 @@
             Exit Sub
         End If
 
-        For i As Integer = 0 To caracteresJouable.Length - 1
-            If (e.KeyChar = caracteresJouable(i).c) Then
+        For i As Integer = 0 To getCaracteresJouable.Length - 1
+            If (e.KeyChar = getCaracteresJouable(i).c) Then
                 sender.BackColor = Color.White
                 Exit Sub
             End If

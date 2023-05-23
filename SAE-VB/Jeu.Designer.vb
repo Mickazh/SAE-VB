@@ -185,7 +185,7 @@ Partial Class Jeu
         'BtnBye
         '
         Me.BtnBye.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnBye.Location = New System.Drawing.Point(503, 748)
+        Me.BtnBye.Location = New System.Drawing.Point(476, 703)
         Me.BtnBye.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.BtnBye.Name = "BtnBye"
         Me.BtnBye.Size = New System.Drawing.Size(112, 35)
@@ -203,7 +203,7 @@ Partial Class Jeu
         Me.RTBTenta.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.RTBTenta.Name = "RTBTenta"
         Me.RTBTenta.ReadOnly = True
-        Me.RTBTenta.Size = New System.Drawing.Size(152, 526)
+        Me.RTBTenta.Size = New System.Drawing.Size(152, 487)
         Me.RTBTenta.TabIndex = 31
         Me.RTBTenta.Text = ""
         '
@@ -241,7 +241,7 @@ Partial Class Jeu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(633, 819)
+        Me.ClientSize = New System.Drawing.Size(633, 754)
         Me.Controls.Add(Me.lblSeconde)
         Me.Controls.Add(Me.lblTemps)
         Me.Controls.Add(Me.LblCharJouable)

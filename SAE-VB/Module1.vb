@@ -18,7 +18,6 @@ Module Module1
     Public Sub Jouer()
         joueurs = New String(1) {}
         scors = New Integer(1) {}
-        caracteresJouable = New Caractere(4) {}
 
         'Lecture des joueurs
         Dim filePathJoueurs As String = "../../Joueurs.csv"
