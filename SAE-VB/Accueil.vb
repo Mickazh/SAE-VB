@@ -34,5 +34,8 @@
         Settings.Show()
     End Sub
 
-
+    Private Sub btnScores_Click(sender As Object, e As EventArgs) Handles btnScores.Click
+        Me.Hide()
+        Score.Show()
+    End Sub
 End Class

@@ -100,7 +100,7 @@ Partial Class FormAccueil
         Me.Label1.AutoSize = True
         Me.Label1.Location = New System.Drawing.Point(195, 110)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(58, 16)
+        Me.Label1.Size = New System.Drawing.Size(64, 17)
         Me.Label1.TabIndex = 6
         Me.Label1.Text = "Joueur 1"
         '
@@ -109,7 +109,7 @@ Partial Class FormAccueil
         Me.Label2.AutoSize = True
         Me.Label2.Location = New System.Drawing.Point(350, 110)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(58, 16)
+        Me.Label2.Size = New System.Drawing.Size(64, 17)
         Me.Label2.TabIndex = 7
         Me.Label2.Text = "Joueur 2"
         '

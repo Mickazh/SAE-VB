@@ -85,3 +85,7 @@ C:\Users\yohan\Desktop\Mastermind\SAE-VB\SAE-VB\obj\Debug\SAE-VB.pdb
 C:\Users\MSI\Documents\OneDrive - Université de Paris\Cours\S2\Période D\IHM\SAE-VB\SAE-VB\bin\Debug\Newtonsoft.Json.dll
 C:\Users\MSI\Documents\OneDrive - Université de Paris\Cours\S2\Période D\IHM\SAE-VB\SAE-VB\bin\Debug\Newtonsoft.Json.xml
 C:\Users\MSI\Documents\OneDrive - Université de Paris\Cours\S2\Période D\IHM\SAE-VB\SAE-VB\obj\Debug\SAE-VB.vbproj.CopyComplete
+C:\Users\vidav\Source\Repos\Mickazh\SAE-VB\SAE-VB\bin\Debug\Newtonsoft.Json.dll
+C:\Users\vidav\Source\Repos\Mickazh\SAE-VB\SAE-VB\bin\Debug\Newtonsoft.Json.xml
+C:\Users\vidav\Source\Repos\Mickazh\SAE-VB\SAE-VB\obj\Debug\SAE_VB.Score.resources
+C:\Users\vidav\Source\Repos\Mickazh\SAE-VB\SAE-VB\obj\Debug\SAE-VB.vbproj.CopyComplete
