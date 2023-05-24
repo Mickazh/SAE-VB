@@ -4,10 +4,6 @@ Imports Microsoft.VisualBasic.FileIO
 Imports Newtonsoft.Json
 
 Module Module1
-    ''' <summary>
-    ''' c est le caractère le réprésentant 
-    ''' status est un entier réprésentant son status : 0->absent, 1->présent, 2->présent et bien placé
-    ''' </summary>
 
     Public joueurs As String()
     Public scors As Integer()

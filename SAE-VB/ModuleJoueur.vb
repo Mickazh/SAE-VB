@@ -11,7 +11,7 @@ Module ModuleJoueur
     Private joueurs As Joueur() = New Joueur(0) {}
 
     Sub lectureJoueurs()
-        MsgBox(New FileInfo(joueursPath).Length)
+        'MsgBox(New FileInfo(joueursPath).Length)
         Dim numFichierJoueur = FreeFile()
         Dim j As Joueur
         Dim indice As Integer = 1
@@ -19,7 +19,7 @@ Module ModuleJoueur
         While Not EOF(numFichierJoueur)
             FileGet(numFichierJoueur, j, indice)
             If (indice - 1) = joueurs.Length Then
-                ReDim Preserve joueurs(joueurs.Length + 1)
+                ReDim Preserve joueurs(joueurs.Length)
             End If
             joueurs(indice - 1) = j
 
@@ -29,7 +29,24 @@ Module ModuleJoueur
 
     End Sub
 
-    Sub enregistrerJoueur(ByRef joueurAj As Joueur)
+    ''' <summary>
+    ''' Enregistre un nouveau joueur
+    ''' </summary>
+    ''' <param name="joueurAJ"></param>
+    ''' <returns>L'indice à laquelle le joueur est placé</returns>
+    Public Function enregistrerNouveauJoueur(joueurAJ As Joueur) As Integer
+        Dim numFichierJoueur = FreeFile()
+        FileOpen(numFichierJoueur, joueursPath, OpenMode.Random, , , Len(joueurAJ))
+        FilePut(numFichierJoueur, joueurAJ, joueurs.Length + 1)
+        FileClose(numFichierJoueur)
+
+        ReDim Preserve joueurs(joueurs.Length)
+        joueurs(joueurs.Length - 1) = joueurAJ
+
+        Return joueurs.Length - 1
+    End Function
+
+    Sub enregistrerJoueur(joueurAj As Joueur)
         Dim joueurFichier As Joueur
         Dim numFichierJoueur = FreeFile()
         Dim joueurInFile = False
@@ -62,10 +79,14 @@ Module ModuleJoueur
             End If
             i += 1
         End While
-        Return i + 1
+        Return -1
     End Function
 
     Public Function getJoueur(index As Integer) As Joueur
         Return joueurs(index)
+    End Function
+
+    Public Function getJoueurs() As Joueur()
+        Return joueurs
     End Function
 End Module
