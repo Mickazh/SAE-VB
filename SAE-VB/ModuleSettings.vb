@@ -26,7 +26,8 @@ Module ModuleSettings
     Sub main()
 
         caracteresJouable = New Caractere(4) {}
-
+        ModuleJoueur.lectureJoueurs()
+        MsgBox(ModuleJoueur.getJoueur(ModuleJoueur.getIndexJoueurByName("autreJafsdf")).score)
         'Lecture des caracteres jouable
         Module1.Jouer()
 
