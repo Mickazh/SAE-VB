@@ -10,7 +10,6 @@ Public Class Jeu
     Private correct As Boolean = True
 
     Private Sub Form3_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Timer.Start()
         indexCacheur = FormAccueil.getIndexJ1
         indexChercheur = FormAccueil.getIndexJ2
         ModuleJoueur.incNbJ1(indexCacheur)
@@ -26,6 +25,7 @@ Public Class Jeu
         For i As Integer = 0 To getCaracteresJouable.Length - 1
             LblCharJouable.Text &= getCaracteresJouable(i).c & " "
         Next
+        Timer.Start()
         If getLimiteTemps() Then
             Timer_count = getTempsPourJouer() * Timer.Interval
             Timer.Start()
@@ -175,4 +175,13 @@ Public Class Jeu
         btnEssaie.Enabled = False
         BtnBye.Visible = True
     End Sub
+    Private Sub RTBTenta_MouseEnter(sender As Object, e As EventArgs) Handles RTBTenta.MouseEnter
+        RTBTenta.Enabled = True
+    End Sub
+
+    Private Sub RTBTenta_MouseLeave(sender As Object, e As EventArgs) Handles RTBTenta.MouseLeave
+        RTBTenta.Enabled = False
+    End Sub
+
+
 End Class

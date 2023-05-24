@@ -26,6 +26,9 @@ Partial Class Settings
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Settings))
         Me.btnEnregistrer = New System.Windows.Forms.Button()
         Me.PnlColorChoice = New System.Windows.Forms.Panel()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.btnAbs = New System.Windows.Forms.Button()
         Me.btnPresent = New System.Windows.Forms.Button()
         Me.btnPrePla = New System.Windows.Forms.Button()
@@ -52,9 +55,6 @@ Partial Class Settings
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
         Me.PnlColorChoice.SuspendLayout()
         Me.PnlTemps.SuspendLayout()
         Me.PanelTime.SuspendLayout()
@@ -67,9 +67,10 @@ Partial Class Settings
         'btnEnregistrer
         '
         Me.btnEnregistrer.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnEnregistrer.Location = New System.Drawing.Point(708, 471)
+        Me.btnEnregistrer.Location = New System.Drawing.Point(629, 377)
+        Me.btnEnregistrer.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnEnregistrer.Name = "btnEnregistrer"
-        Me.btnEnregistrer.Size = New System.Drawing.Size(166, 77)
+        Me.btnEnregistrer.Size = New System.Drawing.Size(148, 62)
         Me.btnEnregistrer.TabIndex = 17
         Me.btnEnregistrer.Text = "Enregistrer"
         Me.btnEnregistrer.UseVisualStyleBackColor = True
@@ -84,32 +85,63 @@ Partial Class Settings
         Me.PnlColorChoice.Controls.Add(Me.btnPrePla)
         Me.PnlColorChoice.Controls.Add(Me.lblColorResult)
         Me.PnlColorChoice.Controls.Add(Me.TextBoxAbsent)
-        Me.PnlColorChoice.Location = New System.Drawing.Point(612, 23)
+        Me.PnlColorChoice.Location = New System.Drawing.Point(544, 18)
+        Me.PnlColorChoice.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.PnlColorChoice.Name = "PnlColorChoice"
-        Me.PnlColorChoice.Size = New System.Drawing.Size(250, 191)
+        Me.PnlColorChoice.Size = New System.Drawing.Size(222, 153)
         Me.PnlColorChoice.TabIndex = 18
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(62, 102)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(72, 32)
+        Me.Label5.TabIndex = 38
+        Me.Label5.Text = "Présent et " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Bien Placé"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(62, 78)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(53, 16)
+        Me.Label4.TabIndex = 37
+        Me.Label4.Text = "Présent"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(62, 52)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(49, 16)
+        Me.Label3.TabIndex = 36
+        Me.Label3.Text = "Absent"
         '
         'btnAbs
         '
-        Me.btnAbs.Location = New System.Drawing.Point(175, 65)
+        Me.btnAbs.Location = New System.Drawing.Point(156, 52)
+        Me.btnAbs.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnAbs.Name = "btnAbs"
-        Me.btnAbs.Size = New System.Drawing.Size(35, 24)
+        Me.btnAbs.Size = New System.Drawing.Size(31, 19)
         Me.btnAbs.TabIndex = 35
         Me.btnAbs.UseVisualStyleBackColor = True
         '
         'btnPresent
         '
-        Me.btnPresent.Location = New System.Drawing.Point(175, 95)
+        Me.btnPresent.Location = New System.Drawing.Point(156, 76)
+        Me.btnPresent.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnPresent.Name = "btnPresent"
-        Me.btnPresent.Size = New System.Drawing.Size(35, 26)
+        Me.btnPresent.Size = New System.Drawing.Size(31, 21)
         Me.btnPresent.TabIndex = 34
         Me.btnPresent.UseVisualStyleBackColor = True
         '
         'btnPrePla
         '
-        Me.btnPrePla.Location = New System.Drawing.Point(175, 139)
+        Me.btnPrePla.Location = New System.Drawing.Point(156, 111)
+        Me.btnPrePla.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnPrePla.Name = "btnPrePla"
-        Me.btnPrePla.Size = New System.Drawing.Size(35, 24)
+        Me.btnPrePla.Size = New System.Drawing.Size(31, 19)
         Me.btnPrePla.TabIndex = 33
         Me.btnPrePla.UseVisualStyleBackColor = True
         '
@@ -119,20 +151,20 @@ Partial Class Settings
         Me.lblColorResult.BackColor = System.Drawing.Color.Transparent
         Me.lblColorResult.Font = New System.Drawing.Font("Arial Rounded MT Bold", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblColorResult.ForeColor = System.Drawing.Color.Black
-        Me.lblColorResult.Location = New System.Drawing.Point(12, 20)
-        Me.lblColorResult.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
+        Me.lblColorResult.Location = New System.Drawing.Point(11, 16)
+        Me.lblColorResult.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.lblColorResult.Name = "lblColorResult"
-        Me.lblColorResult.Size = New System.Drawing.Size(227, 20)
+        Me.lblColorResult.Size = New System.Drawing.Size(185, 16)
         Me.lblColorResult.TabIndex = 32
         Me.lblColorResult.Text = "Couleur de la combinaison"
         Me.lblColorResult.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'TextBoxAbsent
         '
-        Me.TextBoxAbsent.Location = New System.Drawing.Point(254, 100)
-        Me.TextBoxAbsent.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
+        Me.TextBoxAbsent.Location = New System.Drawing.Point(226, 80)
+        Me.TextBoxAbsent.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.TextBoxAbsent.Name = "TextBoxAbsent"
-        Me.TextBoxAbsent.Size = New System.Drawing.Size(34, 26)
+        Me.TextBoxAbsent.Size = New System.Drawing.Size(31, 22)
         Me.TextBoxAbsent.TabIndex = 20
         '
         'PnlTemps
@@ -141,19 +173,19 @@ Partial Class Settings
         Me.PnlTemps.Controls.Add(Me.CheckBoxTime)
         Me.PnlTemps.Controls.Add(Me.PanelTime)
         Me.PnlTemps.Controls.Add(Me.lblLimiteTime)
-        Me.PnlTemps.Location = New System.Drawing.Point(15, 11)
-        Me.PnlTemps.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
+        Me.PnlTemps.Location = New System.Drawing.Point(13, 9)
+        Me.PnlTemps.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.PnlTemps.Name = "PnlTemps"
-        Me.PnlTemps.Size = New System.Drawing.Size(399, 203)
+        Me.PnlTemps.Size = New System.Drawing.Size(355, 162)
         Me.PnlTemps.TabIndex = 24
         '
         'CheckBoxTime
         '
         Me.CheckBoxTime.AutoSize = True
-        Me.CheckBoxTime.Location = New System.Drawing.Point(174, 57)
-        Me.CheckBoxTime.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBoxTime.Location = New System.Drawing.Point(155, 46)
+        Me.CheckBoxTime.Margin = New System.Windows.Forms.Padding(4)
         Me.CheckBoxTime.Name = "CheckBoxTime"
-        Me.CheckBoxTime.Size = New System.Drawing.Size(22, 21)
+        Me.CheckBoxTime.Size = New System.Drawing.Size(18, 17)
         Me.CheckBoxTime.TabIndex = 10
         Me.CheckBoxTime.UseVisualStyleBackColor = True
         '
@@ -162,10 +194,10 @@ Partial Class Settings
         Me.PanelTime.Controls.Add(Me.label_seconde)
         Me.PanelTime.Controls.Add(Me.txtbox_temps)
         Me.PanelTime.Controls.Add(Me.label_timer)
-        Me.PanelTime.Location = New System.Drawing.Point(15, 140)
-        Me.PanelTime.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.PanelTime.Location = New System.Drawing.Point(13, 112)
+        Me.PanelTime.Margin = New System.Windows.Forms.Padding(4)
         Me.PanelTime.Name = "PanelTime"
-        Me.PanelTime.Size = New System.Drawing.Size(357, 46)
+        Me.PanelTime.Size = New System.Drawing.Size(317, 37)
         Me.PanelTime.TabIndex = 9
         Me.PanelTime.Visible = False
         '
@@ -173,19 +205,19 @@ Partial Class Settings
         '
         Me.label_seconde.AutoSize = True
         Me.label_seconde.ForeColor = System.Drawing.Color.Black
-        Me.label_seconde.Location = New System.Drawing.Point(258, 18)
-        Me.label_seconde.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
+        Me.label_seconde.Location = New System.Drawing.Point(229, 14)
+        Me.label_seconde.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.label_seconde.Name = "label_seconde"
-        Me.label_seconde.Size = New System.Drawing.Size(88, 20)
+        Me.label_seconde.Size = New System.Drawing.Size(75, 16)
         Me.label_seconde.TabIndex = 5
         Me.label_seconde.Text = "seconde(s)"
         '
         'txtbox_temps
         '
-        Me.txtbox_temps.Location = New System.Drawing.Point(111, 11)
-        Me.txtbox_temps.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
+        Me.txtbox_temps.Location = New System.Drawing.Point(99, 9)
+        Me.txtbox_temps.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.txtbox_temps.Name = "txtbox_temps"
-        Me.txtbox_temps.Size = New System.Drawing.Size(134, 26)
+        Me.txtbox_temps.Size = New System.Drawing.Size(120, 22)
         Me.txtbox_temps.TabIndex = 4
         '
         'label_timer
@@ -193,10 +225,10 @@ Partial Class Settings
         Me.label_timer.AutoSize = True
         Me.label_timer.Font = New System.Drawing.Font("Arial Rounded MT Bold", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.label_timer.ForeColor = System.Drawing.Color.Black
-        Me.label_timer.Location = New System.Drawing.Point(18, 18)
-        Me.label_timer.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
+        Me.label_timer.Location = New System.Drawing.Point(16, 14)
+        Me.label_timer.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.label_timer.Name = "label_timer"
-        Me.label_timer.Size = New System.Drawing.Size(66, 20)
+        Me.label_timer.Size = New System.Drawing.Size(54, 16)
         Me.label_timer.TabIndex = 3
         Me.label_timer.Text = "Timer :"
         '
@@ -205,10 +237,10 @@ Partial Class Settings
         Me.lblLimiteTime.AutoSize = True
         Me.lblLimiteTime.Font = New System.Drawing.Font("Arial Rounded MT Bold", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblLimiteTime.ForeColor = System.Drawing.Color.Black
-        Me.lblLimiteTime.Location = New System.Drawing.Point(4, 57)
-        Me.lblLimiteTime.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
+        Me.lblLimiteTime.Location = New System.Drawing.Point(4, 46)
+        Me.lblLimiteTime.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.lblLimiteTime.Name = "lblLimiteTime"
-        Me.lblLimiteTime.Size = New System.Drawing.Size(140, 20)
+        Me.lblLimiteTime.Size = New System.Drawing.Size(115, 16)
         Me.lblLimiteTime.TabIndex = 0
         Me.lblLimiteTime.Text = "Limite de temps"
         '
@@ -218,10 +250,10 @@ Partial Class Settings
         Me.button_points.Cursor = System.Windows.Forms.Cursors.Hand
         Me.button_points.Font = New System.Drawing.Font("Arial Rounded MT Bold", 8.25!)
         Me.button_points.ForeColor = System.Drawing.Color.Black
-        Me.button_points.Location = New System.Drawing.Point(320, 63)
-        Me.button_points.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
+        Me.button_points.Location = New System.Drawing.Point(284, 50)
+        Me.button_points.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.button_points.Name = "button_points"
-        Me.button_points.Size = New System.Drawing.Size(54, 40)
+        Me.button_points.Size = New System.Drawing.Size(48, 32)
         Me.button_points.TabIndex = 26
         Me.button_points.Text = "..."
         Me.button_points.UseVisualStyleBackColor = False
@@ -232,10 +264,10 @@ Partial Class Settings
         Me.Panel4.Controls.Add(Me.button_points)
         Me.Panel4.Controls.Add(Me.lblSauvegarde)
         Me.Panel4.Controls.Add(Me.cboChemin)
-        Me.Panel4.Location = New System.Drawing.Point(15, 263)
-        Me.Panel4.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
+        Me.Panel4.Location = New System.Drawing.Point(13, 210)
+        Me.Panel4.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(399, 131)
+        Me.Panel4.Size = New System.Drawing.Size(355, 105)
         Me.Panel4.TabIndex = 25
         '
         'lblSauvegarde
@@ -244,28 +276,29 @@ Partial Class Settings
         Me.lblSauvegarde.BackColor = System.Drawing.Color.Transparent
         Me.lblSauvegarde.Font = New System.Drawing.Font("Arial Rounded MT Bold", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblSauvegarde.ForeColor = System.Drawing.Color.Black
-        Me.lblSauvegarde.Location = New System.Drawing.Point(99, 29)
-        Me.lblSauvegarde.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
+        Me.lblSauvegarde.Location = New System.Drawing.Point(88, 23)
+        Me.lblSauvegarde.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.lblSauvegarde.Name = "lblSauvegarde"
-        Me.lblSauvegarde.Size = New System.Drawing.Size(198, 20)
+        Me.lblSauvegarde.Size = New System.Drawing.Size(162, 16)
         Me.lblSauvegarde.TabIndex = 8
         Me.lblSauvegarde.Text = "Chemin de sauvegarde"
         '
         'cboChemin
         '
         Me.cboChemin.FormattingEnabled = True
-        Me.cboChemin.Location = New System.Drawing.Point(36, 69)
-        Me.cboChemin.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
+        Me.cboChemin.Location = New System.Drawing.Point(32, 55)
+        Me.cboChemin.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.cboChemin.Name = "cboChemin"
-        Me.cboChemin.Size = New System.Drawing.Size(274, 28)
+        Me.cboChemin.Size = New System.Drawing.Size(244, 24)
         Me.cboChemin.TabIndex = 13
         '
         'txtCar
         '
         Me.txtCar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCar.Location = New System.Drawing.Point(84, 60)
+        Me.txtCar.Location = New System.Drawing.Point(75, 48)
+        Me.txtCar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtCar.Name = "txtCar"
-        Me.txtCar.Size = New System.Drawing.Size(37, 35)
+        Me.txtCar.Size = New System.Drawing.Size(33, 30)
         Me.txtCar.TabIndex = 30
         Me.txtCar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -273,9 +306,9 @@ Partial Class Settings
         '
         Me.lblResultChar.AutoSize = True
         Me.lblResultChar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblResultChar.Location = New System.Drawing.Point(66, 118)
+        Me.lblResultChar.Location = New System.Drawing.Point(59, 94)
         Me.lblResultChar.Name = "lblResultChar"
-        Me.lblResultChar.Size = New System.Drawing.Size(0, 22)
+        Me.lblResultChar.Size = New System.Drawing.Size(0, 18)
         Me.lblResultChar.TabIndex = 31
         '
         'Panel1
@@ -283,9 +316,10 @@ Partial Class Settings
         Me.Panel1.Controls.Add(Me.lblChoixCaractere)
         Me.Panel1.Controls.Add(Me.txtCar)
         Me.Panel1.Controls.Add(Me.lblResultChar)
-        Me.Panel1.Location = New System.Drawing.Point(612, 263)
+        Me.Panel1.Location = New System.Drawing.Point(544, 210)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(250, 142)
+        Me.Panel1.Size = New System.Drawing.Size(222, 114)
         Me.Panel1.TabIndex = 32
         '
         'lblChoixCaractere
@@ -294,21 +328,22 @@ Partial Class Settings
         Me.lblChoixCaractere.BackColor = System.Drawing.Color.Transparent
         Me.lblChoixCaractere.Font = New System.Drawing.Font("Arial Rounded MT Bold", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblChoixCaractere.ForeColor = System.Drawing.Color.Black
-        Me.lblChoixCaractere.Location = New System.Drawing.Point(24, 17)
-        Me.lblChoixCaractere.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
+        Me.lblChoixCaractere.Location = New System.Drawing.Point(21, 14)
+        Me.lblChoixCaractere.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.lblChoixCaractere.Name = "lblChoixCaractere"
-        Me.lblChoixCaractere.Size = New System.Drawing.Size(183, 20)
+        Me.lblChoixCaractere.Size = New System.Drawing.Size(150, 16)
         Me.lblChoixCaractere.TabIndex = 27
         Me.lblChoixCaractere.Text = "Choix des caractères"
         Me.lblChoixCaractere.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'NumUpDownEssaie
         '
-        Me.NumUpDownEssaie.Location = New System.Drawing.Point(28, 54)
+        Me.NumUpDownEssaie.Location = New System.Drawing.Point(25, 43)
+        Me.NumUpDownEssaie.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.NumUpDownEssaie.Maximum = New Decimal(New Integer() {20, 0, 0, 0})
         Me.NumUpDownEssaie.Minimum = New Decimal(New Integer() {9, 0, 0, 0})
         Me.NumUpDownEssaie.Name = "NumUpDownEssaie"
-        Me.NumUpDownEssaie.Size = New System.Drawing.Size(57, 26)
+        Me.NumUpDownEssaie.Size = New System.Drawing.Size(51, 22)
         Me.NumUpDownEssaie.TabIndex = 33
         Me.NumUpDownEssaie.Value = New Decimal(New Integer() {15, 0, 0, 0})
         '
@@ -317,9 +352,10 @@ Partial Class Settings
         Me.Panel2.Controls.Add(Me.Label1)
         Me.Panel2.Controls.Add(Me.NumUpDownEssaie)
         Me.Panel2.Controls.Add(Me.Label2)
-        Me.Panel2.Location = New System.Drawing.Point(15, 417)
+        Me.Panel2.Location = New System.Drawing.Point(13, 334)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(357, 97)
+        Me.Panel2.Size = New System.Drawing.Size(317, 78)
         Me.Panel2.TabIndex = 33
         '
         'Label1
@@ -328,10 +364,10 @@ Partial Class Settings
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Arial Rounded MT Bold", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.Black
-        Me.Label1.Location = New System.Drawing.Point(24, 17)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
+        Me.Label1.Location = New System.Drawing.Point(21, 14)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(326, 20)
+        Me.Label1.Size = New System.Drawing.Size(269, 16)
         Me.Label1.TabIndex = 27
         Me.Label1.Text = "Limite de proposition pour l'adversaire"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -339,43 +375,16 @@ Partial Class Settings
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(84, 117)
+        Me.Label2.Location = New System.Drawing.Point(75, 94)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(0, 20)
+        Me.Label2.Size = New System.Drawing.Size(0, 16)
         Me.Label2.TabIndex = 31
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(70, 65)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(60, 20)
-        Me.Label3.TabIndex = 36
-        Me.Label3.Text = "Absent"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(70, 98)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(64, 20)
-        Me.Label4.TabIndex = 37
-        Me.Label4.Text = "Présent"
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(70, 128)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(86, 40)
-        Me.Label5.TabIndex = 38
-        Me.Label5.Text = "Présent et " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Bien Placé"
         '
         'Settings
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(902, 563)
+        Me.ClientSize = New System.Drawing.Size(802, 450)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Panel4)
@@ -383,6 +392,7 @@ Partial Class Settings
         Me.Controls.Add(Me.PnlColorChoice)
         Me.Controls.Add(Me.btnEnregistrer)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "Settings"
         Me.Text = "Settings"
         Me.PnlColorChoice.ResumeLayout(False)

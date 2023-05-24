@@ -199,6 +199,7 @@ Partial Class Jeu
         '
         'RTBTenta
         '
+        Me.RTBTenta.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.RTBTenta.Location = New System.Drawing.Point(75, 201)
         Me.RTBTenta.Margin = New System.Windows.Forms.Padding(4)
         Me.RTBTenta.Name = "RTBTenta"
