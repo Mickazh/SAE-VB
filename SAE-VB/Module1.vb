@@ -8,17 +8,12 @@ Module Module1
     ''' c est le caractère le réprésentant 
     ''' status est un entier réprésentant son status : 0->absent, 1->présent, 2->présent et bien placé
     ''' </summary>
-    Public Structure Joueur
-        Dim nom As String
-        Dim score, PB, NBJ1, NBJ2, TotalTemps As Integer 'pas sur que TotalTemps devrait être un entier
-    End Structure
 
     Public joueurs As String()
     Public scors As Integer()
     Public Sub Jouer()
         joueurs = New String(1) {}
         scors = New Integer(1) {}
-        caracteresJouable = New Caractere(4) {}
 
         'Lecture des joueurs
         Dim filePathJoueurs As String = "../../Joueurs.csv"

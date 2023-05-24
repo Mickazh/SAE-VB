@@ -13,7 +13,6 @@ C:\Users\micow\OneDrive\Documents\Cours\BUT1\S2\R2_02_IHM\SAE-BD\SAE-VB\obj\Debu
 C:\Users\micow\OneDrive\Documents\Cours\BUT1\S2\R2_02_IHM\SAE-BD\SAE-VB\obj\Debug\SAE-VB.vbproj.SuggestedBindingRedirects.cache
 C:\Users\micow\OneDrive\Documents\Cours\BUT1\S2\R2_02_IHM\SAE-BD\SAE-VB\obj\Debug\SAE_VB.FormAccueil.resources
 C:\Users\micow\OneDrive\Documents\Cours\BUT1\S2\R2_02_IHM\SAE-BD\SAE-VB\obj\Debug\SAE_VB.combin.resources
-C:\Users\micow\OneDrive\Documents\Cours\BUT1\S2\R2_02_IHM\SAE-BD\SAE-VB\obj\Debug\SAE_VB.Form3.resources
 C:\Users\micow\OneDrive\Documents\Cours\BUT1\S2\R2_02_IHM\SAE-BD\SAE-VB\obj\Debug\SAE_VB.Resources.resources
 C:\Users\micow\OneDrive\Documents\Cours\BUT1\S2\R2_02_IHM\SAE-BD\SAE-VB\obj\Debug\SAE-VB.vbproj.GenerateResource.cache
 C:\Users\micow\OneDrive\Documents\Cours\BUT1\S2\R2_02_IHM\SAE-BD\SAE-VB\obj\Debug\SAE-VB.vbproj.CoreCompileInputs.cache
@@ -85,3 +84,14 @@ C:\Users\yohan\Desktop\Mastermind\SAE-VB\SAE-VB\obj\Debug\SAE-VB.pdb
 C:\Users\MSI\Documents\OneDrive - Université de Paris\Cours\S2\Période D\IHM\SAE-VB\SAE-VB\bin\Debug\Newtonsoft.Json.dll
 C:\Users\MSI\Documents\OneDrive - Université de Paris\Cours\S2\Période D\IHM\SAE-VB\SAE-VB\bin\Debug\Newtonsoft.Json.xml
 C:\Users\MSI\Documents\OneDrive - Université de Paris\Cours\S2\Période D\IHM\SAE-VB\SAE-VB\obj\Debug\SAE-VB.vbproj.CopyComplete
+C:\Users\vidav\Source\Repos\Mickazh\SAE-VB\SAE-VB\bin\Debug\Newtonsoft.Json.dll
+C:\Users\vidav\Source\Repos\Mickazh\SAE-VB\SAE-VB\bin\Debug\Newtonsoft.Json.xml
+C:\Users\vidav\Source\Repos\Mickazh\SAE-VB\SAE-VB\obj\Debug\SAE_VB.Score.resources
+C:\Users\vidav\Source\Repos\Mickazh\SAE-VB\SAE-VB\obj\Debug\SAE-VB.vbproj.CopyComplete
+C:\Users\MSI\Documents\OneDrive - Université de Paris\Cours\S2\Période D\IHM\SAE-VB\SAE-VB\obj\Debug\SAE_VB.Score.resources
+C:\Users\micow\OneDrive\Documents\Cours\BUT1\S2\R2_02_IHM\SAE-BD\SAE-VB\obj\Debug\SAE_VB.Jeu.resources
+C:\Users\micow\OneDrive\Documents\Cours\BUT1\S2\R2_02_IHM\SAE-BD\SAE-VB\obj\Debug\SAE_VB.Score.resources
+C:\Users\micow\OneDrive\Documents\Cours\BUT1\S2\R2_02_IHM\SAE-BD\SAE-VB\obj\Debug\SAE_VB.Settings.resources
+C:\Users\micow\OneDrive\Documents\Cours\BUT1\S2\R2_02_IHM\SAE-BD\SAE-VB\bin\Debug\Newtonsoft.Json.dll
+C:\Users\micow\OneDrive\Documents\Cours\BUT1\S2\R2_02_IHM\SAE-BD\SAE-VB\bin\Debug\Newtonsoft.Json.xml
+C:\Users\micow\OneDrive\Documents\Cours\BUT1\S2\R2_02_IHM\SAE-BD\SAE-VB\obj\Debug\SAE-VB.vbproj.CopyComplete
