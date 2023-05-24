@@ -3,11 +3,18 @@ Imports System.Threading
 Imports System.Windows.Forms.VisualStyles.VisualStyleElement.Status
 
 Public Class Jeu
+    Private indexCacheur, indexChercheur As Integer
+    Private totalTempsPasse As Integer = 0
     Private tentatives As Caractere()()
     Private nbTentatives As Integer = 0
     Private correct As Boolean = True
 
     Private Sub Form3_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Timer.Start()
+        indexCacheur = FormAccueil.getIndexJ1
+        indexChercheur = FormAccueil.getIndexJ2
+        ModuleJoueur.incNbJ1(indexCacheur)
+        ModuleJoueur.incNbJ2(indexChercheur)
         Me.Size = New Size(450, 630)
         Me.Text = $"Il vous reste {getnbEssaie()} coup(s)..."
         tentatives = New Caractere(0)() {}
@@ -53,10 +60,6 @@ Public Class Jeu
     End Sub
 
     Private Sub BtnBye_Click(sender As Object, e As EventArgs) Handles BtnBye.Click
-        FormAccueil.cboJoueur1.Text = "j2"
-        FormAccueil.cboJoueur2.Text = "j1"
-        FormAccueil.Show()
-        combin.Close()
         Me.Close()
     End Sub
 
@@ -64,12 +67,16 @@ Public Class Jeu
         'peut être un peu brutale car j'empeche la fermeture du fichier
         If Not correct Then
             e.Cancel = True
+            Exit Sub
         End If
-        'FormAccueil.cboJoueur1.Text = "j2"
-        'FormAccueil.cboJoueur2.Text = "j1"
+        ModuleJoueur.addTime(indexCacheur, totalTempsPasse)
+        ModuleJoueur.addTime(indexChercheur, totalTempsPasse)
+        ModuleJoueur.enregistrerJoueur(getJoueur(indexCacheur))
+        ModuleJoueur.enregistrerJoueur(getJoueur(indexChercheur))
     End Sub
 
     Private Sub Timer_Tick(sender As Object, e As EventArgs) Handles Timer.Tick
+        totalTempsPasse += 1
         Timer_count -= Timer.Interval
         lblTemps.Text = CStr(Timer_count / Timer.Interval)
         If Timer_count = 0 Then
@@ -80,8 +87,8 @@ Public Class Jeu
 
     Private Sub Jeu_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
         'peut être un peu brutale car j'empeche la fermeture du fichier
-        FormAccueil.cboJoueur1.Text = "j2"
-        FormAccueil.cboJoueur2.Text = "j1"
+        combin.Close()
+        FormAccueil.echangeJoueur()
         FormAccueil.Show()
     End Sub
 
@@ -96,10 +103,7 @@ Public Class Jeu
         If Not valide Then
             Exit Sub
         End If
-        If getnbEssaie() = nbTentatives Then
-            EndGame()
-            Exit Sub
-        End If
+
         Dim correct = True
         Dim caract As Caractere
         tentatives(nbTentatives) = New Caractere(4) {}
@@ -138,13 +142,20 @@ Public Class Jeu
         RTBTenta.AppendText(vbCrLf)
 
         If correct Then
-            btnEssaie.Enabled = False
-            MsgBox("bravo")
-            BtnBye.Visible = True
+            Timer.Stop()
+            MsgBox($"Bravo {FormAccueil.getNameJ1}, vous avez trouvé, vous gagnez donc un point")
+            incScore(indexChercheur)
+            editPB(indexChercheur, totalTempsPasse)
+            fin()
+            Exit Sub
         End If
 
         nbTentatives += 1
         Me.Text = $"Il vous reste {getnbEssaie() - nbTentatives} coup(s)..."
+        If getnbEssaie() = nbTentatives Then
+            EndGame()
+            Exit Sub
+        End If
         'For i As Integer = 0 To tentatives.Length - 1
         '    Dim s = ""
         '    For j As Integer = 0 To tentatives(i).Length - 1
@@ -153,8 +164,14 @@ Public Class Jeu
         'Next
         ReDim Preserve tentatives(nbTentatives)
     End Sub
-    Public Sub EndGame()
-        MsgBox("Dommage, vous n'avez pas trouvé ! ")
+    Private Sub EndGame()
+        incScore(indexCacheur)
+        MsgBox($"Dommage {FormAccueil.getNameJ1}, vous n'avez pas trouvé !
+{FormAccueil.getNameJ2} gagne donc un point")
+        fin()
+    End Sub
+
+    Private Sub fin()
         btnEssaie.Enabled = False
         BtnBye.Visible = True
     End Sub

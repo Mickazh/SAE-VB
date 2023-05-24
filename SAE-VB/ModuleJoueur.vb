@@ -6,7 +6,7 @@ Module ModuleJoueur
     Private joueursPath = "../../joueurs"
 
 
-    Private joueurs As Joueur() = New Joueur(0) {}
+    Private joueurs As Joueur() = New Joueur() {}
 
     Sub lectureJoueurs()
         'MsgBox(New FileInfo(joueursPath).Length)
@@ -86,5 +86,31 @@ Module ModuleJoueur
 
     Public Function getJoueurs() As Joueur()
         Return joueurs
+    End Function
+
+    Public Sub incScore(i As Integer)
+        joueurs(i).score += 1
+    End Sub
+
+    Public Sub addTime(i As Integer, time As Integer)
+        'MsgBox(time)
+        joueurs(i).TotalTemps += time
+    End Sub
+
+    Public Sub incNbJ1(i As Integer)
+        joueurs(i).NBJ1 += 1
+    End Sub
+    Public Sub incNbJ2(i As Integer)
+        joueurs(i).NBJ2 += 1
+    End Sub
+
+    Public Sub editPB(i As Integer, time As Integer)
+        If joueurs(i).PB > time Then
+            joueurs(i).PB = time
+        End If
+    End Sub
+
+    Public Function getTime(i As Integer) As Integer
+        Return joueurs(i).TotalTemps
     End Function
 End Module

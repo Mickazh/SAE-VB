@@ -103,22 +103,22 @@ Partial Class FormAccueil
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(187, 114)
+        Me.Label1.Location = New System.Drawing.Point(184, 114)
         Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(48, 13)
+        Me.Label1.Size = New System.Drawing.Size(47, 13)
         Me.Label1.TabIndex = 6
-        Me.Label1.Text = "Joueur 1"
+        Me.Label1.Text = "Cacheur"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(368, 114)
+        Me.Label2.Location = New System.Drawing.Point(356, 114)
         Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(48, 13)
+        Me.Label2.Size = New System.Drawing.Size(56, 13)
         Me.Label2.TabIndex = 7
-        Me.Label2.Text = "Joueur 2"
+        Me.Label2.Text = "Chercheur"
         '
         'PnlJoueurs
         '
