@@ -1,4 +1,5 @@
-﻿Imports System.IO
+﻿Imports System.ComponentModel
+Imports System.IO
 Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 Imports System.Windows.Forms.VisualStyles.VisualStyleElement.ToolBar
 Imports System.Xml
@@ -9,12 +10,13 @@ Public Class Settings
     Public typeActuel As String = ""
 
     Private Sub btnEnregistrer_Click(sender As Object, e As EventArgs) Handles btnEnregistrer.Click
-        limiteTemps = CheckBoxTime.Checked
-        tempsPourJouer = CInt(txtbox_temps.Text)
-        path = cboChemin.Text
-        nbPropostions = NumUpDownEssaie.Value
-        couleurPresent = btnPresent.BackColor
-        couleurPresentBienPlacé = btnPrePla.BackColor
+        setnbEssaie(NumUpDownEssaie.Value)
+        setLimiteTemps(CheckBoxTime.Checked)
+        setTempsPourJouer(txtbox_temps.Text)
+        setChemin(cboChemin.Text)
+        setcouleurAbsent(btnAbs.BackColor)
+        setcouleurPresent(btnPresent.BackColor)
+        setcouleurPBP(btnPrePla.BackColor)
         EnregistrerParam()
         FormAccueil.Show()
         Me.Close()
@@ -32,16 +34,17 @@ Public Class Settings
     End Sub
 
     Private Sub Settings_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        NumUpDownEssaie.Value = nbPropostions
-        txtbox_temps.Text = tempsPourJouer
-        If limiteTemps Then
+        NumUpDownEssaie.Value = getnbEssaie()
+        txtbox_temps.Text = getTempsPourJouer()
+        If getLimiteTemps() Then
             CheckBoxTime.Checked = True
         Else
             CheckBoxTime.Checked = False
         End If
-        cboChemin.Text = path
-        btnPresent.BackColor = couleurPresent
-        btnPrePla.BackColor = couleurPresentBienPlacé
+        cboChemin.Text = getChemin()
+        btnAbs.BackColor = getcouleurAbsent()
+        btnPresent.BackColor = getcouleurPresent()
+        btnPrePla.BackColor = getcouleurPBP()
         ToolTipChar.SetToolTip(txtCar, "Appuyer sur Entrée pour valider le caractère choisi")
     End Sub
 
@@ -56,7 +59,7 @@ Public Class Settings
         If e.KeyCode = Keys.Enter Then
             Dim character As Char = txtCar.Text.Trim()
 
-            ' Vérifier si le caractère est vide ou s'il est déjà dans le HashSet
+            ' Vérifie si le caractère est vide ou s'il est déjà dans le HashSet
             If String.IsNullOrEmpty(character) OrElse charactersSet.Contains(character) Then
                 MessageBox.Show("Veuillez entrer un caractère différent.")
                 Return
@@ -73,7 +76,7 @@ Public Class Settings
 
             ' Efface le contenu de la TextBox
             txtCar.Clear()
-            CharJouable = String.Join("", charactersSet)
+            setCharJouable(String.Join("", charactersSet))
             lblResultChar.Text = String.Join(" ", charactersSet)
         End If
     End Sub
@@ -105,6 +108,16 @@ Public Class Settings
         PanelTime.Visible = Not PanelTime.Visible
     End Sub
 
+    'Private Function IsColorTooClose(color As Color) As Boolean
+    '    For Each buttonColor As Color In buttonColors
+    '        ' Vérifie si la distance entre la couleur sélectionnée et une couleur existante est inférieure à un seuil
+    '        If CalculateColorDistance(color, buttonColor) < 100 Then
+    '            Return True ' Couleurs trop proches
+    '        End If
+    '    Next
+
+    '    Return False ' Couleurs suffisamment différentes
+    'End Function
     Private Sub btnAbs_Click(sender As Object, e As EventArgs) Handles btnAbs.Click, btnPresent.Click, btnPrePla.Click
         Dim colorDialog As New ColorDialog()
 
@@ -115,4 +128,13 @@ Public Class Settings
             sender.BackColor = selectedColor
         End If
     End Sub
+
+    'Private Sub Settings_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
+    '    Dim res As Boolean = MsgBox("Etes-vous sûr de vouloir quitter les paramètres" & vbCrLf & "Les paramètres ne seront pas sauvegardés ", vbYesNo)
+    '    If res = vbYes Then
+
+
+    '    End If
+
+    'End Sub
 End Class

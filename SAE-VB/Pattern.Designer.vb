@@ -40,9 +40,9 @@ Partial Class combin
         Me.lblTitre.AutoSize = True
         Me.lblTitre.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTitre.ForeColor = System.Drawing.Color.Red
-        Me.lblTitre.Location = New System.Drawing.Point(324, 37)
+        Me.lblTitre.Location = New System.Drawing.Point(364, 46)
         Me.lblTitre.Name = "lblTitre"
-        Me.lblTitre.Size = New System.Drawing.Size(113, 20)
+        Me.lblTitre.Size = New System.Drawing.Size(131, 25)
         Me.lblTitre.TabIndex = 0
         Me.lblTitre.Text = "Master Mind"
         '
@@ -50,59 +50,64 @@ Partial Class combin
         '
         Me.lblCaractères.AutoSize = True
         Me.lblCaractères.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblCaractères.Location = New System.Drawing.Point(595, 170)
+        Me.lblCaractères.Location = New System.Drawing.Point(669, 212)
         Me.lblCaractères.Name = "lblCaractères"
-        Me.lblCaractères.Size = New System.Drawing.Size(178, 20)
+        Me.lblCaractères.Size = New System.Drawing.Size(205, 25)
         Me.lblCaractères.TabIndex = 1
         Me.lblCaractères.Text = "Caractères jouables"
         '
         'txt1
         '
-        Me.txt1.Location = New System.Drawing.Point(23, 10)
+        Me.txt1.Location = New System.Drawing.Point(26, 12)
         Me.txt1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txt1.Name = "txt1"
-        Me.txt1.Size = New System.Drawing.Size(79, 22)
+        Me.txt1.Size = New System.Drawing.Size(88, 26)
         Me.txt1.TabIndex = 2
+        Me.txt1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txt2
         '
-        Me.txt2.Location = New System.Drawing.Point(107, 10)
+        Me.txt2.Location = New System.Drawing.Point(120, 12)
         Me.txt2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txt2.Name = "txt2"
-        Me.txt2.Size = New System.Drawing.Size(79, 22)
+        Me.txt2.Size = New System.Drawing.Size(88, 26)
         Me.txt2.TabIndex = 7
+        Me.txt2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txt3
         '
-        Me.txt3.Location = New System.Drawing.Point(191, 10)
+        Me.txt3.Location = New System.Drawing.Point(215, 12)
         Me.txt3.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txt3.Name = "txt3"
-        Me.txt3.Size = New System.Drawing.Size(79, 22)
+        Me.txt3.Size = New System.Drawing.Size(88, 26)
         Me.txt3.TabIndex = 8
+        Me.txt3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txt4
         '
-        Me.txt4.Location = New System.Drawing.Point(275, 10)
+        Me.txt4.Location = New System.Drawing.Point(309, 12)
         Me.txt4.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txt4.Name = "txt4"
-        Me.txt4.Size = New System.Drawing.Size(79, 22)
+        Me.txt4.Size = New System.Drawing.Size(88, 26)
         Me.txt4.TabIndex = 9
+        Me.txt4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txt5
         '
-        Me.txt5.Location = New System.Drawing.Point(359, 10)
+        Me.txt5.Location = New System.Drawing.Point(404, 12)
         Me.txt5.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txt5.Name = "txt5"
-        Me.txt5.Size = New System.Drawing.Size(79, 22)
+        Me.txt5.Size = New System.Drawing.Size(88, 26)
         Me.txt5.TabIndex = 10
+        Me.txt5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'btnCacher
         '
         Me.btnCacher.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnCacher.Location = New System.Drawing.Point(680, 102)
+        Me.btnCacher.Location = New System.Drawing.Point(765, 128)
         Me.btnCacher.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnCacher.Name = "btnCacher"
-        Me.btnCacher.Size = New System.Drawing.Size(75, 23)
+        Me.btnCacher.Size = New System.Drawing.Size(84, 29)
         Me.btnCacher.TabIndex = 11
         Me.btnCacher.Text = "Hide"
         Me.btnCacher.UseVisualStyleBackColor = True
@@ -110,10 +115,10 @@ Partial Class combin
         'LblCharJouable
         '
         Me.LblCharJouable.AutoSize = True
-        Me.LblCharJouable.Location = New System.Drawing.Point(595, 203)
+        Me.LblCharJouable.Location = New System.Drawing.Point(669, 254)
         Me.LblCharJouable.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.LblCharJouable.Name = "LblCharJouable"
-        Me.LblCharJouable.Size = New System.Drawing.Size(0, 16)
+        Me.LblCharJouable.Size = New System.Drawing.Size(0, 20)
         Me.LblCharJouable.TabIndex = 12
         '
         'PnlChar
@@ -123,19 +128,19 @@ Partial Class combin
         Me.PnlChar.Controls.Add(Me.txt3)
         Me.PnlChar.Controls.Add(Me.txt2)
         Me.PnlChar.Controls.Add(Me.txt1)
-        Me.PnlChar.Location = New System.Drawing.Point(137, 94)
-        Me.PnlChar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PnlChar.Location = New System.Drawing.Point(154, 118)
+        Me.PnlChar.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.PnlChar.Name = "PnlChar"
-        Me.PnlChar.Size = New System.Drawing.Size(456, 48)
+        Me.PnlChar.Size = New System.Drawing.Size(513, 60)
         Me.PnlChar.TabIndex = 13
         '
         'combin
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.AppWorkspace
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(811, 245)
+        Me.ClientSize = New System.Drawing.Size(912, 306)
         Me.Controls.Add(Me.PnlChar)
         Me.Controls.Add(Me.LblCharJouable)
         Me.Controls.Add(Me.btnCacher)
