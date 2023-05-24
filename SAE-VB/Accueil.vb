@@ -50,14 +50,12 @@ Public Class FormAccueil
         indexJ2 = ModuleJoueur.getIndexJoueurByName(cboJoueur2.Text)
 
         If indexJ1 = -1 Then
-            Dim j = New Joueur
-            j.nom = cboJoueur1.Text
+            Dim j = New Joueur With {.nom = cboJoueur1.Text, .score = 0, .NBJ1 = 0, .NBJ2 = 0, .PB = Integer.MaxValue, .TotalTemps = 0}
             indexJ1 = ModuleJoueur.enregistrerNouveauJoueur(j)
         End If
         'pas très propre
         If indexJ2 = -1 Then
-            Dim j = New Joueur
-            j.nom = cboJoueur2.Text
+            Dim j = New Joueur With {.nom = cboJoueur2.Text, .score = 0, .NBJ1 = 0, .NBJ2 = 0, .PB = Integer.MaxValue, .TotalTemps = 0}
             indexJ2 = ModuleJoueur.enregistrerNouveauJoueur(j)
         End If
 
@@ -81,4 +79,32 @@ Public Class FormAccueil
     Private Sub cboJoueur_GotFocus(sender As Object, e As EventArgs) Handles cboJoueur1.GotFocus, cboJoueur2.GotFocus
         sender.backColor = Color.White
     End Sub
+
+    Public Sub echangeJoueur()
+        cboJoueur1.Text = Trim(ModuleJoueur.getJoueur(indexJ2).nom)
+        cboJoueur2.Text = Trim(ModuleJoueur.getJoueur(indexJ1).nom)
+    End Sub
+
+    Public Function getNameJ1() As String
+        Return Trim(ModuleJoueur.getJoueur(indexJ1).nom)
+    End Function
+
+    Public Function getNameJ2() As String
+        Return Trim(ModuleJoueur.getJoueur(indexJ2).nom)
+    End Function
+
+    Public Function getJ1() As Joueur
+        Return getJoueur(indexJ1)
+    End Function
+
+    Public Function getJ2() As Joueur
+        Return getJoueur(indexJ2)
+    End Function
+
+    Public Function getIndexJ1() As Integer
+        Return indexJ1
+    End Function
+    Public Function getIndexJ2() As Integer
+        Return indexJ2
+    End Function
 End Class

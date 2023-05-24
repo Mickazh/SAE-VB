@@ -24,7 +24,6 @@ Module ModuleSettings
     Private couleurPresentBienPlacé As Color
 
     Sub main()
-
         caracteresJouable = New Caractere(4) {}
         ModuleJoueur.lectureJoueurs()
         'MsgBox(ModuleJoueur.getJoueur(0).score)
