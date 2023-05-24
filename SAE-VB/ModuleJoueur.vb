@@ -1,12 +1,10 @@
 ﻿Imports System.IO
 Imports System.Runtime.InteropServices
+Imports SAE_VB.Score
 
 Module ModuleJoueur
     Private joueursPath = "../../joueurs"
-    Structure Joueur
-        <VBFixedString(15)> Dim nom As String
-        Dim score, PB, NBJ1, NBJ2, TotalTemps As Integer 'pas sur que TotalTemps devrait être un entier
-    End Structure
+
 
     Private joueurs As Joueur() = New Joueur(0) {}
 
@@ -33,7 +31,7 @@ Module ModuleJoueur
     ''' Enregistre un nouveau joueur
     ''' </summary>
     ''' <param name="joueurAJ"></param>
-    ''' <returns>L'indice à laquelle le joueur est placé</returns>
+    ''' <returns>L'indice à laquel le joueur est placé</returns>
     Public Function enregistrerNouveauJoueur(joueurAJ As Joueur) As Integer
         Dim numFichierJoueur = FreeFile()
         FileOpen(numFichierJoueur, joueursPath, OpenMode.Random, , , Len(joueurAJ))
@@ -70,11 +68,11 @@ Module ModuleJoueur
     ''' renvoie l'indice du joueur grace au nom
     ''' </summary>
     ''' <param name="name"></param>
-    ''' <returns>L'indice du joueur dans la liste des joueurs</returns>
+    ''' <returns>L'indice du joueur dans la liste des joueurs, s'il n'y est pas alors renvoie -1</returns>
     Public Function getIndexJoueurByName(name As String) As Integer
         Dim i = 0
         While i < joueurs.Length - 1
-            If Trim(joueurs(i).nom).Equals(name) Then
+            If Trim(joueurs(i).nom).Equals(Trim(name)) Then
                 Return i
             End If
             i += 1

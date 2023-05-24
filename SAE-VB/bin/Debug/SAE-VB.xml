@@ -22,19 +22,19 @@ SAE-VB
   les recherches de ressources à l'aide de cette classe de ressource fortement typée.
 </summary>
 </member>
-<member name="M:SAE_VB.ModuleJoueur.enregistrerNouveauJoueur(SAE_VB.ModuleJoueur.Joueur)">
+<member name="M:SAE_VB.ModuleJoueur.enregistrerNouveauJoueur(SAE_VB.Score.Joueur)">
  <summary>
  Enregistre un nouveau joueur
  </summary>
  <param name="joueurAJ"></param>
- <returns>L'indice à laquelle le joueur est placé</returns>
+ <returns>L'indice à laquel le joueur est placé</returns>
 </member>
 <member name="M:SAE_VB.ModuleJoueur.getIndexJoueurByName(System.String)">
  <summary>
  renvoie l'indice du joueur grace au nom
  </summary>
  <param name="name"></param>
- <returns>L'indice du joueur dans la liste des joueurs</returns>
+ <returns>L'indice du joueur dans la liste des joueurs, s'il n'y est pas alors renvoie -1</returns>
 </member>
 <member name="T:SAE_VB.ModuleSettings.Caractere">
  <summary>

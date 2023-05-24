@@ -1,4 +1,5 @@
-﻿Imports System.Threading
+﻿Imports SAE_VB.Score
+Imports System.Threading
 Imports System.Windows.Forms.VisualStyles.VisualStyleElement.Status
 
 Public Class Jeu

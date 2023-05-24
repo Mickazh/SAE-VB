@@ -1,4 +1,6 @@
-﻿Public Class FormAccueil
+﻿Imports SAE_VB.Score
+
+Public Class FormAccueil
     Private indexJ1, indexJ2 As Integer
 
     Private Sub ComboBox2_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboJoueur2.SelectedIndexChanged
