@@ -7,7 +7,7 @@ Public Class Jeu
     Private totalTempsPasse As Integer = 0
     Private tentatives As Caractere()()
     Private nbTentatives As Integer = 0
-    Private correct As Boolean = True
+    Private correct As Boolean = False
 
     Private Sub Form3_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         lblAbsent.BackColor = getcouleurAbsent()
@@ -174,6 +174,7 @@ Public Class Jeu
     End Sub
 
     Private Sub fin()
+        correct = True
         btnEssaie.Enabled = False
         BtnBye.Visible = True
     End Sub

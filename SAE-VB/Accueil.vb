@@ -24,7 +24,7 @@ Public Class FormAccueil
     End Sub
 
     Private Sub btnExitApp_Click(sender As Object, e As EventArgs) Handles btnExitApp.Click
-        Dim choix = MsgBox("Voulez-vous quitter?", vbYesNo)
+        Dim choix = MsgBox("Voulez-vous quitter ?", vbYesNo)
         If choix = vbYes Then
             Me.Close()
         End If

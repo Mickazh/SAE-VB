@@ -48,79 +48,73 @@ Partial Class Score
         'lbNom
         '
         Me.lbNom.FormattingEnabled = True
-        Me.lbNom.ItemHeight = 16
-        Me.lbNom.Location = New System.Drawing.Point(17, 14)
-        Me.lbNom.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.lbNom.Location = New System.Drawing.Point(13, 11)
+        Me.lbNom.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.lbNom.Name = "lbNom"
-        Me.lbNom.Size = New System.Drawing.Size(120, 84)
+        Me.lbNom.Size = New System.Drawing.Size(91, 69)
         Me.lbNom.TabIndex = 0
         '
         'lbScore
         '
         Me.lbScore.FormattingEnabled = True
-        Me.lbScore.ItemHeight = 16
-        Me.lbScore.Location = New System.Drawing.Point(143, 14)
-        Me.lbScore.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.lbScore.Location = New System.Drawing.Point(107, 11)
+        Me.lbScore.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.lbScore.Name = "lbScore"
-        Me.lbScore.Size = New System.Drawing.Size(120, 84)
+        Me.lbScore.Size = New System.Drawing.Size(91, 69)
         Me.lbScore.TabIndex = 1
         '
         'lbNbJ1
         '
         Me.lbNbJ1.FormattingEnabled = True
-        Me.lbNbJ1.ItemHeight = 16
-        Me.lbNbJ1.Location = New System.Drawing.Point(268, 14)
-        Me.lbNbJ1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.lbNbJ1.Location = New System.Drawing.Point(201, 11)
+        Me.lbNbJ1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.lbNbJ1.Name = "lbNbJ1"
-        Me.lbNbJ1.Size = New System.Drawing.Size(120, 84)
+        Me.lbNbJ1.Size = New System.Drawing.Size(91, 69)
         Me.lbNbJ1.TabIndex = 2
         '
         'lbNbJ2
         '
         Me.lbNbJ2.FormattingEnabled = True
-        Me.lbNbJ2.ItemHeight = 16
-        Me.lbNbJ2.Location = New System.Drawing.Point(395, 14)
-        Me.lbNbJ2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.lbNbJ2.Location = New System.Drawing.Point(296, 11)
+        Me.lbNbJ2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.lbNbJ2.Name = "lbNbJ2"
-        Me.lbNbJ2.Size = New System.Drawing.Size(120, 84)
+        Me.lbNbJ2.Size = New System.Drawing.Size(91, 69)
         Me.lbNbJ2.TabIndex = 3
         '
         'lbMeilleurTemps
         '
         Me.lbMeilleurTemps.FormattingEnabled = True
-        Me.lbMeilleurTemps.ItemHeight = 16
-        Me.lbMeilleurTemps.Location = New System.Drawing.Point(521, 14)
-        Me.lbMeilleurTemps.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.lbMeilleurTemps.Location = New System.Drawing.Point(391, 11)
+        Me.lbMeilleurTemps.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.lbMeilleurTemps.Name = "lbMeilleurTemps"
-        Me.lbMeilleurTemps.Size = New System.Drawing.Size(120, 84)
+        Me.lbMeilleurTemps.Size = New System.Drawing.Size(91, 69)
         Me.lbMeilleurTemps.TabIndex = 4
         '
         'lbTemps
         '
         Me.lbTemps.FormattingEnabled = True
-        Me.lbTemps.ItemHeight = 16
-        Me.lbTemps.Location = New System.Drawing.Point(647, 14)
-        Me.lbTemps.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.lbTemps.Location = New System.Drawing.Point(485, 11)
+        Me.lbTemps.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.lbTemps.Name = "lbTemps"
-        Me.lbTemps.Size = New System.Drawing.Size(120, 84)
+        Me.lbTemps.Size = New System.Drawing.Size(91, 69)
         Me.lbTemps.TabIndex = 5
         '
         'btnQuitter
         '
-        Me.btnQuitter.Location = New System.Drawing.Point(316, 289)
-        Me.btnQuitter.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnQuitter.Location = New System.Drawing.Point(237, 235)
+        Me.btnQuitter.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnQuitter.Name = "btnQuitter"
-        Me.btnQuitter.Size = New System.Drawing.Size(156, 60)
+        Me.btnQuitter.Size = New System.Drawing.Size(117, 49)
         Me.btnQuitter.TabIndex = 6
         Me.btnQuitter.Text = "Quitter"
         Me.btnQuitter.UseVisualStyleBackColor = True
         '
         'btnRechercher
         '
-        Me.btnRechercher.Location = New System.Drawing.Point(531, 52)
-        Me.btnRechercher.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnRechercher.Location = New System.Drawing.Point(398, 42)
+        Me.btnRechercher.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnRechercher.Name = "btnRechercher"
-        Me.btnRechercher.Size = New System.Drawing.Size(93, 23)
+        Me.btnRechercher.Size = New System.Drawing.Size(70, 19)
         Me.btnRechercher.TabIndex = 7
         Me.btnRechercher.Text = "Rechercher"
         Me.btnRechercher.UseVisualStyleBackColor = True
@@ -128,37 +122,38 @@ Partial Class Score
         'cboRechercher
         '
         Me.cboRechercher.FormattingEnabled = True
-        Me.cboRechercher.Location = New System.Drawing.Point(373, 52)
-        Me.cboRechercher.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.cboRechercher.Location = New System.Drawing.Point(280, 42)
+        Me.cboRechercher.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.cboRechercher.Name = "cboRechercher"
-        Me.cboRechercher.Size = New System.Drawing.Size(151, 24)
+        Me.cboRechercher.Size = New System.Drawing.Size(114, 21)
         Me.cboRechercher.TabIndex = 8
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(87, 20)
+        Me.Label1.Location = New System.Drawing.Point(65, 16)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(62, 16)
+        Me.Label1.Size = New System.Drawing.Size(50, 13)
         Me.Label1.TabIndex = 10
         Me.Label1.Text = "Trier Par:"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(371, 20)
+        Me.Label2.Location = New System.Drawing.Point(278, 16)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(116, 16)
+        Me.Label2.Size = New System.Drawing.Size(93, 13)
         Me.Label2.TabIndex = 11
         Me.Label2.Text = "Chercher par Nom"
         '
         'cboTrier
         '
         Me.cboTrier.FormattingEnabled = True
-        Me.cboTrier.Location = New System.Drawing.Point(91, 52)
-        Me.cboTrier.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cboTrier.Location = New System.Drawing.Point(68, 42)
         Me.cboTrier.Name = "cboTrier"
-        Me.cboTrier.Size = New System.Drawing.Size(151, 24)
+        Me.cboTrier.Size = New System.Drawing.Size(114, 21)
         Me.cboTrier.TabIndex = 13
         '
         'PnlLst
@@ -169,80 +164,73 @@ Partial Class Score
         Me.PnlLst.Controls.Add(Me.lbNbJ1)
         Me.PnlLst.Controls.Add(Me.lbScore)
         Me.PnlLst.Controls.Add(Me.lbNom)
-        Me.PnlLst.Location = New System.Drawing.Point(9, 133)
-        Me.PnlLst.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PnlLst.Location = New System.Drawing.Point(7, 108)
         Me.PnlLst.Name = "PnlLst"
-        Me.PnlLst.Size = New System.Drawing.Size(778, 104)
+        Me.PnlLst.Size = New System.Drawing.Size(584, 84)
         Me.PnlLst.TabIndex = 14
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(68, 102)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label3.Location = New System.Drawing.Point(51, 83)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(36, 16)
+        Me.Label3.Size = New System.Drawing.Size(29, 13)
         Me.Label3.TabIndex = 15
         Me.Label3.Text = "Nom"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(189, 102)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label4.Location = New System.Drawing.Point(142, 83)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(43, 16)
+        Me.Label4.Size = New System.Drawing.Size(35, 13)
         Me.Label4.TabIndex = 16
         Me.Label4.Text = "Score"
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(282, 97)
-        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label5.Location = New System.Drawing.Point(212, 79)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(115, 32)
+        Me.Label5.Size = New System.Drawing.Size(91, 26)
         Me.Label5.TabIndex = 17
-        Me.Label5.Text = "Nombre de partie " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Chercheur" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        Me.Label5.Text = "Nombre de partie " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Cacheur"
         Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(405, 97)
-        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label6.Location = New System.Drawing.Point(304, 79)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(112, 32)
+        Me.Label6.Size = New System.Drawing.Size(88, 26)
         Me.Label6.TabIndex = 18
-        Me.Label6.Text = "Nombre de partie" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Trouveur"
+        Me.Label6.Text = "Nombre de partie" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & " Chercheur"
         Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label7
         '
         Me.Label7.AutoSize = True
         Me.Label7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label7.Location = New System.Drawing.Point(547, 102)
-        Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label7.Location = New System.Drawing.Point(410, 83)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(94, 16)
+        Me.Label7.Size = New System.Drawing.Size(74, 13)
         Me.Label7.TabIndex = 19
         Me.Label7.Text = "Meilleur temps"
         '
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(670, 102)
-        Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label8.Location = New System.Drawing.Point(502, 83)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(84, 16)
+        Me.Label8.Size = New System.Drawing.Size(66, 13)
         Me.Label8.TabIndex = 20
         Me.Label8.Text = "Temps Total"
         '
         'Score
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 380)
+        Me.ClientSize = New System.Drawing.Size(600, 309)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Label6)
@@ -257,7 +245,7 @@ Partial Class Score
         Me.Controls.Add(Me.btnRechercher)
         Me.Controls.Add(Me.btnQuitter)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "Score"
         Me.Text = "Score"
         Me.PnlLst.ResumeLayout(False)
