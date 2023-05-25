@@ -1,8 +1,8 @@
 charJouable #$£%@
 limiteTemps True
-tempsPourJouer 15
+tempsPourJouer 30
 path ../../config.txt
 nbPropostions 15
-couleurAbsent 255 255 255
+couleurAbsent 255 255 0
 couleurPresent 0 0 255
 couleurPresentBienPlacé 0 255 0

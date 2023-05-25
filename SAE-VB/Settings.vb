@@ -10,7 +10,10 @@ Public Class Settings
     Public typeActuel As String = ""
 
     Private Sub btnEnregistrer_Click(sender As Object, e As EventArgs) Handles btnEnregistrer.Click
-        setnbEssaie(NumUpDownEssaie.Value)
+        If Not verifParam() Then
+            Exit Sub
+        End If
+
         setLimiteTemps(CheckBoxTime.Checked)
         setTempsPourJouer(txtbox_temps.Text)
         setChemin(cboChemin.Text)
@@ -21,6 +24,31 @@ Public Class Settings
         FormAccueil.Show()
         Me.Close()
     End Sub
+
+    ''' <summary>
+    ''' 
+    ''' </summary>
+    ''' <returns>True si les parametres sont "bons"</returns>
+    Private Function verifParam() As Boolean
+        If Integer.Parse(txtbox_temps.Text) < 30 Then
+            MsgBox("Veuillez saisir un temps supérieur ou égale à 30 secondes")
+            Return False
+        End If
+        If btnAbs.BackColor.Equals(btnPrePla.BackColor) OrElse btnAbs.BackColor.Equals(btnPresent.BackColor) Then
+            MsgBox("Les couleurs sont les mêmes")
+            Return False
+        End If
+        If btnPrePla.BackColor.Equals(btnAbs.BackColor) OrElse btnPrePla.BackColor.Equals(btnPresent.BackColor) Then
+            MsgBox("Les couleurs sont les mêmes")
+            Return False
+        End If
+        If btnPresent.BackColor.Equals(btnAbs.BackColor) OrElse btnPresent.BackColor.Equals(btnPrePla.BackColor) Then
+            MsgBox("Les couleurs sont les mêmes")
+            Return False
+        End If
+        Return True
+
+    End Function
 
     Private Sub button_points_Click(sender As Object, e As EventArgs) Handles button_points.Click
         Dim SaveFileDialog As New SaveFileDialog()
@@ -34,6 +62,7 @@ Public Class Settings
     End Sub
 
     Private Sub Settings_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        PnlPath.Visible = False
         NumUpDownEssaie.Value = getnbEssaie()
         txtbox_temps.Text = getTempsPourJouer()
         If getLimiteTemps() Then
