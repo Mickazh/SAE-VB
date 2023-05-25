@@ -43,6 +43,8 @@ Partial Class Jeu
         Me.LblCharJouable = New System.Windows.Forms.Label()
         Me.lblTemps = New System.Windows.Forms.Label()
         Me.lblSeconde = New System.Windows.Forms.Label()
+        Me.LblCacheur = New System.Windows.Forms.Label()
+        Me.LblChercheur = New System.Windows.Forms.Label()
         Me.PnlChar.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -191,19 +193,24 @@ Partial Class Jeu
         'BtnBye
         '
         Me.BtnBye.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnBye.Location = New System.Drawing.Point(335, 486)
+        Me.BtnBye.Location = New System.Drawing.Point(283, 492)
+        Me.BtnBye.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.BtnBye.Name = "BtnBye"
-        Me.BtnBye.Size = New System.Drawing.Size(75, 23)
+        Me.BtnBye.Size = New System.Drawing.Size(92, 41)
         Me.BtnBye.TabIndex = 30
         Me.BtnBye.Text = "Bye"
         Me.BtnBye.UseVisualStyleBackColor = True
         '
+        'Timer
+        '
+        Me.Timer.Interval = 1000
+        '
         'RTBTenta
         '
-        Me.RTBTenta.Location = New System.Drawing.Point(64, 163)
+        Me.RTBTenta.Location = New System.Drawing.Point(56, 163)
         Me.RTBTenta.Name = "RTBTenta"
         Me.RTBTenta.ReadOnly = True
-        Me.RTBTenta.Size = New System.Drawing.Size(103, 343)
+        Me.RTBTenta.Size = New System.Drawing.Size(115, 396)
         Me.RTBTenta.TabIndex = 31
         Me.RTBTenta.Text = ""
         '
@@ -222,7 +229,7 @@ Partial Class Jeu
         '
         Me.lblTemps.AutoSize = True
         Me.lblTemps.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTemps.Location = New System.Drawing.Point(261, 400)
+        Me.lblTemps.Location = New System.Drawing.Point(279, 401)
         Me.lblTemps.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblTemps.Name = "lblTemps"
         Me.lblTemps.Size = New System.Drawing.Size(73, 17)
@@ -233,20 +240,37 @@ Partial Class Jeu
         '
         Me.lblSeconde.AutoSize = True
         Me.lblSeconde.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblSeconde.Location = New System.Drawing.Point(332, 400)
+        Me.lblSeconde.Location = New System.Drawing.Point(332, 401)
         Me.lblSeconde.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblSeconde.Name = "lblSeconde"
         Me.lblSeconde.Size = New System.Drawing.Size(94, 17)
         Me.lblSeconde.TabIndex = 34
         Me.lblSeconde.Text = "seconde (s)"
         '
+        'LblCacheur
+        '
+        Me.LblCacheur.AutoSize = True
+        Me.LblCacheur.Location = New System.Drawing.Point(19, 2)
+        Me.LblCacheur.Name = "LblCacheur"
+        Me.LblCacheur.Size = New System.Drawing.Size(0, 13)
+        Me.LblCacheur.TabIndex = 35
+        '
+        'LblChercheur
+        '
+        Me.LblChercheur.AutoSize = True
+        Me.LblChercheur.Location = New System.Drawing.Point(269, 2)
+        Me.LblChercheur.Name = "LblChercheur"
+        Me.LblChercheur.Size = New System.Drawing.Size(0, 13)
+        Me.LblChercheur.TabIndex = 36
+        '
         'Jeu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(422, 532)
+        Me.ClientSize = New System.Drawing.Size(424, 584)
+        Me.Controls.Add(Me.LblChercheur)
+        Me.Controls.Add(Me.LblCacheur)
         Me.Controls.Add(Me.lblSeconde)
-        Me.Controls.Add(Me.lblTemps)
         Me.Controls.Add(Me.LblCharJouable)
         Me.Controls.Add(Me.RTBTenta)
         Me.Controls.Add(Me.BtnBye)
@@ -259,6 +283,7 @@ Partial Class Jeu
         Me.Controls.Add(Me.btnEssaie)
         Me.Controls.Add(Me.lblCaractères)
         Me.Controls.Add(Me.lblTitre)
+        Me.Controls.Add(Me.lblTemps)
         Me.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.Name = "Jeu"
         Me.Text = "Jeu"
@@ -289,4 +314,6 @@ Partial Class Jeu
     Friend WithEvents LblCharJouable As Label
     Friend WithEvents lblTemps As Label
     Friend WithEvents lblSeconde As Label
+    Friend WithEvents LblCacheur As Label
+    Friend WithEvents LblChercheur As Label
 End Class

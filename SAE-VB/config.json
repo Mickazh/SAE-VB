@@ -1,7 +1,0 @@
-{
-  "charJouable": [ "#", "$", "�", "%", "@" ],
-  "couleursStatus": [ "Color.White", "Color.Blue", "Color.Green" ],
-  "nbProposition": 15,
-  "savePath": "../../config.json",
-  "LimiteTemps": 50
-}
