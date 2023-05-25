@@ -9,7 +9,6 @@ Module ModuleJoueur
     Private joueurs As Joueur() = New Joueur() {}
 
     Sub lectureJoueurs()
-        'MsgBox(New FileInfo(joueursPath).Length)
         Dim numFichierJoueur = FreeFile()
         Dim j As Joueur
         Dim indice As Integer = 1
@@ -71,7 +70,7 @@ Module ModuleJoueur
     ''' <returns>L'indice du joueur dans la liste des joueurs, s'il n'y est pas alors renvoie -1</returns>
     Public Function getIndexJoueurByName(name As String) As Integer
         Dim i = 0
-        While i < joueurs.Length - 1
+        While i < joueurs.Length
             If Trim(joueurs(i).nom).Equals(Trim(name)) Then
                 Return i
             End If
@@ -93,7 +92,6 @@ Module ModuleJoueur
     End Sub
 
     Public Sub addTime(i As Integer, time As Integer)
-        'MsgBox(time)
         joueurs(i).TotalTemps += time
     End Sub
 

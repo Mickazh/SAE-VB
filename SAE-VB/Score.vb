@@ -6,6 +6,8 @@
     End Structure
     Dim attributs As String() = New String(5) {"Nom", "Score", "Nb Joueur 1", "Nb Joueur 2", "Meilleur temps", "Temps de jeu"}
 
+    Dim listLst As Object()
+
     Dim joueurs As Joueur() = ModuleJoueur.getJoueurs().Clone()
     Dim procedures() As SubProcedureDelegate = {AddressOf triParNom,
             AddressOf triParScore, AddressOf triParNbJ1, AddressOf triParNbJ2,
@@ -17,6 +19,7 @@
     End Sub
 
     Private Sub Score_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        listLst = {lbNom, lbScore, lbNbJ1, lbNbJ2, lbMeilleurTemps, lbTemps}
         btnRechercher.Enabled = False
         cboRechercher.DropDownStyle = ComboBoxStyle.DropDownList
         cboTrier.DropDownStyle = ComboBoxStyle.DropDownList
@@ -66,7 +69,7 @@
             lbScore.Items.Add(j.score)
             lbNbJ1.Items.Add(j.NBJ1)
             lbNbJ2.Items.Add(j.NBJ2)
-            lbMeilleurTemps.Items.Add(j.PB)
+            lbMeilleurTemps.Items.Add(IIf(j.PB = Integer.MaxValue, "Aucun", j.PB))
             lbTemps.Items.Add(j.TotalTemps)
         Next
     End Sub
@@ -80,12 +83,22 @@ $"Nom : {j.nom}
 Score : {j.score}
 Nombre de partie en cacheur : {j.NBJ1}
 Nombre de partie en chercheur : {j.NBJ2}
-Meilleur temps : {j.PB}
+Meilleur temps : {IIf(j.PB = Integer.MaxValue, "Aucun", j.PB)}
 Total de temps joue : {j.TotalTemps}"
         MsgBox(s)
     End Sub
 
     Private Sub cboRechercher_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboRechercher.SelectedIndexChanged
         btnRechercher.Enabled = True
+    End Sub
+
+    Private Sub lb_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lbNom.SelectedIndexChanged,
+        lbScore.SelectedIndexChanged, lbNbJ1.SelectedIndexChanged, lbNbJ2.SelectedIndexChanged, lbMeilleurTemps.SelectedIndexChanged, lbTemps.SelectedIndexChanged
+        Dim selectedI = sender.selectedIndex, topI = sender.topIndex
+        For i As Integer = 0 To listLst.Length - 1
+            Dim ob As Object = listLst(i)
+            ob.topIndex = topI
+            ob.selectedIndex = selectedI
+        Next
     End Sub
 End Class
