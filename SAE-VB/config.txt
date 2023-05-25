@@ -5,4 +5,4 @@ path ../../config.txt
 nbPropostions 15
 couleurAbsent 255 128 128
 couleurPresent 0 0 255
-couleurPresentBienPlacé 0 0 0
+couleurPresentBienPlacé 0 255 0
