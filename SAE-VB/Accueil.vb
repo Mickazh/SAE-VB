@@ -62,7 +62,7 @@ Public Class FormAccueil
         refreshCbo()
         Me.Hide()
         LectParam()
-        combin.Show()
+        Pattern.Show()
 
     End Sub
 

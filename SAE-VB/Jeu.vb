@@ -88,7 +88,7 @@ Public Class Jeu
 
     Private Sub Jeu_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
         'peut être un peu brutale car j'empeche la fermeture du fichier
-        combin.Close()
+        Pattern.Close()
         FormAccueil.echangeJoueur()
         FormAccueil.Show()
     End Sub
@@ -112,12 +112,12 @@ Public Class Jeu
             caract = New Caractere
             caract.c = PnlChar.Controls(i).Text(0)
 
-            If PnlChar.Controls(i).Text(0).Equals(combin.combineCache(i)) Then
+            If PnlChar.Controls(i).Text(0).Equals(Pattern.combineCache(i)) Then
                 PnlChar.Controls(i).BackColor = getcouleurPBP()
                 RTBTenta.SelectionColor = getcouleurPBP()
                 caract.status = 2
 
-            ElseIf combin.combineCache.Contains(PnlChar.Controls(i).Text(0)) Then
+            ElseIf Pattern.combineCache.Contains(PnlChar.Controls(i).Text(0)) Then
                 PnlChar.Controls(i).BackColor = getcouleurPresent()
                 RTBTenta.SelectionColor = getcouleurPresent()
                 caract.status = 1
