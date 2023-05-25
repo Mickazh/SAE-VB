@@ -7,9 +7,10 @@ Public Class Jeu
     Private totalTempsPasse As Integer = 0
     Private tentatives As Caractere()()
     Private nbTentatives As Integer = 0
-    Private correct As Boolean = True
+    Private correct As Boolean = False
 
     Private Sub Form3_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        lblAbsent.BackColor = getcouleurAbsent()
         Timer.Start()
         LblCacheur.Text = "Cacheur : " & FormAccueil.getNameJ1()
         LblChercheur.Text = "Chercheur : " & FormAccueil.getNameJ2()
@@ -128,6 +129,7 @@ Public Class Jeu
                 caract.status = 0
                 'PnlChar.Controls(i).BackColor = colorMauvais
                 'RTBTenta.SelectionColor = getcouleurAbsent()'
+                PnlChar.Controls(i).BackColor = getcouleurAbsent()
                 RTBTenta.SelectionColor = lblAbsent.ForeColor
                 correct = False
             End If
@@ -172,7 +174,16 @@ Public Class Jeu
     End Sub
 
     Private Sub fin()
+        correct = True
         btnEssaie.Enabled = False
         BtnBye.Visible = True
     End Sub
+    Private Sub RTBTenta_MouseEnter(sender As Object, e As EventArgs) Handles RTBTenta.MouseEnter
+        RTBTenta.Enabled = True
+    End Sub
+
+    Private Sub RTBTenta_MouseLeave(sender As Object, e As EventArgs) Handles RTBTenta.MouseLeave
+        RTBTenta.Enabled = False
+    End Sub
+
 End Class
