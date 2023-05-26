@@ -24,7 +24,7 @@ Public Class FormAccueil
     End Sub
 
     Private Sub btnExitApp_Click(sender As Object, e As EventArgs) Handles btnExitApp.Click
-        Dim choix = MsgBox("Voulez vous quitter?", vbYesNo)
+        Dim choix = MsgBox("Voulez-vous quitter ?", vbYesNo)
         If choix = vbYes Then
             Me.Close()
         End If
@@ -39,7 +39,7 @@ Public Class FormAccueil
             End If
         Next
         If Trim(cboJoueur1.Text).Equals(Trim(cboJoueur2.Text)) AndAlso Not Trim(cboJoueur1.Text).Equals("") Then
-            MsgBox("Vous avez le meme nom")
+            MsgBox("Vous avez le même nom")
             joueurPasValide = True
         End If
         If joueurPasValide Then
@@ -62,7 +62,7 @@ Public Class FormAccueil
         refreshCbo()
         Me.Hide()
         LectParam()
-        combin.Show()
+        Pattern.Show()
 
     End Sub
 

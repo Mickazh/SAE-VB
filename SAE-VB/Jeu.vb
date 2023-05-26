@@ -7,10 +7,13 @@ Public Class Jeu
     Private totalTempsPasse As Integer = 0
     Private tentatives As Caractere()()
     Private nbTentatives As Integer = 0
-    Private correct As Boolean = True
+    Private correct As Boolean = False
 
     Private Sub Form3_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        lblAbsent.BackColor = getcouleurAbsent()
         Timer.Start()
+        LblCacheur.Text = "Cacheur : " & FormAccueil.getNameJ1()
+        LblChercheur.Text = "Chercheur : " & FormAccueil.getNameJ2()
         indexCacheur = FormAccueil.getIndexJ1
         indexChercheur = FormAccueil.getIndexJ2
         ModuleJoueur.incNbJ1(indexCacheur)
@@ -28,7 +31,6 @@ Public Class Jeu
         Next
         If getLimiteTemps() Then
             Timer_count = getTempsPourJouer() * Timer.Interval
-            Timer.Start()
         Else
             lblTemps.Visible = False
             lblSeconde.Visible = False
@@ -79,7 +81,7 @@ Public Class Jeu
         totalTempsPasse += 1
         Timer_count -= Timer.Interval
         lblTemps.Text = CStr(Timer_count / Timer.Interval)
-        If Timer_count = 0 Then
+        If getLimiteTemps() AndAlso Timer_count = 0 Then
             Timer.Stop()
             EndGame()
         End If
@@ -87,7 +89,7 @@ Public Class Jeu
 
     Private Sub Jeu_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
         'peut être un peu brutale car j'empeche la fermeture du fichier
-        combin.Close()
+        Pattern.Close()
         FormAccueil.echangeJoueur()
         FormAccueil.Show()
     End Sub
@@ -111,23 +113,23 @@ Public Class Jeu
             caract = New Caractere
             caract.c = PnlChar.Controls(i).Text(0)
 
-            If PnlChar.Controls(i).Text(0).Equals(combin.combineCache(i)) Then
+            If PnlChar.Controls(i).Text(0).Equals(Pattern.combineCache(i)) Then
                 PnlChar.Controls(i).BackColor = getcouleurPBP()
                 RTBTenta.SelectionColor = getcouleurPBP()
                 caract.status = 2
 
-            ElseIf combin.combineCache.Contains(PnlChar.Controls(i).Text(0)) Then
+            ElseIf Pattern.combineCache.Contains(PnlChar.Controls(i).Text(0)) Then
                 PnlChar.Controls(i).BackColor = getcouleurPresent()
                 RTBTenta.SelectionColor = getcouleurPresent()
                 caract.status = 1
 
                 correct = False
 
-                'MsgBox("ok")
             Else
                 caract.status = 0
                 'PnlChar.Controls(i).BackColor = colorMauvais
                 'RTBTenta.SelectionColor = getcouleurAbsent()'
+                PnlChar.Controls(i).BackColor = getcouleurAbsent()
                 RTBTenta.SelectionColor = lblAbsent.ForeColor
                 correct = False
             End If
@@ -143,7 +145,7 @@ Public Class Jeu
 
         If correct Then
             Timer.Stop()
-            MsgBox($"Bravo {FormAccueil.getNameJ1}, vous avez trouvé, vous gagnez donc un point")
+            MsgBox($"Bravo {FormAccueil.getNameJ2}, vous avez trouvé, vous gagnez donc un point")
             incScore(indexChercheur)
             editPB(indexChercheur, totalTempsPasse)
             fin()
@@ -166,13 +168,22 @@ Public Class Jeu
     End Sub
     Private Sub EndGame()
         incScore(indexCacheur)
-        MsgBox($"Dommage {FormAccueil.getNameJ1}, vous n'avez pas trouvé !
-{FormAccueil.getNameJ2} gagne donc un point")
+        MsgBox($"Dommage {FormAccueil.getNameJ2}, vous n'avez pas trouvé !
+{FormAccueil.getNameJ1} gagne donc un point")
         fin()
     End Sub
 
     Private Sub fin()
+        correct = True
         btnEssaie.Enabled = False
         BtnBye.Visible = True
     End Sub
+    Private Sub RTBTenta_MouseEnter(sender As Object, e As EventArgs) Handles RTBTenta.MouseEnter
+        RTBTenta.Enabled = True
+    End Sub
+
+    Private Sub RTBTenta_MouseLeave(sender As Object, e As EventArgs) Handles RTBTenta.MouseLeave
+        RTBTenta.Enabled = False
+    End Sub
+
 End Class

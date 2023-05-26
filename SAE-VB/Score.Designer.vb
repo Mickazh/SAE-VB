@@ -22,6 +22,7 @@ Partial Class Score
     'Ne la modifiez pas à l'aide de l'éditeur de code.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Score))
         Me.lbNom = New System.Windows.Forms.ListBox()
         Me.lbScore = New System.Windows.Forms.ListBox()
         Me.lbNbJ1 = New System.Windows.Forms.ListBox()
@@ -48,7 +49,7 @@ Partial Class Score
         '
         Me.lbNom.FormattingEnabled = True
         Me.lbNom.Location = New System.Drawing.Point(13, 11)
-        Me.lbNom.Margin = New System.Windows.Forms.Padding(2)
+        Me.lbNom.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.lbNom.Name = "lbNom"
         Me.lbNom.Size = New System.Drawing.Size(91, 69)
         Me.lbNom.TabIndex = 0
@@ -57,7 +58,7 @@ Partial Class Score
         '
         Me.lbScore.FormattingEnabled = True
         Me.lbScore.Location = New System.Drawing.Point(107, 11)
-        Me.lbScore.Margin = New System.Windows.Forms.Padding(2)
+        Me.lbScore.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.lbScore.Name = "lbScore"
         Me.lbScore.Size = New System.Drawing.Size(91, 69)
         Me.lbScore.TabIndex = 1
@@ -66,7 +67,7 @@ Partial Class Score
         '
         Me.lbNbJ1.FormattingEnabled = True
         Me.lbNbJ1.Location = New System.Drawing.Point(201, 11)
-        Me.lbNbJ1.Margin = New System.Windows.Forms.Padding(2)
+        Me.lbNbJ1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.lbNbJ1.Name = "lbNbJ1"
         Me.lbNbJ1.Size = New System.Drawing.Size(91, 69)
         Me.lbNbJ1.TabIndex = 2
@@ -75,7 +76,7 @@ Partial Class Score
         '
         Me.lbNbJ2.FormattingEnabled = True
         Me.lbNbJ2.Location = New System.Drawing.Point(296, 11)
-        Me.lbNbJ2.Margin = New System.Windows.Forms.Padding(2)
+        Me.lbNbJ2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.lbNbJ2.Name = "lbNbJ2"
         Me.lbNbJ2.Size = New System.Drawing.Size(91, 69)
         Me.lbNbJ2.TabIndex = 3
@@ -84,7 +85,7 @@ Partial Class Score
         '
         Me.lbMeilleurTemps.FormattingEnabled = True
         Me.lbMeilleurTemps.Location = New System.Drawing.Point(391, 11)
-        Me.lbMeilleurTemps.Margin = New System.Windows.Forms.Padding(2)
+        Me.lbMeilleurTemps.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.lbMeilleurTemps.Name = "lbMeilleurTemps"
         Me.lbMeilleurTemps.Size = New System.Drawing.Size(91, 69)
         Me.lbMeilleurTemps.TabIndex = 4
@@ -93,7 +94,7 @@ Partial Class Score
         '
         Me.lbTemps.FormattingEnabled = True
         Me.lbTemps.Location = New System.Drawing.Point(485, 11)
-        Me.lbTemps.Margin = New System.Windows.Forms.Padding(2)
+        Me.lbTemps.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.lbTemps.Name = "lbTemps"
         Me.lbTemps.Size = New System.Drawing.Size(91, 69)
         Me.lbTemps.TabIndex = 5
@@ -101,7 +102,7 @@ Partial Class Score
         'btnQuitter
         '
         Me.btnQuitter.Location = New System.Drawing.Point(237, 235)
-        Me.btnQuitter.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnQuitter.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnQuitter.Name = "btnQuitter"
         Me.btnQuitter.Size = New System.Drawing.Size(117, 49)
         Me.btnQuitter.TabIndex = 6
@@ -111,7 +112,7 @@ Partial Class Score
         'btnRechercher
         '
         Me.btnRechercher.Location = New System.Drawing.Point(398, 42)
-        Me.btnRechercher.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnRechercher.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnRechercher.Name = "btnRechercher"
         Me.btnRechercher.Size = New System.Drawing.Size(70, 19)
         Me.btnRechercher.TabIndex = 7
@@ -122,7 +123,7 @@ Partial Class Score
         '
         Me.cboRechercher.FormattingEnabled = True
         Me.cboRechercher.Location = New System.Drawing.Point(280, 42)
-        Me.cboRechercher.Margin = New System.Windows.Forms.Padding(2)
+        Me.cboRechercher.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.cboRechercher.Name = "cboRechercher"
         Me.cboRechercher.Size = New System.Drawing.Size(114, 21)
         Me.cboRechercher.TabIndex = 8
@@ -165,13 +166,13 @@ Partial Class Score
         Me.PnlLst.Controls.Add(Me.lbNom)
         Me.PnlLst.Location = New System.Drawing.Point(7, 108)
         Me.PnlLst.Name = "PnlLst"
-        Me.PnlLst.Size = New System.Drawing.Size(585, 95)
+        Me.PnlLst.Size = New System.Drawing.Size(584, 84)
         Me.PnlLst.TabIndex = 14
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(43, 83)
+        Me.Label3.Location = New System.Drawing.Point(51, 83)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(29, 13)
         Me.Label3.TabIndex = 15
@@ -180,7 +181,7 @@ Partial Class Score
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(137, 83)
+        Me.Label4.Location = New System.Drawing.Point(142, 83)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(35, 13)
         Me.Label4.TabIndex = 16
@@ -189,25 +190,28 @@ Partial Class Score
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(197, 83)
+        Me.Label5.Location = New System.Drawing.Point(212, 79)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(102, 13)
+        Me.Label5.Size = New System.Drawing.Size(91, 26)
         Me.Label5.TabIndex = 17
-        Me.Label5.Text = "Nombre de partie J1"
+        Me.Label5.Text = "Nombre de partie " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Cacheur"
+        Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(300, 83)
+        Me.Label6.Location = New System.Drawing.Point(304, 79)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(102, 13)
+        Me.Label6.Size = New System.Drawing.Size(88, 26)
         Me.Label6.TabIndex = 18
-        Me.Label6.Text = "Nombre de partie J2"
+        Me.Label6.Text = "Nombre de partie" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & " Chercheur"
+        Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(408, 83)
+        Me.Label7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label7.Location = New System.Drawing.Point(410, 83)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(74, 13)
         Me.Label7.TabIndex = 19
@@ -240,7 +244,8 @@ Partial Class Score
         Me.Controls.Add(Me.cboRechercher)
         Me.Controls.Add(Me.btnRechercher)
         Me.Controls.Add(Me.btnQuitter)
-        Me.Margin = New System.Windows.Forms.Padding(2)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "Score"
         Me.Text = "Score"
         Me.PnlLst.ResumeLayout(False)

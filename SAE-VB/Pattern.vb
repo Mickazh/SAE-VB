@@ -1,4 +1,4 @@
-﻿Public Class combin
+﻿Public Class Pattern
     Public combineCache As Char()
     Private Sub combin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         combineCache = New Char(4) {}
