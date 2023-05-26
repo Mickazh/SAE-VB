@@ -26,9 +26,9 @@ Partial Class Settings
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Settings))
         Me.btnEnregistrer = New System.Windows.Forms.Button()
         Me.PnlColorChoice = New System.Windows.Forms.Panel()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
+        Me.LblPreBien = New System.Windows.Forms.Label()
+        Me.LblPresent = New System.Windows.Forms.Label()
+        Me.LblAbsent = New System.Windows.Forms.Label()
         Me.btnAbs = New System.Windows.Forms.Button()
         Me.btnPresent = New System.Windows.Forms.Button()
         Me.btnPrePla = New System.Windows.Forms.Button()
@@ -68,7 +68,7 @@ Partial Class Settings
         '
         Me.btnEnregistrer.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnEnregistrer.Location = New System.Drawing.Point(472, 306)
-        Me.btnEnregistrer.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnEnregistrer.Margin = New System.Windows.Forms.Padding(2)
         Me.btnEnregistrer.Name = "btnEnregistrer"
         Me.btnEnregistrer.Size = New System.Drawing.Size(111, 50)
         Me.btnEnregistrer.TabIndex = 17
@@ -77,54 +77,54 @@ Partial Class Settings
         '
         'PnlColorChoice
         '
-        Me.PnlColorChoice.Controls.Add(Me.Label5)
-        Me.PnlColorChoice.Controls.Add(Me.Label4)
-        Me.PnlColorChoice.Controls.Add(Me.Label3)
+        Me.PnlColorChoice.Controls.Add(Me.LblPreBien)
+        Me.PnlColorChoice.Controls.Add(Me.LblPresent)
+        Me.PnlColorChoice.Controls.Add(Me.LblAbsent)
         Me.PnlColorChoice.Controls.Add(Me.btnAbs)
         Me.PnlColorChoice.Controls.Add(Me.btnPresent)
         Me.PnlColorChoice.Controls.Add(Me.btnPrePla)
         Me.PnlColorChoice.Controls.Add(Me.lblColorResult)
         Me.PnlColorChoice.Controls.Add(Me.TextBoxAbsent)
         Me.PnlColorChoice.Location = New System.Drawing.Point(408, 15)
-        Me.PnlColorChoice.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.PnlColorChoice.Margin = New System.Windows.Forms.Padding(2)
         Me.PnlColorChoice.Name = "PnlColorChoice"
         Me.PnlColorChoice.Size = New System.Drawing.Size(166, 124)
         Me.PnlColorChoice.TabIndex = 18
         '
-        'Label5
+        'LblPreBien
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(46, 83)
-        Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(58, 26)
-        Me.Label5.TabIndex = 38
-        Me.Label5.Text = "Présent et " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Bien Placé"
+        Me.LblPreBien.AutoSize = True
+        Me.LblPreBien.Location = New System.Drawing.Point(46, 83)
+        Me.LblPreBien.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.LblPreBien.Name = "LblPreBien"
+        Me.LblPreBien.Size = New System.Drawing.Size(58, 26)
+        Me.LblPreBien.TabIndex = 38
+        Me.LblPreBien.Text = "Présent et " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Bien Placé"
         '
-        'Label4
+        'LblPresent
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(46, 63)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(43, 13)
-        Me.Label4.TabIndex = 37
-        Me.Label4.Text = "Présent"
+        Me.LblPresent.AutoSize = True
+        Me.LblPresent.Location = New System.Drawing.Point(46, 63)
+        Me.LblPresent.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.LblPresent.Name = "LblPresent"
+        Me.LblPresent.Size = New System.Drawing.Size(43, 13)
+        Me.LblPresent.TabIndex = 37
+        Me.LblPresent.Text = "Présent"
         '
-        'Label3
+        'LblAbsent
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(46, 42)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(40, 13)
-        Me.Label3.TabIndex = 36
-        Me.Label3.Text = "Absent"
+        Me.LblAbsent.AutoSize = True
+        Me.LblAbsent.Location = New System.Drawing.Point(46, 42)
+        Me.LblAbsent.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.LblAbsent.Name = "LblAbsent"
+        Me.LblAbsent.Size = New System.Drawing.Size(40, 13)
+        Me.LblAbsent.TabIndex = 36
+        Me.LblAbsent.Text = "Absent"
         '
         'btnAbs
         '
         Me.btnAbs.Location = New System.Drawing.Point(117, 42)
-        Me.btnAbs.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnAbs.Margin = New System.Windows.Forms.Padding(2)
         Me.btnAbs.Name = "btnAbs"
         Me.btnAbs.Size = New System.Drawing.Size(23, 15)
         Me.btnAbs.TabIndex = 35
@@ -133,7 +133,7 @@ Partial Class Settings
         'btnPresent
         '
         Me.btnPresent.Location = New System.Drawing.Point(117, 62)
-        Me.btnPresent.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnPresent.Margin = New System.Windows.Forms.Padding(2)
         Me.btnPresent.Name = "btnPresent"
         Me.btnPresent.Size = New System.Drawing.Size(23, 17)
         Me.btnPresent.TabIndex = 34
@@ -142,7 +142,7 @@ Partial Class Settings
         'btnPrePla
         '
         Me.btnPrePla.Location = New System.Drawing.Point(117, 90)
-        Me.btnPrePla.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnPrePla.Margin = New System.Windows.Forms.Padding(2)
         Me.btnPrePla.Name = "btnPrePla"
         Me.btnPrePla.Size = New System.Drawing.Size(23, 15)
         Me.btnPrePla.TabIndex = 33
@@ -297,7 +297,7 @@ Partial Class Settings
         '
         Me.txtCar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtCar.Location = New System.Drawing.Point(56, 39)
-        Me.txtCar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtCar.Margin = New System.Windows.Forms.Padding(2)
         Me.txtCar.Name = "txtCar"
         Me.txtCar.Size = New System.Drawing.Size(26, 26)
         Me.txtCar.TabIndex = 30
@@ -319,7 +319,7 @@ Partial Class Settings
         Me.Panel1.Controls.Add(Me.txtCar)
         Me.Panel1.Controls.Add(Me.lblResultChar)
         Me.Panel1.Location = New System.Drawing.Point(408, 171)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(166, 93)
         Me.Panel1.TabIndex = 32
@@ -341,7 +341,7 @@ Partial Class Settings
         'NumUpDownEssaie
         '
         Me.NumUpDownEssaie.Location = New System.Drawing.Point(19, 35)
-        Me.NumUpDownEssaie.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.NumUpDownEssaie.Margin = New System.Windows.Forms.Padding(2)
         Me.NumUpDownEssaie.Maximum = New Decimal(New Integer() {20, 0, 0, 0})
         Me.NumUpDownEssaie.Minimum = New Decimal(New Integer() {9, 0, 0, 0})
         Me.NumUpDownEssaie.Name = "NumUpDownEssaie"
@@ -355,7 +355,7 @@ Partial Class Settings
         Me.Panel2.Controls.Add(Me.NumUpDownEssaie)
         Me.Panel2.Controls.Add(Me.Label2)
         Me.Panel2.Location = New System.Drawing.Point(10, 271)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(238, 63)
         Me.Panel2.TabIndex = 33
@@ -395,7 +395,7 @@ Partial Class Settings
         Me.Controls.Add(Me.PnlColorChoice)
         Me.Controls.Add(Me.btnEnregistrer)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "Settings"
         Me.Text = "Settings"
         Me.PnlColorChoice.ResumeLayout(False)
@@ -442,7 +442,7 @@ Partial Class Settings
     Friend WithEvents btnAbs As Button
     Friend WithEvents btnPresent As Button
     Friend WithEvents btnPrePla As Button
-    Friend WithEvents Label5 As Label
-    Friend WithEvents Label4 As Label
-    Friend WithEvents Label3 As Label
+    Friend WithEvents LblPreBien As Label
+    Friend WithEvents LblPresent As Label
+    Friend WithEvents LblAbsent As Label
 End Class

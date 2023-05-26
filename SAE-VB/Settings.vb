@@ -34,20 +34,16 @@ Public Class Settings
             MsgBox("Veuillez saisir un temps supérieur ou égale à 30 secondes")
             Return False
         End If
-        If btnAbs.BackColor.Equals(btnPrePla.BackColor) OrElse btnAbs.BackColor.Equals(btnPresent.BackColor) Then
-            MsgBox("Les couleurs sont les mêmes")
-            Return False
-        End If
-        If btnPrePla.BackColor.Equals(btnAbs.BackColor) OrElse btnPrePla.BackColor.Equals(btnPresent.BackColor) Then
-            MsgBox("Les couleurs sont les mêmes")
-            Return False
-        End If
-        If btnPresent.BackColor.Equals(btnAbs.BackColor) OrElse btnPresent.BackColor.Equals(btnPrePla.BackColor) Then
+        If sameColors(btnAbs.BackColor, btnPrePla.BackColor, btnPresent.BackColor) Then
             MsgBox("Les couleurs sont les mêmes")
             Return False
         End If
         Return True
 
+    End Function
+
+    Private Function sameColors(c1 As Color, c2 As Color, c3 As Color) As Boolean
+        Return c1.Equals(c2) OrElse c2.Equals(c3) OrElse c3.Equals(c1)
     End Function
 
     Private Sub button_points_Click(sender As Object, e As EventArgs) Handles button_points.Click
@@ -62,6 +58,7 @@ Public Class Settings
     End Sub
 
     Private Sub Settings_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        FormBorderStyle = FormBorderStyle.FixedSingle
         PnlPath.Visible = False
         NumUpDownEssaie.Value = getnbEssaie()
         txtbox_temps.Text = getTempsPourJouer()
@@ -74,6 +71,9 @@ Public Class Settings
         btnAbs.BackColor = getcouleurAbsent()
         btnPresent.BackColor = getcouleurPresent()
         btnPrePla.BackColor = getcouleurPBP()
+        LblAbsent.BackColor = btnAbs.BackColor
+        LblPresent.ForeColor = btnPresent.BackColor
+        LblPreBien.ForeColor = btnPrePla.BackColor
         ToolTipChar.SetToolTip(txtCar, "Appuyer sur Entrée pour valider le caractère choisi")
     End Sub
 
@@ -156,6 +156,18 @@ Public Class Settings
             Dim selectedColor As Color = colorDialog.Color
             sender.BackColor = selectedColor
         End If
+    End Sub
+
+    Private Sub btnAbs_BackColorChanged(sender As Object, e As EventArgs) Handles btnAbs.BackColorChanged
+        LblAbsent.BackColor = btnAbs.BackColor
+    End Sub
+
+    Private Sub btnPrePla_BackColorChanged(sender As Object, e As EventArgs) Handles btnPrePla.BackColorChanged
+        LblPreBien.ForeColor = btnPrePla.BackColor
+    End Sub
+
+    Private Sub btnPresent_BackColorChanged(sender As Object, e As EventArgs) Handles btnPresent.BackColorChanged
+        LblPresent.ForeColor = btnPresent.BackColor
     End Sub
 
     'Private Sub Settings_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing

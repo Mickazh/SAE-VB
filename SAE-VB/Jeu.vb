@@ -10,6 +10,7 @@ Public Class Jeu
     Private correct As Boolean = False
 
     Private Sub Form3_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        FormBorderStyle = FormBorderStyle.FixedSingle
         lblAbsent.BackColor = getcouleurAbsent()
         Timer.Start()
         LblCacheur.Text = "Cacheur : " & FormAccueil.getNameJ1()
