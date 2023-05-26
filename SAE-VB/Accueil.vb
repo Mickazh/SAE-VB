@@ -8,6 +8,7 @@ Public Class FormAccueil
     End Sub
 
     Private Sub FormAccueil_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        FormBorderStyle = FormBorderStyle.FixedSingle
         cboJoueur1.Sorted = True
         cboJoueur2.Sorted = True
         refreshCbo()

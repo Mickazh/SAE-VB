@@ -19,6 +19,7 @@
     End Sub
 
     Private Sub Score_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        FormBorderStyle = FormBorderStyle.FixedSingle
         listLst = {lbNom, lbScore, lbNbJ1, lbNbJ2, lbMeilleurTemps, lbTemps}
         btnRechercher.Enabled = False
         cboRechercher.DropDownStyle = ComboBoxStyle.DropDownList

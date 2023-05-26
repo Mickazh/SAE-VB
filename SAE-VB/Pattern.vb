@@ -1,6 +1,7 @@
 ﻿Public Class Pattern
     Public combineCache As Char()
     Private Sub combin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        FormBorderStyle = FormBorderStyle.FixedSingle
         combineCache = New Char(4) {}
         For i As Integer = 0 To getCaracteresJouable.Length - 1
             LblCharJouable.Text &= getCaracteresJouable(i).c & " "
@@ -51,6 +52,14 @@
 
         Me.Hide()
         Jeu.Show()
+    End Sub
+
+    Private Sub BtnAleatoire_Click(sender As Object, e As EventArgs) Handles BtnAleatoire.Click
+        Dim Generator As System.Random = New System.Random()
+        For i = 0 To combineCache.Length - 1
+            Dim intRandom = Generator.Next(0, combineCache.Length - 1)
+            PnlChar.Controls(i).Text = getCaracteresJouable(intRandom).c
+        Next
     End Sub
 
     'Private Sub txt_GotFocus(sender As Object, e As EventArgs) Handles txt1.GotFocus, txt2.GotFocus, txt3.GotFocus, txt4.GotFocus, txt5.GotFocus
